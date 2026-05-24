@@ -38,68 +38,113 @@
         Positive Train Control (PTC), and Communication Based Train Control (CBTC).
 
     </p>
-
-    <hr>
-
-    <h2>Topics Covered</h2>
-
-    <ul style="font-size: 22px;">
-
-        <li>Track circuits</li>
-        <li>Signal indications</li>
-        <li>Switch machines</li>
-        <li>Relays and control logic</li>
-        <li>Basic troubleshooting</li>
-
-    </ul>
-
+    <img src="images/back ground 2.png" 
+alt="Railroad Signal"
+style="width:350px;
+float:right;
+margin-left:20px;
+border-radius:10px;">
     <hr>
 
     <h2>Module Quiz</h2>
 
-    <p style="font-size: 22px;">
-        1. What is the purpose of a railroad signal system?
-    </p>
-
-    <button>Control train movement safely</button>
-
-    <button>Paint railroad tracks</button>
-
-    <button>Wash locomotives</button>
+    <form id="quizForm">
+    
+    <p>1. What is the purpose of a railroad signal system?</p>
+    <label><input type="radio" name="q1" value="correct"> Control train movement safely</label><br>
+    <label><input type="radio" name="q1" value="wrong"> Paint railroad tracks</label><br>
+    <label><input type="radio" name="q1" value="wrong"> Wash locomotives</label><br><br>
+    
+    <p>2. What detects train occupancy?</p>
+    <label><input type="radio" name="q2" value="correct"> Track circuit</label><br>
+    <label><input type="radio" name="q2" value="wrong"> Horn</label><br>
+    <label><input type="radio" name="q2" value="wrong"> Fuel tank</label><br><br>
+    
+    <p>3. What does CBTC stand for?</p>
+    <label><input type="radio" name="q3" value="correct"> Communication Based Train Control</label><br>
+    <label><input type="radio" name="q3" value="wrong"> Central Brake Track Circuit</label><br>
+    <label><input type="radio" name="q3" value="wrong"> Control Board Test Circuit</label><br><br>
+    
+    <button type="button" onclick="gradeQuiz()" 
+style="background-color:#0056b3;
+color:white;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;">
+Submit Answers
+</button>
+    
+    </form>
+    
+    <br>
+    
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
+    </div>
+    
+    <script>
+    function gradeQuiz() {
+    
+        const answers = document.querySelectorAll('input[type="radio"]');
+    
+        answers.forEach(answer => {
+    
+            answer.disabled = true;
+    
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+    
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+    
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+    
+        });
+    
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+    
 
     <hr>
 
-    <p style="font-size: 22px;">
-        2. What detects train occupancy?
-    </p>
+    <div style="margin-top:30px;">
 
-    <button>Track circuit</button>
-
-    <button>Horn</button>
-
-    <button>Fuel tank</button>
-
-    <hr>
-
-    <p style="font-size: 22px;">
-        3. What does CBTC stand for?
-    </p>
-
-    <button>Communication Based Train Control</button>
-
-    <button>Central Brake Track Circuit</button>
-
-    <button>Control Board Test Circuit</button>
-
-    <hr>
-
-    <a href="Courses.html">
-
-        <button style="padding: 15px; font-size: 18px;">
-
-            Back To Courses
-
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
         </button>
+        </a>
+        
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+        
+        </div>
 
     </a>
 
@@ -122,7 +167,7 @@
         </p>
 
     </footer>
-
+    
 </body>
 
 </html>
