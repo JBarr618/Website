@@ -76,6 +76,31 @@ cursor:pointer;
 margin-top:20px;">
 Submit Answers
 </button>
+<button type="button"
+onclick="checkPassword()"
+style="background-color:#0056b3;
+color:white;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
+margin-left:10px;">
+Module 1A
+</button>
+
+<script>
+function checkPassword() {
+    let password = prompt("Enter Password:");
+
+    if(password === "signal2026") {
+        window.location.href = "../Module 1A/Module-1A.html";
+    } else {
+        alert("Incorrect Password");
+    }
+}
+</script>
     
     </form>
     
