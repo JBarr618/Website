@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 13C: Troubleshooting Microlok Units</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .intro-container {
+      overflow: auto;
+      padding: 20px 0;
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin: 20px 0;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 13C: Troubleshooting Microlok Units</h1>
+
+  <div class="intro-container">
+    <h2>What is a Microlok Unit?</h2>
+    <p><strong>Microlok</strong> refers to a family of vital electronic interlocking systems originally developed by General Railway Signal (GRS). Over time, GRS became part of Alstom in 1998.<sup>1</sup> However, the Microlok product line is now associated with Wabtec, following subsequent acquisitions and industry restructuring. Microlok is a widely used EPTC system known for its reliability, flexibility, and application in both mainline and mass transit railway signaling.<sup>2</sup></p>
+
+    <div class="image-placeholder">[Image: Microlok Diagnostic Software Screenshot]</div>
+
+    <p>A Microlok unit, at its core, is a programmable electronic controller designed for safety-critical railway interlocking applications. It receives inputs from field devices such as track circuits, switches, and signals, processes this information according to the configured interlocking logic, and generates vital outputs to control these field devices, ensuring safe train movements.</p>
+
+    <p><strong>Key characteristics</strong> of a Microlok unit and the broader Microlok system include:</p>
+    <ul>
+      <li><strong>Vital Processing:</strong> Microlok units employ microprocessor-based technology with built-in safety features to ensure that outputs are only generated when safe conditions are met. This “vital” processing is crucial for preventing conflicting train movements and ensuring safe signaling.</li>
+      <li><strong>Software-Based Logic:</strong> The interlocking logic for a specific railway installation is implemented through software programming.<sup>3</sup> This offers significant flexibility for adapting to different track layouts and operational requirements, and for making future modifications.</li>
+      <li><strong>Modular Architecture:</strong> Microlok systems typically have a modular design, allowing for scalability and customization based on the complexity of the interlocking.<sup>4</sup> Input/output (I/O) modules interface with field equipment, and communication modules allow for connection to other signaling and control systems.</li>
+      <li><strong>Self-Diagnostics and Monitoring:</strong> Microlok units often include comprehensive self-monitoring and diagnostic capabilities to detect internal faults and provide status information, aiding in maintenance and troubleshooting.<sup>5</sup></li>
+      <li><strong>Communication Interfaces:</strong> Microlok systems can communicate with various other systems using different protocols, including those for remote control panels, CBTC interfaces, and data logging. The Microlok II system, for example, can use serial protocols like RS-232 for communication.<sup>6</sup></li>
+    </ul>
+
+    <div class="image-placeholder">[Image: Technician Checking Wiring at Microlok Cabinet]</div>
+
+    <p>The Microlok product line has evolved over time, with versions like Microlok I and the more widely deployed Microlok II. Microlok II is an FRA-compliant system with a proven track record in North American railway signaling. It is designed to handle a variety of applications, including basic interlocking control, speed command logic for automatic train control (ATC), and coded track circuit functions. Hitachi Rail has also developed systems, such as MicroLok II Genesys, building upon the Microlok II platform.</p>
+
+    <p>In essence, a Microlok unit is a powerful and reliable electronic brain of a railway interlocking system, replacing traditional relays with software-driven safety logic to control and monitor train movements safely and efficiently.</p>
+
+    <div class="image-placeholder">[Image: Diagram of Troubleshooting Points in Microlok Architecture]</div>
+  </div>
+
+  <h3>Module 13C Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is one of the first steps in troubleshooting a Microlok unit?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Replacing all I/O modules immediately</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Reviewing status indicators and diagnostic software</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Turning off power to the system</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What are common categories of issues that can cause Microlok unit failures?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Improper use of signal flags</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Communication, hardware, or software faults</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Incorrect train length</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Why is it important to use Microlok diagnostic software during troubleshooting?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) It replaces the need for field inspections</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) It can permanently fix all problems</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) It provides error logs and real-time system status</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="unlock-button">🔐 Unlock Next Module</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="back-button">⬅️ Back</button>
+    <button id="home-button">🏠 Home</button>
+  </div>
+
+  <script>
+    // === Quiz config ===
+    const questions = [
+      { name: "q1", correct: "b" },
+      { name: "q2", correct: "b" },
+      { name: "q3", correct: "c" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const nextButton = document.getElementById("next-button");
+    const unlockButton = document.getElementById("unlock-button");
+    const backButton = document.getElementById("back-button");
+    const homeButton = document.getElementById("home-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+
+    // Optional: randomize answer order to avoid consistent letter keys
+    function shuffleAnswers() {
+      document.querySelectorAll('.question-container').forEach(container => {
+        const options = Array.from(container.querySelectorAll('.answer-option'));
+        for (let i = options.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          container.appendChild(options[j]);
+          options.splice(j, 1);
+        }
+      });
+    }
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll(".answer-option");
+
+        options.forEach(option => {
+          const input = option.querySelector("input");
+          // Clear previous state
+          option.classList.remove('correct-answer', 'wrong-answer');
+          if (input.value === questions[index].correct) {
+            option.classList.add("correct-answer");
+          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
+            option.classList.add("wrong-answer");
+          }
+        });
+
+        if (selected && selected.value === questions[index].correct) {
+          score++;
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module13CScore", score);
+      localStorage.setItem("module13CMax", questions.length);
+    });
+
+    // === Access + Navigation ===
+    unlockButton.addEventListener("click", () => {
+      const password = prompt("Enter your course access password:");
+      if (password === "railroad2025") {
+        nextButton.style.display = "inline-block";
+        unlockButton.style.display = "none";
+        alert("Access granted.");
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      window.location.href = "../Module 13/Module-13D.html";
+    });
+
+    backButton.addEventListener("click", () => {
+      window.location.href = "../Module 13/Module-13B.html";
+    });
+
+    homeButton.addEventListener("click", () => {
+      window.location.href = "../../index.html";
+    });
+
+    // INIT
+    shuffleAnswers();
+  </script>
+</body>
+</html>

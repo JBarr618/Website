@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 5B: How Complex a Control Point Can Become</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      padding: 20px;
+    }
+
+    .intro-container {
+      overflow: auto;
+      padding: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .question-container {
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+
+    .answer-option input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .correct-answer {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+
+    .wrong-answer {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+
+    #submit-button, #next-button, #back-button, #home-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
+      background-color: #0056b3;
+    }
+
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 5B: How Complex a Control Point Can Become</h1>
+
+  <div class="intro-container">
+    <p>Control points can vary greatly in complexity, depending on the size and complexity of the interlocking they serve. The most basic control points might only manage a few switches and signals, while larger, more sophisticated control points can handle hundreds or even thousands of components.</p>
+    <p>Several factors contribute to the complexity of a control point:</p>
+    <ul>
+      <li>Number of Switches and Signals: The more switches and signals that need to be controlled, the more complex the interlocking logic and the control panel interface become.</li>
+      <li>Track Layout: The layout of the track network, including the number of junctions, crossings, and sidings, directly affects the number of routes and potential conflicts that the interlocking must manage.</li>
+      <li>Level of Automation: Control points can range from fully manual operations to highly automated systems with advanced computer interfaces. Automated systems generally require more complex software and hardware.</li>
+      <li>Additional Features: Some control points may include additional features such as speed control, route setting displays, and diagnostic tools, further increasing their complexity.</li>
+    </ul>
+    <p>The complexity of a control point also influences the number of operators required to manage it. Smaller, simpler interlockings can often be operated by a single person, while larger, more complex interlockings may require multiple operators working in shifts.</p>
+  </div>
+
+  <h3>Module 5B Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What factors contribute to the complexity of a control point in a railway signaling system?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) The amount of sunshine at the location</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Number of switches, signals, track layout, level of automation, and added features</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Length of the trains passing through</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. How does the number of switches and signals in an interlocking affect the complexity of the control point?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) More switches and signals increase control logic and interface complexity</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Fewer switches make systems overcomplicated</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) It has no real effect on complexity</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What are the advantages and disadvantages of using a fully automated control point compared to a manual one?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) Automation increases efficiency but adds software/hardware complexity</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) Manual systems are faster and more modern</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) Automation reduces control entirely</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="back-button" onclick="location.href='Module 5A- What is the Importance of a Control Point.html'">⬅️ Back</button>
+    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
+    <button id="next-button" onclick="location.href='Module 5C- How to Troubleshoot a Control Point Problem.html'">Next ➡️</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "a" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+    const nextButton = document.getElementById("next-button");
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll(".answer-option");
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              const input = label.querySelector("input");
+              if (input.value === questions[index].correctAnswer) {
+                label.classList.add("correct-answer");
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector("input");
+              if (input.value === selectedAnswer.value) {
+                label.classList.add("wrong-answer");
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add("correct-answer");
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector("input");
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add("correct-answer");
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
+      submitButton.disabled = true;
+      nextButton.style.display = "inline-block";
+    });
+  </script>
+</body>
+</html>
+

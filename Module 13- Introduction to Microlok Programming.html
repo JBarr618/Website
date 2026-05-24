@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 13: Introduction to Microlok Programming</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .intro-container {
+      overflow: auto;
+      padding: 20px 0;
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin: 20px 0;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+    .answer-option input[type="radio"] {
+      margin-right: 10px;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 13: Introduction to Microlok Programming</h1>
+
+  <div class="intro-container">
+    <p>The vital programming of Microlok units is typically done using proprietary software and a specific, high-level language developed by the manufacturer (originally GRS, now Wabtec). This language is designed with safety as the paramount concern, ensuring that the interlocking logic implemented is robust and prevents unsafe conditions.</p>
+
+    <div class="image-placeholder">[Image: Microlok Software Environment]</div>
+
+    <p>It is a high-level, safety-oriented language that uses familiar signaling concepts like route locking and track occupancy. Engineers use Wabtec’s development environment to write, simulate, and compile the logic into code that is safely deployed to Microlok units in the field. The environment includes built-in safety checks, simulation tools, and validation systems to ensure robust design and deployment.</p>
+
+    <div class="image-placeholder">[Image: Diagram of Microlok Programming and Deployment Workflow]</div>
+
+    <p>While the Microlok software and language are proprietary, the structure is designed to be intuitive for signaling engineers and tightly controlled to preserve safety. Other manufacturers like Siemens (IVPI) and Electrologixs also use similar proprietary systems tailored to their hardware.</p>
+  </div>
+
+  <h3>Module 13 Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What company originally developed the Microlok programming system?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Siemens</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Wabtec (formerly GRS)</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Electrologixs</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What is a major advantage of using a high-level language for vital Microlok programming?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Easier to repair by the train crew</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Easier for signaling engineers to implement interlocking logic</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) It works without any hardware</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Why are the details of Microlok programming proprietary?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) To reduce development cost</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) To prevent signal delays</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) To protect system safety and control who can program the logic</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="unlock-button">🔐 Unlock Next Module</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="back-button">⬅️ Back</button>
+    <button id="home-button">🏠 Home</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correct: "b" },
+      { name: "q2", correct: "b" },
+      { name: "q3", correct: "c" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const nextButton = document.getElementById("next-button");
+    const unlockButton = document.getElementById("unlock-button");
+    const backButton = document.getElementById("back-button");
+    const homeButton = document.getElementById("home-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll(".answer-option");
+
+        options.forEach(option => {
+          const input = option.querySelector("input");
+          if (input.value === questions[index].correct) {
+            option.classList.add("correct-answer");
+          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
+            option.classList.add("wrong-answer");
+          }
+        });
+
+        if (selected && selected.value === questions[index].correct) {
+          score++;
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module13Score", score);
+      localStorage.setItem("module13Max", questions.length);
+    });
+
+    unlockButton.addEventListener("click", () => {
+      const password = prompt("Enter your course access password:");
+      if (password === "railroad2025") {
+        nextButton.style.display = "inline-block";
+        unlockButton.style.display = "none";
+        alert("Access granted.");
+      } else {
+        alert("Incorrect password. Please try again or return to the course home page.");
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      window.location.href = "Module-13A.html";
+    });
+
+    backButton.addEventListener("click", () => {
+        window.location.href = "../Module 12/Module 12I- Troubleshooting CBTC.html";
+
+    });
+
+    homeButton.addEventListener("click", () => {
+      window.location.href = "/index.html";
+    });
+  </script>
+</body>
+</html>

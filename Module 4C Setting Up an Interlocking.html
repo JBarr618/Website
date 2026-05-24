@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 4C: Setting Up an Interlocking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1.2em;
+    }
+    .content-container {
+      margin-bottom: 30px;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #submit-button, #next-button, #home-button {
+      padding: 14px 28px;
+      font-size: 1.2em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover:enabled, #home-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 4C: Setting Up an Interlocking</h1>
+
+  <div class="content-container">
+    <p>Setting up an interlocking is a complex and meticulous process that requires careful planning and coordination. The first step is to design the interlocking layout, taking into account the specific track configuration, signal locations, and operational requirements. This often involves using specialized software to create detailed diagrams and simulations.</p>
+    <p>Once the design is finalized, the physical installation of the interlocking components begins. This includes laying the track, installing switches and signals, and connecting the wiring and cables. Careful attention must be paid to the alignment and positioning of the equipment to ensure proper operation.</p>
+    <p>After the physical installation, thorough testing and commissioning are essential. This involves verifying that all signals, switches, and interlocking logic are functioning correctly. Rigorous tests are conducted to ensure that conflicting routes cannot be set up and that trains can safely proceed through the interlocking in any authorized direction.</p>
+    <p>Once the testing is complete and all issues are resolved, the interlocking is put into service. This typically involves transferring control from the manual mode to the interlocking system, allowing it to take over the management of train movements. Regular maintenance and inspections are also crucial to ensure the continued reliability and safety of the interlocking.</p>
+  </div>
+
+  <h2>Module 4C Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What are the key steps involved in setting up a new interlocking system?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Drawing plans, waiting, and observing train behavior</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Design, installation, testing, and commissioning</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Laying ballast and painting signals</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Why is thorough testing and commissioning essential before putting an interlocking into service?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) To validate colors of signal lights</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) To verify functionality and ensure safety by preventing conflicting routes</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) To determine train weight limits</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What types of ongoing maintenance and inspections are typically required to ensure the continued reliability of an interlocking system?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Regular inspections, logic testing, and equipment checks</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Painting rails and replacing signs</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Switching track configurations randomly</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="home-button">🏠 Home</button>
+    <button id="next-button" disabled>➡️ Next Module</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+    const homeButton = document.getElementById('home-button');
+    const nextButton = document.getElementById('next-button');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll('.question-container').forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll('.answer-option');
+
+        options.forEach(opt => {
+          const input = opt.querySelector('input');
+          if (input.value === questions[index].correctAnswer) {
+            opt.classList.add('correct-answer');
+          }
+        });
+
+        if (selected && selected.value === questions[index].correctAnswer) {
+          score++;
+        } else if (selected) {
+          selected.parentElement.classList.add('wrong-answer');
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module4cScore", score);
+      localStorage.setItem("module4cMax", questions.length);
+
+      nextButton.disabled = false;
+    });
+
+    homeButton.addEventListener('click', () => {
+      window.location.href = '/index.html';
+    });
+
+    nextButton.addEventListener('click', () => {
+      window.location.href = 'Modules/Module 4/Module 4C Setting Up an Interlocking.html';
+    });
+  </script>
+</body>
+</html>

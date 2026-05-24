@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 5A: What is the Importance of a Control Point?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      padding: 20px;
+    }
+
+    .intro-container {
+      overflow: auto;
+      padding: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .question-container {
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+
+    .answer-option input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .correct-answer {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+
+    .wrong-answer {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+    }
+
+    #submit-button, #next-button, #back-button, #home-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
+      background-color: #0056b3;
+    }
+
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 5A: What is the Importance of a Control Point?</h1>
+
+  <div class="intro-container">
+    <p>Control points are essential for the safe, efficient, and flexible operation of railway systems. They provide a centralized location for controlling and monitoring all the critical components of an interlocking, including signals, switches, and track circuits. This centralized control is crucial for preventing conflicting train movements and ensuring the safe passage of trains through complex track layouts.</p>
+
+    <p>Without control points, the operation of an interlocking would be much more challenging and prone to human error. Operators would need to be physically present at each switch and signal location, making it difficult to coordinate movements and respond to changing traffic conditions. Control points streamline this process, allowing operators to manage train movements remotely and with greater precision.</p>
+
+    <p>In addition to safety, control points also optimize traffic flow. By providing a clear overview of the interlocking and its surroundings, operators can make informed decisions about route selection and train sequencing. This helps to minimize delays, maximize throughput, and improve the overall efficiency of the railway network. Control points also facilitate flexible train routing, enabling operators to adapt to changing circumstances such as track maintenance, equipment failures, or unexpected traffic surges.</p>
+  </div>
+
+  <h3>Module 5A Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary function of a control point in a railroad signaling system?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) To operate train brakes manually</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) To control and monitor all components of an interlocking</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) To inspect train wheels</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. How do control points contribute to the safe operation of trains through an interlocking?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) By lighting trackside lanterns</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) By coordinating signals, switches, and routes to prevent conflicts</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) By reducing signal visibility</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Explain how control points help to optimize traffic flow and improve the efficiency of a railway network.</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) By playing announcements</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) By providing overview and enabling quick routing decisions</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) By stopping trains for long periods</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">4. What role do control points play in enabling flexible train routing?</p>
+      <label class="answer-option"><input type="radio" name="q4" value="a" /> A) They allow remote and adaptive route adjustments during events</label>
+      <label class="answer-option"><input type="radio" name="q4" value="b" /> B) They operate vending machines for crew comfort</label>
+      <label class="answer-option"><input type="radio" name="q4" value="c" /> C) They increase the number of ticket counters</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">4</span>
+    </div>
+
+    <button id="back-button" onclick="location.href='Module 5- Introduction to Control Points.html'">⬅️ Back</button>
+    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
+    <button id="next-button" onclick="location.href='odule 5B- How Complex a Control Point Can Become.html'">Next ➡️</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "b" },
+      { name: "q4", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+    const nextButton = document.getElementById("next-button");
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll(".answer-option");
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              const input = label.querySelector("input");
+              if (input.value === questions[index].correctAnswer) {
+                label.classList.add("correct-answer");
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector("input");
+              if (input.value === selectedAnswer.value) {
+                label.classList.add("wrong-answer");
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add("correct-answer");
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector("input");
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add("correct-answer");
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
+      submitButton.disabled = true;
+      nextButton.style.display = "inline-block";
+    });
+  </script>
+</body>
+</html>
+

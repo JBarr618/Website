@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 11E: Setting Up Relays</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    .question-container {
+      margin-top: 30px;
+    }
+    .question {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .answer-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "a",
+        q2: "d",
+        q3: "b"
+      };
+
+      let score = 0;
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      alert("You got " + score + " out of 3 questions correct.");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Module 11E: Setting Up Relays</h1>
+
+  <p>Setting up relays in railway signaling circuits requires careful attention to wiring, power supply, and environmental conditions to ensure reliable and safe operation. Here are some key considerations:</p>
+
+  <ol>
+    <li><strong>Correct Coil Voltage and Current:</strong> Match the coil's power requirements with the control circuit specifications to avoid damage or malfunction.</li>
+    <li><strong>Proper Wiring of Contacts:</strong> Connect control and load circuits to the correct terminals (NO, NC, common) with appropriately rated wires and secure insulation.</li>
+    <li><strong>Mounting and Orientation:</strong> Securely mount relays in vibration-free, environmentally suitable locations, respecting manufacturer orientation guidelines.</li>
+    <li><strong>Protection Against Back EMF:</strong> Use a diode across the coil in reverse bias to safely dissipate voltage spikes when de-energized.</li>
+    <li><strong>Contact Protection:</strong> Use snubber circuits across contacts, especially when switching inductive loads, to reduce arcing and prolong contact life.</li>
+    <li><strong>Testing and Verification:</strong> Power the coil and observe contact operation; check continuity in both energized and de-energized states to confirm function.</li>
+    <li><strong>Documentation:</strong> Keep wiring diagrams and relay specs up to date for accurate maintenance and faster troubleshooting.</li>
+  </ol>
+
+  <div class="question-container">
+    <div class="question">1. What are some important factors to consider when selecting the mounting location and orientation for a relay in a signaling system?</div>
+    <label class="answer-option"><input type="radio" name="q1" value="a"> Vibration resistance, environmental protection, and manufacturer-recommended orientation.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="b"> Color coding, voltage polarity, and touch-screen access.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="c"> Grounding at both ends and looping wire under the relay base.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="d"> Relay labeling and time delay programming only.</label>
+
+    <div class="question">2. Why is it often necessary to include a diode across a relay coil in a control circuit with electronic components? What is this phenomenon called?</div>
+    <label class="answer-option"><input type="radio" name="q2" value="a"> To heat the coil evenly — this is called magnetic friction.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="b"> To amplify contact signals — this is called loop gain.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="c"> To alternate contact resistance — this is called feedback control.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="d"> To suppress voltage spikes — this is called back EMF.</label>
+
+    <div class="question">3. What steps should be taken after physically wiring a relay into a circuit to ensure it is functioning correctly and safely?</div>
+    <label class="answer-option"><input type="radio" name="q3" value="a"> Adjust the relay contacts using a screwdriver until they click.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="b"> Test coil operation, verify contact switching, and check continuity in both states.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="c"> Measure the ambient humidity and reset the control system software.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="d"> De-solder and re-solder each wire to ensure a clean look.</label>
+
+    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
+  </div>
+
+</body>
+</html>

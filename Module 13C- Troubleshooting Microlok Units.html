@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 13C: Troubleshooting Microlok Units</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .intro-container {
+      overflow: auto;
+      padding: 20px 0;
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin: 20px 0;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 13C: Troubleshooting Microlok Units</h1>
+
+  <div class="intro-container">
+    <p>Troubleshooting a Microlok unit requires a systematic approach, specialized tools, and a thorough understanding of both the hardware architecture and the programmed vital interlocking logic. When a fault occurs, it can manifest in various ways, from incorrect signal aspects and failed switch movements to complete system outages. The first step in troubleshooting often involves examining system status indicators and utilizing diagnostic software to identify any error codes or alarms reported by the Microlok unit itself.</p>
+
+    <div class="image-placeholder">[Image: Microlok Diagnostic Software Screenshot]</div>
+
+    <p>Common issues encountered can stem from hardware failures, software glitches, communication problems, or issues with the interface to field equipment. Hardware problems might involve power supply failures, faulty input/output modules, or issues with the central processing unit. Communication faults can occur in links to remote control systems or field devices. Diagnostic tools are essential for identifying and isolating these failures.</p>
+
+    <div class="image-placeholder">[Image: Technician Checking Wiring at Microlok Cabinet]</div>
+
+    <p>Effective troubleshooting involves analyzing diagnostic outputs, using multimeters and test software, and comparing field symptoms with system logs. Steps may include replacing hardware modules, updating logic software, verifying communications, or repairing field wiring. Proper training and documentation are critical to avoid mistakes that could affect safety-critical operations.</p>
+
+    <div class="image-placeholder">[Image: Diagram of Troubleshooting Points in Microlok Architecture]</div>
+  </div>
+
+  <h3>Module 13C Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is one of the first steps in troubleshooting a Microlok unit?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Replacing all I/O modules immediately</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Reviewing status indicators and diagnostic software</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Turning off power to the system</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What are common categories of issues that can cause Microlok unit failures?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Improper use of signal flags</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Communication, hardware, or software faults</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Incorrect train length</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Why is it important to use Microlok diagnostic software during troubleshooting?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) It replaces the need for field inspections</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) It can permanently fix all problems</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) It provides error logs and real-time system status</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="unlock-button">🔐 Unlock Next Module</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="back-button">⬅️ Back</button>
+    <button id="home-button">🏠 Home</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correct: "b" },
+      { name: "q2", correct: "b" },
+      { name: "q3", correct: "c" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const nextButton = document.getElementById("next-button");
+    const unlockButton = document.getElementById("unlock-button");
+    const backButton = document.getElementById("back-button");
+    const homeButton = document.getElementById("home-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll(".answer-option");
+
+        options.forEach(option => {
+          const input = option.querySelector("input");
+          if (input.value === questions[index].correct) {
+            option.classList.add("correct-answer");
+          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
+            option.classList.add("wrong-answer");
+          }
+        });
+
+        if (selected && selected.value === questions[index].correct) {
+          score++;
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module13CScore", score);
+      localStorage.setItem("module13CMax", questions.length);
+    });
+
+    unlockButton.addEventListener("click", () => {
+      const password = prompt("Enter your course access password:");
+      if (password === "railroad2025") {
+        nextButton.style.display = "inline-block";
+        unlockButton.style.display = "none";
+        alert("Access granted.");
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      alert("This is the last module in the Microlok series.");
+    });
+
+    backButton.addEventListener("click", () => {
+      window.location.href = "Module 13B- Testing Microlok Units.html";
+    });
+
+    homeButton.addEventListener("click", () => {
+      window.location.href = "/index.html";
+    });
+  </script>
+</body>
+</html>

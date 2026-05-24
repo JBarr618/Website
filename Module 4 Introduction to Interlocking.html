@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 4: Introduction to Interlockings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 1.2em;
+    }
+    .content-container {
+      margin-bottom: 30px;
+    }
+    .image-container {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 50%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #submit-button, #next-button, #home-button {
+      padding: 14px 28px;
+      font-size: 1.2em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover:enabled, #home-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 4: Introduction to Interlockings</h1>
+
+  <div class="content-container">
+    <p>Interlockings are of paramount importance to railroad safety and efficiency. They are the cornerstone of preventing train collisions at locations where train routes intersect or converge. Without interlockings, the risk of trains running into each other would be unacceptably high, especially in areas with frequent train traffic. They provide a centralized and automated system for managing train movements, eliminating the potential for human error in setting conflicting routes.
+    <div class="image-container">
+      <img src="" alt="">
+    </div>
+  </div>
+
+  <div class="content-container">
+    <p>Beyond safety, interlockings also optimize traffic flow. By allowing multiple trains to operate in a complex area without interfering with each other, they increase the throughput of the railway network. This is particularly crucial in busy terminals, junctions, and crossings where trains need to move efficiently to maintain schedules and minimize delays. A well-designed interlocking can significantly increase the capacity of a railway line.</p>
+  </div>
+
+  <div class="content-container">
+    <p>Furthermore, interlockings facilitate flexible train routing. They allow train dispatchers to direct trains along different paths depending on traffic conditions, maintenance schedules, or other operational needs. This flexibility is essential for managing disruptions and keeping the railway system running smoothly. In essence, interlockings are not just safety devices; they are also vital tools for maximizing the efficiency and operational flexibility of a railroad.</p>
+  </div>
+
+  <h2>Module 4 Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary purpose of an interlocking in a railroad signaling system?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) To increase train speed through stations</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) To prevent conflicting train movements</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) To communicate with onboard train radios</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Explain the concept of "route locking" in the context of an interlocking.</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Locking the train doors during movement</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Locking switches and signals to prevent conflicting movements</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) Locking the train's speed at a fixed rate</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Why are strict safety standards and regulations essential for the design and operation of interlockings?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) To simplify dispatcher duties</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) To reduce maintenance costs</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) To ensure safe and efficient train movement</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="home-button">🏠 Home</button>
+    <button id="next-button" disabled>➡️ Next Module</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "c" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+    const homeButton = document.getElementById('home-button');
+    const nextButton = document.getElementById('next-button');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll('.question-container').forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll('.answer-option');
+
+        options.forEach(opt => {
+          const input = opt.querySelector('input');
+          if (input.value === questions[index].correctAnswer) {
+            opt.classList.add('correct-answer');
+          }
+        });
+
+        if (selected && selected.value === questions[index].correctAnswer) {
+          score++;
+        } else if (selected) {
+          selected.parentElement.classList.add('wrong-answer');
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module4Score", score);
+      localStorage.setItem("module4Max", questions.length);
+
+      nextButton.disabled = false;
+    });
+
+    homeButton.addEventListener('click', () => {
+      window.location.href = '/index.html';
+    });
+
+    nextButton.addEventListener('click', () => {
+      window.location.href = 'Module 4B What types of Equipment are used in an Interlocking.html';
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

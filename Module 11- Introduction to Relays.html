@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 11: Introduction to Relays</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    .question-container {
+      margin-top: 30px;
+    }
+    .question {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .answer-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "a",
+        q2: "d",
+        q3: "b"
+      };
+
+      let score = 0;
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      alert("You got " + score + " out of 3 questions correct.");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Module 11: Introduction to Relays</h1>
+
+  <p>Relays are electromechanical switches that play a fundamental role in railway signaling systems. They act as electrically controlled switches, using a small electrical current to control a larger current, or to switch multiple circuits on or off. In essence, a relay allows a low-power circuit to control a high-power circuit, providing electrical isolation between the control and controlled circuits.</p>
+
+  <p>A basic relay consists of an electromagnet, an armature (a movable iron piece), a spring, and a set of contacts. When an electrical current flows through the coil of the electromagnet, it creates a magnetic field. This magnetic field attracts the armature, causing it to move. The movement of the armature either opens or closes the contacts, thus switching the controlled circuit(s). When the current to the coil is interrupted, the magnetic field collapses, and the spring returns the armature to its original position, switching the contacts back to their initial state.</p>
+
+  <p>In railway signaling, relays are used for a wide variety of functions, including:</p>
+  <ul>
+    <li><strong>Signal Control:</strong> Switching power to signal lamps to display different aspects.</li>
+    <li><strong>Interlocking Logic:</strong> Implementing the complex logic that prevents conflicting train movements.</li>
+    <li><strong>Track Circuit Indication:</strong> Detecting the presence or absence of a train based on the state of a track relay.</li>
+    <li><strong>Remote Control:</strong> Allowing control of field devices (like switches and signals) from a central location.</li>
+    <li><strong>Safety Circuits:</strong> Forming vital safety chains where the correct state of multiple relays indicates a safe condition.</li>
+  </ul>
+
+  <p>The reliability and fail-safe characteristics of relays are paramount in signaling applications. They are often designed so that a power failure or a fault in the relay itself will result in a "safe" condition (e.g., a signal displaying a stop aspect).</p>
+
+  <div class="question-container">
+    <div class="question">1. What is the fundamental function of a relay in an electrical circuit?</div>
+    <label class="answer-option"><input type="radio" name="q1" value="a"> To control a high-power circuit using a low-power signal.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="b"> To store electrical charge for short bursts of power.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="c"> To measure electrical resistance in signaling wires.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="d"> To regulate voltage levels in a power supply.</label>
+
+    <div class="question">2. Describe the basic components of an electromechanical relay and how they interact to perform a switching action.</div>
+    <label class="answer-option"><input type="radio" name="q2" value="a"> A diode and a resistor create switching pulses.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="b"> A transistor controls a capacitor to charge the relay.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="c"> A fuse opens the circuit when voltage is applied.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="d"> An electromagnet attracts an armature, moving contacts to open or close circuits.</label>
+
+    <div class="question">3. Give at least three examples of how relays are used in railway signaling systems.</div>
+    <label class="answer-option"><input type="radio" name="q3" value="a"> To lubricate switch points, power solar panels, and provide Wi-Fi.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="b"> For signal control, track circuit indication, and interlocking logic.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="c"> To track employee location, adjust train speed, and run ticket printers.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="d"> In air conditioning, toilet lighting, and music systems on passenger cars.</label>
+
+    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
+  </div>
+
+</body>
+</html>

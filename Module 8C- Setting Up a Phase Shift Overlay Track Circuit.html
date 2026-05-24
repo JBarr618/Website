@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 8C: Setting Up a Phase Shift Overlay Track Circuit</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 8C: Setting Up a Phase Shift Overlay Track Circuit</h1>
+
+  <div class="content-container">
+    <p>
+      Setting up a Phase Shift Overlay (PSO) track circuit involves a more intricate process than traditional amplitude-based AC circuits due to the need to establish and monitor the precise phase relationship of the signal. The key steps generally include:
+    </p>
+    <ol>
+      <li><strong>Defining the Track Block:</strong> While traditional insulated joints might not be strictly required for the PSO signal within the block, the overall block boundaries for signaling purposes still need to be defined. This might involve insulated joints for other signaling systems or the placement of the PSO transmitting and receiving equipment at specific locations.</li>
+      <li><strong>Transmitter Installation:</strong> A specialized AC transmitter is installed at one end of the track block. This transmitter generates a continuous AC signal at a specific frequency and a defined phase. The output power and frequency stability of the transmitter are critical for reliable operation.</li>
+      <li><strong>Receiver Installation:</strong> A phase-sensitive AC receiver is installed at the other end of the track block. This receiver is designed to compare the phase of the received signal with a locally generated reference signal. It is calibrated to detect predetermined phase shifts that indicate train occupancy.</li>
+      <li><strong>Tuning and Impedance Matching:</strong> At the boundaries of the track block, tuned circuits (inductors and capacitors) or impedance matching units are often installed. These devices help to define the electrical length of the track circuit for the PSO signal and minimize reflections or signal losses. Proper tuning is essential for establishing a consistent phase relationship under unoccupied conditions.</li>
+      <li><strong>Calibration and Adjustment:</strong> The entire system requires careful calibration and adjustment. This involves setting the transmitter output level, adjusting the tuning elements at the block boundaries, and calibrating the phase detection threshold of the receiver. The phase relationship under clear track conditions must be precisely established as a baseline.</li>
+      <li><strong>Testing and Verification:</strong> Rigorous testing is performed to verify that the receiver accurately detects the phase shifts caused by a train shunt at various locations within the block. The system's ability to detect broken rails (by observing significant phase changes) is also tested.</li>
+    </ol>
+  </div>
+
+  <h2>Module 8C Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. How does the definition of a track block for a Phase Shift Overlay (PSO) system potentially differ from that of a traditional AC track circuit?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) PSO blocks may not require insulated joints for signaling current</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) PSO blocks use shorter rail sections</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) PSO blocks rely entirely on axle counters</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What is the role of tuned circuits or impedance matching units in setting up a PSO track circuit?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) To insulate the receiver from high voltage</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) To define electrical length and reduce signal reflection</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) To improve phase stability and reduce losses</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What is the crucial parameter that needs to be carefully calibrated and adjusted in a PSO system to ensure accurate train detection?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) The phase detection threshold of the receiver</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) The length of the rail joint</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) The ballast resistance across the track</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "a" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "c" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

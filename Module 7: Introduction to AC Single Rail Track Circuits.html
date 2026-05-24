@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 7: Introduction to AC Single Rail Track Circuits</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .content-container {
+      margin-bottom: 30px;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 7: Introduction to AC Single Rail Track Circuits</h1>
+
+  <div class="content-container">
+    <p>In contrast to AC double rail track circuits, AC single rail track circuits utilize insulated rail joints on only one of the two running rails to define the track block. The other rail remains electrically continuous throughout multiple track circuit blocks and is typically used as the return path for AC traction power in electrified territory, as well as the return path for the AC track circuit current.</p>
+
+    <p>In a typical AC single rail track circuit setup, the AC power source is connected between the insulated rail and the continuous rail at one end of the block. The AC-sensitive receiver is connected similarly at the other end. The AC signal flows from the source, through the insulated rail, across the receiver, and returns via the continuous rail. When a train enters the block, its wheels and axles shunt the insulated rail to the continuous rail, providing a low-impedance path that bypasses the receiver, causing it to de-energize and indicate occupancy.</p>
+
+    <p>A key advantage of AC single rail track circuits is that they require fewer insulated rail joints compared to double rail circuits, potentially reducing installation and maintenance costs. However, they have the disadvantage of only being able to detect breaks in the insulated rail. A break in the continuous rail might not be detected by the track circuit. Therefore, their application is often limited to specific situations and may require additional safety measures.</p>
+  </div>
+
+  <h2>Module 7 Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the key difference in the installation of insulated rail joints between AC single rail and AC double rail track circuits?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Double rail circuits use fewer joints</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Single rail circuits require insulation on only one rail</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Single rail circuits use wooden ties</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. In an AC single rail track circuit, which rail is typically used as the return path for both the traction power (if present) and the track circuit current?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) The insulated rail</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) The continuous rail</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) Neither rail</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What is a potential disadvantage of AC single rail track circuits compared to double rail circuits in terms of fault detection?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) They require more maintenance staff</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) They cannot detect breaks in the continuous rail</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) They interfere with onboard train radios</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "b" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

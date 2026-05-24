@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3B: Why is a DC Track Circuit Used?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 1.1em;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .paragraph-container {
+            flex: 1;
+        }
+
+        .paragraph-container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            width: 400px;
+            flex-shrink: 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #module-questions-container {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .answer-option {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 1.1em;
+        }
+
+        .answer-option:hover {
+            background-color: #e0e0e0;
+        }
+
+        .answer-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #results-container {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .correct-answer {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .wrong-answer {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        #submit-button, #home-button, #next-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        #submit-button:hover, #home-button:hover, #next-button:hover {
+            background-color: #0056b3;
+        }
+
+        #submit-button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Module 3B: Why is a DC Track Circuit Used?</h1>
+
+    <div class="content-wrapper">
+        <div class="content-container">
+            <div class="paragraph-container">
+                <p>The primary reason for using a DC track circuit is to provide a reliable and continuous method of detecting the presence of a train on a specific section of track. This seemingly simple function is absolutely fundamental to the safe operation of railroads.</p>
+                <p>Without knowing whether a section of track is occupied, it would be impossible to prevent collisions between trains traveling on the same line. The track circuit acts as the "eyes" of the signaling system, constantly monitoring the occupancy status of the railway.</p>
+            </div>
+            <div class="image-container">
+                <img src="/Pictures/Module 3/two trains on same track.webp" alt="Two trains on the same track heading toward each other." />
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="paragraph-container">
+                <p>Beyond basic train detection, DC track circuits offer an inherent "fail-safe" characteristic, which is a critical advantage in safety-critical applications like railroading.</p>
+                <p>The system is designed so that a loss of power, a broken rail, or any other disruption to the circuit will cause the relay to de-energize, signaling an occupied condition. This means that the system defaults to a safe state, significantly reducing the risk of accidents caused by system malfunctions.</p>
+            </div>
+            <div class="image-container">
+                <img src="/Pictures/Module 3/Red signal with train in advance of signal.webp" alt="Train passing a signal that changed from green to red." />
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="paragraph-container">
+                <p>Furthermore, while the basic DC track circuit primarily detects occupancy, it can be adapted and enhanced to provide additional functionality.</p>
+                <p>By varying the voltage, current, or introducing coded signals into the track circuit, it can be used to transmit other vital information to the train, such as signal aspects. This integration of train detection and communication forms the foundation for advanced signaling systems.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="module-questions-container">
+        <h3>Module 3B Questions:</h3>
+        <div id="quiz-container">
+            <div class="question-container">
+                <p class="question">Question 1: What is the most fundamental reason why DC track circuits are used in railroad signaling?</p>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="a"> A) Easy to install on the track circuit.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="b"> B) Continuously detect the presence of a train on a section of track.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="c"> C) Less equipment needed for the fail-safe circuit.
+                </label>
+            </div>
+
+            <div class="question-container">
+                <p class="question">Question 2: What is the "fail-safe" characteristic of a DC track circuit and why is it important?</p>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="a"> A) Fail-Safe is a 1964 movie.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="b"> B) Broken rail does not cause a track circuit to be fail-safe.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="c"> C) Loss of power or broken rail causes relay to de-energize, defaulting to a safe state.
+                </label>
+            </div>
+
+            <div class="question-container">
+                <p class="question">Question 3: What other information can DC track circuits transmit?</p>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="a"> A) Coded signals such as signal aspects.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="b"> B) Movement authority for switches.
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="c"> C) Morse code to dispatch centers.
+                </label>
+            </div>
+
+            <button id="submit-button">Submit Answers</button>
+            <button id="home-button" onclick="window.location.href='/Index.html'">Home</button>
+            <button id="next-button" onclick="window.location.href='/Modules/Module 3/Module 3C.html'">Next Module</button>
+
+            <div id="results-container" style="display: none;">
+                Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizContainer = document.getElementById('quiz-container');
+        const submitButton = document.getElementById('submit-button');
+        const resultsContainer = document.getElementById('results-container');
+        const finalScoreDisplay = document.getElementById('final-score');
+        const maxScoreDisplay = document.getElementById('max-score');
+
+        const questions = [
+            { name: "q1", correctAnswer: "b" },
+            { name: "q2", correctAnswer: "c" },
+            { name: "q3", correctAnswer: "a" }
+        ];
+
+        submitButton.addEventListener('click', () => {
+            let score = 0;
+            const questionContainers = document.querySelectorAll('.question-container');
+            maxScoreDisplay.textContent = questions.length;
+
+            questionContainers.forEach((qContainer, index) => {
+                const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+                const answerElements = qContainer.querySelectorAll('.answer-option');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === questions[index].correctAnswer) {
+                        score++;
+                        answerElements.forEach(label => {
+                            if (label.querySelector('input').value === questions[index].correctAnswer) {
+                                label.classList.add('correct-answer');
+                            }
+                        });
+                    } else {
+                        answerElements.forEach(label => {
+                            const val = label.querySelector('input').value;
+                            if (val === selectedAnswer.value) {
+                                label.classList.add('wrong-answer');
+                            }
+                            if (val === questions[index].correctAnswer) {
+                                label.classList.add('correct-answer');
+                            }
+                        });
+                    }
+                } else {
+                    answerElements.forEach(label => {
+                        if (label.querySelector('input').value === questions[index].correctAnswer) {
+                            label.classList.add('correct-answer');
+                        }
+                    });
+                }
+            });
+
+            finalScoreDisplay.textContent = score;
+            resultsContainer.style.display = 'block';
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.disabled = true);
+            submitButton.disabled = true;
+        });
+    </script>
+</body>
+</html>
+

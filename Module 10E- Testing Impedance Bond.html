@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 10E: Testing Impedance Bonds</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 10E: Testing Impedance Bonds</h1>
+
+  <div class="content-container">
+    <p>
+      Testing impedance bonds is crucial to ensure they are functioning correctly and providing both a low-impedance path for traction return current and a high impedance to signaling frequencies. Regular testing helps to identify degradation or failures that could impact both the traction and signaling systems. Key tests include:
+    </p>
+    <ul>
+      <li><strong>DC Resistance Measurement:</strong> Verifies low resistance for traction return; high resistance may indicate faults. Measured with a low-resistance ohmmeter.</li>
+      <li><strong>Inductance Measurement:</strong> Ensures proper impedance at relevant frequencies; tested using an LCR meter.</li>
+      <li><strong>Impedance at Operating Frequencies:</strong> Confirms low impedance at traction frequency and high impedance at signaling frequency; measured with frequency-capable impedance meters.</li>
+      <li><strong>Current Carrying Capacity:</strong> In some cases, bonds are tested under high-current conditions to check durability and thermal limits.</li>
+      <li><strong>Insulation Resistance:</strong> Verifies no leakage or shorting between windings and frame using an insulation tester (megger).</li>
+      <li><strong>Visual Inspection:</strong> Looks for corrosion, damage, looseness, or signs of overheating at terminals or mounting points.</li>
+    </ul>
+    <p>
+      Testing frequency and documentation are governed by maintenance standards and regulations to ensure long-term safety and reliability.
+    </p>
+  </div>
+
+  <h2>Module 10E Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. Why is a low DC resistance across an impedance bond important for the operation of an electrified railway? What test is used to verify this?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) To ensure signal clarity; verified with a logic analyzer</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) To ensure efficient traction current return; verified using a low-resistance ohmmeter</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) To check relay activation time; verified with a timer relay</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What electrical property of an impedance bond is measured to ensure it provides the correct impedance at both traction and signaling frequencies? What instrument is used for this?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Resistance using a megger</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Capacitance using a voltmeter</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) Inductance using an LCR meter or frequency-specific impedance tester</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Besides electrical tests, what other type of inspection is crucial for the maintenance of impedance bonds? What are some of the things to look for?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Visual inspection for corrosion, overheating, or loose connections</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Optical fiber analysis for light leakage</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Insulation polarity testing using a directional coupler</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "c" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

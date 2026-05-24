@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 7C: Why is an AC Single Rail Track Circuit Used?</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 7C: Why is an AC Single Rail Track Circuit Used?</h1>
+
+  <div class="content-container">
+    <p>AC single rail track circuits are employed in specific railway scenarios, primarily driven by considerations of cost-effectiveness and compatibility with electrified traction systems:</p>
+
+    <p><strong>1. Cost Reduction:</strong> A significant advantage of single rail track circuits is the reduction in the number of insulated rail joints required. Since only one rail needs to be segmented to define the track blocks, the installation and maintenance costs associated with insulated joints are lower compared to double rail circuits. This can be particularly beneficial on long stretches of track where minimizing infrastructure costs is a priority.</p>
+
+    <p><strong>2. Compatibility with AC Electrification:</strong> In railway systems using AC traction power, one rail is often designated as the return path for the high-current traction current. Using the continuous rail of a single rail track circuit for this purpose simplifies the return current path and reduces the need for extensive impedance bonding that would be required if both rails were segmented (as in a double rail circuit). This design helps to minimize interference between the traction power and the signaling system.</p>
+
+    <p><strong>3. Specific Operational Requirements:</strong> In certain operational contexts, the reduced broken rail detection capability (only on the insulated rail) might be deemed acceptable, especially when coupled with other safety measures and inspection regimes. For instance, on lines with lower traffic density or where the risk of a break in the continuous rail is considered minimal, the cost savings of a single rail system might outweigh the limitation in broken rail detection.</p>
+
+    <p>It's important to note that while AC single rail track circuits offer these advantages, their application is carefully considered based on the specific operational needs, safety requirements, and the type of traction power used on the railway line.</p>
+  </div>
+
+  <h2>Module 7C Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary economic advantage of using AC single rail track circuits compared to AC double rail track circuits?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Fewer insulated joints reduce cost</label>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) They use lower voltage sources</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) They require more frequent testing</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. How does the design of an AC single rail track circuit facilitate its use in railway systems with AC electric traction?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) The continuous rail carries return current for traction and track circuit</label>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) It eliminates the need for any bonding</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) It allows switching to DC at stations</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What is a key limitation of AC single rail track circuits in terms of safety and fault detection, and how might this influence their application?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Limited broken rail detection on the continuous rail</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Requires dual voltage transformers</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Cannot be used in curved track segments</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "c" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

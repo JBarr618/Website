@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 9A: What is a Type C Track Circuit?</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 9A: What is a Type C Track Circuit?</h1>
+
+  <div class="content-container">
+    <p>
+      A Type C Track Circuit is an advanced form of AC track circuit engineered to provide reliable train detection and robust broken rail detection, particularly in challenging environments like electrified railways with significant AC traction return currents. The core principle of a Type C circuit involves the simultaneous transmission of two distinct alternating current frequencies along the rails of a track block.
+    </p>
+    <p>
+      One of these frequencies is primarily dedicated to train detection. When a train enters the track block, its wheels and axles create a low-impedance shunt across the rails, affecting the amplitude and/or phase of this train detection frequency as received at the other end of the block. The receiver is designed to detect these changes and indicate occupancy.
+    </p>
+    <p>
+      The second AC frequency is specifically used for broken rail detection. A break in either rail within the track block will significantly alter the impedance characteristics for this particular frequency. This change in impedance results in a detectable change in the received signal level or phase of the broken rail detection frequency. The receiver continuously monitors this frequency for such changes, providing an indication of a rail break even when a train is not present.
+    </p>
+    <p>
+      The receiver in a Type C track circuit is a sophisticated piece of equipment containing filters to separate the two transmitted frequencies and independent detection circuits to analyze each frequency for the specific changes associated with train occupancy and broken rails. This dual-frequency approach, combined with advanced filtering and detection techniques, provides a high degree of immunity to interference from AC traction currents and offers a more comprehensive approach to track integrity monitoring compared to simpler track circuit designs.
+    </p>
+  </div>
+
+  <h2>Module 9A Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the defining characteristic of a Type C Track Circuit in terms of the electrical signal transmitted along the rails?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) It uses direct current for train detection</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) It uses a frequency sweep method for detection</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) It transmits two distinct AC frequencies simultaneously</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Explain how a Type C Track Circuit differentiates between the detection of a train and the detection of a broken rail. What signal changes are monitored for each?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Train detection uses polarity, broken rail detection uses temperature</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) One frequency is affected by train shunting, the other by rail impedance from a break</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) Both rely solely on changes in voltage amplitude</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. What key components within the receiver of a Type C Track Circuit enable it to analyze the two transmitted frequencies independently?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Filters and independent detection circuits</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Capacitor banks and transducers</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Axle counters and sensors</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "c" },
+      { name: "q2", correctAnswer: "b" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

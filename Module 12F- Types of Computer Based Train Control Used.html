@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 12F: Types of CBTC Used</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    h3 {
+      margin-top: 25px;
+    }
+    .question-container {
+      margin-top: 30px;
+    }
+    .question {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .answer-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .correct {
+      background-color: #c8e6c9;
+    }
+    .incorrect {
+      background-color: #ffcdd2;
+    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "a",
+        q2: "d",
+        q3: "b"
+      };
+
+      for (let q in correctAnswers) {
+        const options = document.getElementsByName(q);
+        options.forEach(option => {
+          const label = option.parentElement;
+          label.classList.remove("correct", "incorrect");
+          if (option.checked) {
+            if (option.value === correctAnswers[q]) {
+              label.classList.add("correct");
+            } else {
+              label.classList.add("incorrect");
+            }
+          }
+        });
+      }
+
+      const score = Object.keys(correctAnswers).filter(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        return selected && selected.value === correctAnswers[q];
+      }).length;
+
+      alert("You got " + score + " out of 3 questions correct.");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Module 12F: Types of Computer Based Train Control Used</h1>
+
+  <p>Computer Based Train Control (CBTC) systems can be categorized in several ways, reflecting their architectural design, the level of automation they enable, and the communication technologies they employ. Understanding these classifications helps explain the flexibility of CBTC across diverse rail systems.</p>
+
+  <h3>1. By Architecture</h3>
+  <ul>
+    <li><strong>Centralized CBTC:</strong> A central control center receives data from all trains, calculates movement authorities and speed profiles, and sends commands back to each train. This setup relies heavily on continuous communication.</li>
+    <li><strong>Distributed (Train-Centric) CBTC:</strong> More processing occurs on the train itself. Trains may share information directly with one another, reducing dependency on a single central processor. This approach improves scalability and resilience.</li>
+  </ul>
+
+  <h3>2. By Grade of Automation (GoA)</h3>
+  <ul>
+    <li><strong>GoA 1 – Manual Operation:</strong> Driver handles all tasks; CBTC provides protection and situational data.</li>
+    <li><strong>GoA 2 – Semi-Automatic Operation (STO):</strong> CBTC automates stopping/starting; driver handles doors and emergencies.</li>
+    <li><strong>GoA 3 – Driverless Train Operation (DTO):</strong> No driver; attendant may be onboard. CBTC controls full movement and door operation.</li>
+    <li><strong>GoA 4 – Unattended Train Operation (UTO):</strong> Fully automated with no onboard staff. Often paired with platform screen doors for safety.</li>
+  </ul>
+
+  <h3>3. By Communication Technology</h3>
+  <ul>
+    <li><strong>Radio-Based:</strong> Wi-Fi, LTE, or licensed-band radios provide continuous train-to-control center communication.</li>
+    <li><strong>Inductive Loops and Balises:</strong> Often used for positioning or periodic updates rather than primary data channels.</li>
+    <li><strong>Public Cellular (LTE/5G):</strong> Emerging option for reducing dedicated infrastructure costs, but raises safety/security concerns.</li>
+  </ul>
+
+  <p>These types can be combined. For example, a GoA 4 system may use centralized architecture and LTE communication. Railroads choose CBTC configurations based on traffic type, budget, automation goals, and local constraints.</p>
+
+  <div class="question-container">
+    <div class="question">1. What is the primary difference in how processing and control are handled in centralized versus distributed CBTC architectures?</div>
+    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Centralized systems process control data centrally; distributed systems allow trains to process and share control data locally.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="b"> B. Distributed systems require more wayside signals.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Centralized CBTC only works on single-track lines.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Distributed CBTC uses satellite GPS for all data transmission.</label>
+
+    <div class="question">2. What describes a GoA 4 CBTC system?</div>
+    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Driver controls train with ATO assistance.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Train operates automatically but a conductor is onboard.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Automated start/stop with driver managing doors and safety.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="d"> D. Fully automated operation with no onboard staff required.</label>
+
+    <div class="question">3. What is the most commonly used communication technology in CBTC systems, and why is reliable communication so critical for their operation?</div>
+    <label class="answer-option"><input type="radio" name="q3" value="a"> A. Satellite dish communication</label>
+    <label class="answer-option"><input type="radio" name="q3" value="b"> B. Radio-based systems like Wi-Fi or LTE-R, because continuous two-way communication is required for movement authority and train monitoring.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="c"> C. Manual signaling via handheld radios</label>
+    <label class="answer-option"><input type="radio" name="q3" value="d"> D. Acoustic sensors and intercom networks</label>
+
+    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
+  </div>
+
+</body>
+</html>

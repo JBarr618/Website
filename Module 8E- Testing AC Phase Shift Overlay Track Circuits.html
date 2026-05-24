@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 8E: Testing AC Phase Shift Overlay Track Circuits</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 8E: Testing AC Phase Shift Overlay Track Circuits</h1>
+
+  <div class="content-container">
+    <p>Testing AC Phase Shift Overlay (PSO) track circuits requires specialized procedures and equipment to verify their ability to accurately detect train occupancy and broken rails through the analysis of signal phase. Key aspects of PSO testing include:</p>
+    <ol>
+      <li><strong>Baseline Phase Measurement:</strong> Initially, the phase relationship between the transmitted and received signals is precisely measured and recorded under clear track conditions. This baseline phase is the reference point against which changes due to train occupancy or rail breaks will be compared.</li>
+      <li><strong>Shunt Testing:</strong> A calibrated shunt is applied at various locations within the track block to simulate the presence of a train. The phase shift at the receiver is carefully measured for each shunt location. The system must demonstrate a consistent and detectable phase shift that exceeds the predetermined occupancy threshold.</li>
+      <li><strong>Broken Rail Simulation:</strong> To verify the broken rail detection capability, a simulated break (an open circuit) is introduced in one or both rails at different points within the block. The resulting phase shift at the receiver is observed. A significant phase change should occur, indicating a fault condition. The sensitivity of the system to different types and locations of breaks is evaluated.</li>
+      <li><strong>Frequency Stability Check:</strong> The stability of the transmitter's output frequency is crucial for reliable phase detection. The frequency is monitored over time to ensure it remains within the specified tolerances.</li>
+      <li><strong>Signal Level Measurement:</strong> While phase is the primary detection parameter, the amplitude of the received signal is also monitored to ensure it remains within an acceptable range. Significant signal loss could indicate other problems within the track circuit.</li>
+      <li><strong>Environmental Condition Testing:</strong> The performance of the PSO system under various environmental conditions (e.g., temperature changes, moisture) may also be evaluated to ensure reliable operation in real-world scenarios.</li>
+    </ol>
+  </div>
+
+  <h2>Module 8E Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the initial and crucial measurement taken when testing an AC Phase Shift Overlay (PSO) track circuit, and why is it important?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Voltage drop across transmitter terminals</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Baseline phase between transmitted and received signals</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Frequency spectrum analysis of rail current</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Describe how the broken rail detection capability of a PSO system is typically tested. What change in the received signal is expected?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Phase lag is reduced to zero at the transmitter</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Voltage polarity reverses</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) A significant phase shift is detected at the receiver</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Besides phase, what other signal parameters might be monitored during the testing of a PSO track circuit, and why?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Signal amplitude to detect potential circuit faults</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Wire color to confirm polarity</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Track ballast temperature for safety certification</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "c" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

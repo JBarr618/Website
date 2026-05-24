@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 13B: Testing Microlok Units</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .intro-container {
+      overflow: auto;
+      padding: 20px 0;
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #ccc;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin: 20px 0;
+    }
+    .question-container {
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answer-option {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .answer-option:hover {
+      background-color: #e0e0e0;
+    }
+    .answer-option input[type="radio"] {
+      margin-right: 10px;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+    }
+    #results-container {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
+      background-color: #0056b3;
+    }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+    #next-button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 13B: Testing Microlok Units</h1>
+
+  <div class="intro-container">
+    <p>Testing Microlok units is a critical process throughout their lifecycle, from initial factory acceptance to ongoing maintenance in the field. The primary goal of testing is to ensure the vital safety functions operate correctly and reliably, preventing unsafe conditions in railway signaling. This involves verifying the hardware integrity, the programmed interlocking logic, and the proper interface with field equipment. Comprehensive testing ensures that the Microlok unit will perform its safety-critical role as intended.</p>
+
+    <div class="image-placeholder">[Image: Microlok Diagnostic Testing]</div>
+
+    <p>Factory testing includes functional checks of the processing unit, input/output modules, and communication interfaces. Simulations are used to test the interlocking logic under normal and fault conditions. Field testing involves verifying physical connections and logic functions with trackside equipment, ensuring safe operation of signals, switches, and routes. Diagnostic tools help monitor system behavior during these steps.</p>
+
+    <div class="image-placeholder">[Image: Commissioning a Microlok Unit]</div>
+
+    <p>Ongoing maintenance testing ensures reliability over time. It includes routine checks, diagnostic reviews, and corrective actions as needed. Microlok units must consistently meet safety standards throughout their operational life, requiring trained personnel, detailed documentation, and specialized software to support continuous testing and validation.</p>
+  </div>
+
+  <h3>Module 13B Questions:</h3>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the main purpose of testing Microlok units?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) To reduce maintenance costs</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) To ensure reliable and safe operation</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) To train new employees</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What is typically verified during field testing?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Marketing materials</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Software documentation</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Wiring, field device interaction, and interlocking logic</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Why is ongoing maintenance testing important?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) To find cheaper hardware options</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) To ensure continued compliance and reliability</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) To improve system appearance</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+
+    <button id="unlock-button">🔐 Unlock Next Module</button>
+    <button id="next-button">Next ➡️</button>
+    <button id="back-button">⬅️ Back</button>
+    <button id="home-button">🏠 Home</button>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correct: "b" },
+      { name: "q2", correct: "c" },
+      { name: "q3", correct: "b" }
+    ];
+
+    const submitButton = document.getElementById("submit-button");
+    const nextButton = document.getElementById("next-button");
+    const unlockButton = document.getElementById("unlock-button");
+    const backButton = document.getElementById("back-button");
+    const homeButton = document.getElementById("home-button");
+    const resultsContainer = document.getElementById("results-container");
+    const finalScoreDisplay = document.getElementById("final-score");
+    const maxScoreDisplay = document.getElementById("max-score");
+
+    submitButton.addEventListener("click", () => {
+      let score = 0;
+      maxScoreDisplay.textContent = questions.length;
+
+      document.querySelectorAll(".question-container").forEach((container, index) => {
+        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const options = container.querySelectorAll(".answer-option");
+
+        options.forEach(option => {
+          const input = option.querySelector("input");
+          if (input.value === questions[index].correct) {
+            option.classList.add("correct-answer");
+          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
+            option.classList.add("wrong-answer");
+          }
+        });
+
+        if (selected && selected.value === questions[index].correct) {
+          score++;
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = "block";
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+      submitButton.disabled = true;
+
+      localStorage.setItem("module13BScore", score);
+      localStorage.setItem("module13BMax", questions.length);
+    });
+
+    unlockButton.addEventListener("click", () => {
+      const password = prompt("Enter your course access password:");
+      if (password === "railroad2025") {
+        nextButton.style.display = "inline-block";
+        unlockButton.style.display = "none";
+        alert("Access granted.");
+      } else {
+        alert("Incorrect password. Please try again or return to the course home page.");
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      window.location.href = "Module-13C.html";
+    });
+
+    backButton.addEventListener("click", () => {
+      window.location.href = "Module 13A- The Vital Programming of Microlok Units.html";
+    });
+
+    homeButton.addEventListener("click", () => {
+      window.location.href = "/index.html";
+    });
+  </script>
+</body>
+</html>

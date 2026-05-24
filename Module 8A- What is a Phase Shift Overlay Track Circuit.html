@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 8A: What is a Phase Shift Overlay Track Circuit?</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 8A: What is a Phase Shift Overlay Track Circuit?</h1>
+
+  <div class="content-container">
+    <p>
+      A Phase Shift Overlay (PSO) Track Circuit is a sophisticated type of AC track circuit that detects the presence of a train by monitoring changes in the phase of an alternating current signal transmitted along the rails. Unlike traditional amplitude-based AC track circuits, PSO systems continuously transmit a relatively low-power AC signal at a specific frequency throughout a defined track block. The receiver at the other end of the block is designed to precisely measure the phase of this received signal relative to a locally generated reference signal.
+    </p>
+    <p>
+      The track block in a PSO system may or may not be fully isolated by insulated joints in the traditional sense for the signaling current. Often, tuned circuits or impedance matching units are used at the block boundaries to define the electrical limits for the PSO signal while allowing the passage of other frequencies, such as AC traction power. When a train enters the block, its wheels and axles alter the impedance of the track circuit. This change in impedance causes a shift in the phase of the AC signal as it travels along the rails to the receiver.
+    </p>
+    <p>
+      The PSO receiver is specifically designed to be highly sensitive to these phase shifts. A predetermined change in phase indicates that a train is occupying the track block. One of the key advantages of this technology is its ability to provide continuous broken rail detection. A break in either rail will significantly alter the impedance of the track circuit, leading to a detectable phase shift at the receiver, thus signaling a potentially unsafe condition. Furthermore, PSO circuits can often operate over relatively long distances and can be overlaid on existing signaling systems, offering a flexible solution for complex railway environments.
+    </p>
+  </div>
+
+  <h2>Module 8A Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary electrical characteristic that a Phase Shift Overlay (PSO) track circuit monitors to detect train occupancy?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Amplitude of the signal</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Frequency of the signal</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Phase shift of the AC signal</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. How do Phase Shift Overlay track circuits often define the electrical boundaries of a track block for the signaling current, and how does this differ from traditional AC track circuits?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) They use tuned circuits or impedance matching units instead of insulated joints</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) They use battery isolation instead of relays</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) They rely on mechanical switches to isolate signals</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Explain how a break in a rail can affect the PSO circuit and what safety function this supports.</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) The break reduces wheel detection range</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) It alters track impedance and causes a phase shift, indicating a fault</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) It generates a short circuit that disables the receiver</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "c" },
+      { name: "q2", correctAnswer: "a" },
+      { name: "q3", correctAnswer: "b" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

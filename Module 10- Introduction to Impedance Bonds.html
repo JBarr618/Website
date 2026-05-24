@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 10: Introduction to Impedance Bonds</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 10: Introduction to Impedance Bonds</h1>
+
+  <div class="content-container">
+    <p>
+      Impedance bonds are specialized inductive devices that play a crucial role in railway signaling, particularly in electrified territories with traction power. They are strategically connected across the running rails at the boundaries of track circuits.
+    </p>
+    <p>
+      The primary function of an impedance bond is to provide a low-impedance path for the flow of DC traction return currents along the rails. These high-magnitude, low-frequency currents need a continuous and efficient return path to the power substations. At the same time, the impedance bond presents a high impedance to the higher-frequency signals used by the track circuits for train detection and communication. This allows the signaling system to function reliably without being disrupted by the traction power.
+    </p>
+    <p>
+      In essence, an impedance bond acts like a frequency-selective filter. It allows the low-frequency traction current to pass through with minimal opposition while effectively blocking or attenuating the higher-frequency signaling currents. This separation of frequencies is vital for ensuring both the efficient operation of electric trains and the reliable functioning of the signaling system that ensures their safe movement. Different types and configurations of impedance bonds exist, tailored to the specific requirements of the railway system and the types of track circuits employed.
+    </p>
+  </div>
+
+  <h2>Module 10 Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary purpose of an impedance bond in railway signaling, especially in AC-electrified areas?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) To prevent relay chattering at crossings</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) To allow track circuits to use higher voltages</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) To carry DC traction return current while blocking signal frequencies</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. How does an impedance bond selectively allow the passage of AC traction return currents while impeding AC signaling currents? What electrical property is key to this function?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) It uses inductance to block high-frequency signaling current</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) It uses capacitance to store signal energy</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) It creates a short between the rails</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Where are impedance bonds typically installed in relation to track circuits?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Inside signal bungalows next to relays</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Across the rails at the boundaries of the track circuit</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) On top of the third rail</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "c" },
+      { name: "q2", correctAnswer: "a" },
+      { name: "q3", correctAnswer: "b" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 10A: What is an Impedance Bond?</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 10A: What is an Impedance Bond?</h1>
+
+  <div class="content-container">
+    <p>
+      An impedance bond is a specifically designed electrical component, primarily an inductor (coil of wire), used in railway signaling systems, particularly in DC-electrified territories. It is connected across the two running rails of a track circuit at the location of insulated rail joints or at the boundaries between track circuits.
+    </p>
+    <p>
+      Its fundamental purpose is to provide a low-resistance path for the high-magnitude, low-frequency DC traction return currents while simultaneously presenting a high impedance to the relatively low-power, higher-frequency AC signals used by the track circuits for train detection and communication.
+    </p>
+    <p>
+      Think of it as a selective gate for electrical current. The low inductance of the bond offers very little opposition to the slow changes in current associated with the DC traction power (typically 50 or 60 Hz), allowing it to flow freely back to the power substation through the rails. However, the same inductance offers significant opposition to the more rapidly changing currents of the AC signaling frequencies (often in the range of hundreds to thousands of Hertz), effectively blocking these signals from passing from one track circuit to the next through the bond.
+    </p>
+    <p>
+      The construction of an impedance bond typically involves a coil wound around a laminated iron core to enhance its inductive properties. It has terminals for connection to each of the running rails. The design and specifications of an impedance bond (inductance value, current carrying capacity, impedance at different frequencies) are carefully engineered to match the specific requirements of the railway system, including the traction power system and the types of track circuits in use.
+    </p>
+  </div>
+
+  <h2>Module 10A Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the primary electrical component that forms the basis of an impedance bond? What is its fundamental electrical property?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Transformer; step-up voltage ratio</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Inductor; frequency-dependent impedance</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Capacitor; energy storage in electric field</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. Explain in simple terms how an impedance bond can offer a low resistance to DC traction current and a high resistance to AC signaling current simultaneously. What factor differentiates these two types of current?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Rail type and ballast level</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Voltage drop per mile</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) The difference in frequency between traction and signaling currents</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Where are impedance bonds typically located along the track in relation to track circuits and insulated rail joints?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Across the running rails at track circuit boundaries or insulated joints</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Between signal mast and bungalow</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Under relay racks inside control rooms</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "b" },
+      { name: "q2", correctAnswer: "c" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

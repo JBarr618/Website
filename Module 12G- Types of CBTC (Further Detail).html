@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 12G: Types of CBTC - Further Detail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    h3 {
+      margin-top: 25px;
+    }
+    .question-container {
+      margin-top: 30px;
+    }
+    .question {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .answer-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .correct {
+      background-color: #c8e6c9;
+    }
+    .incorrect {
+      background-color: #ffcdd2;
+    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "c",
+        q2: "a",
+        q3: "d"
+      };
+
+      for (let q in correctAnswers) {
+        const options = document.getElementsByName(q);
+        options.forEach(option => {
+          const label = option.parentElement;
+          label.classList.remove("correct", "incorrect");
+          if (option.checked) {
+            if (option.value === correctAnswers[q]) {
+              label.classList.add("correct");
+            } else {
+              label.classList.add("incorrect");
+            }
+          }
+        });
+      }
+
+      const score = Object.keys(correctAnswers).filter(q => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        return selected && selected.value === correctAnswers[q];
+      }).length;
+
+      alert("You got " + score + " out of 3 questions correct.");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Module 12G: Types of Computer Based Train Control Used (Further Detail)</h1>
+
+  <p>To further clarify the types of Computer Based Train Control (CBTC) systems in operation and development, we can look at specific examples and nuances within the main categories:</p>
+
+  <h3>1. By Architecture – Real-World Examples and Nuances</h3>
+  <ul>
+    <li><strong>Centralized CBTC Dominance:</strong> Most current CBTC systems use a centralized architecture. Examples include:
+      <ul>
+        <li><em>Siemens Trainguard MT</em> – deployed in many metros globally</li>
+        <li><em>Thales SelTrac</em> – widely used in urban transit</li>
+        <li><em>Bombardier CITYFLO (now Alstom)</em> – installed in several cities worldwide</li>
+      </ul>
+    </li>
+    <li><strong>Hybrid Evolution:</strong> Newer CBTC systems are exploring hybrid models, combining centralized safety management with distributed train-based logic for resilience and scalability.</li>
+  </ul>
+
+  <h3>2. By Grade of Automation (GoA) – Deployment Trends</h3>
+  <ul>
+    <li><strong>GoA 2 as Entry Point:</strong> Many new systems start with Semi-Automatic Operation (STO) to improve capacity while maintaining a human operator for doors and emergencies.</li>
+    <li><strong>GoA 3/4 Growth:</strong> There is growing adoption of Driverless (DTO) and Unattended Train Operation (UTO) on new metro lines in cities like:
+      <ul>
+        <li>Paris (Line 14)</li>
+        <li>Singapore (North East Line)</li>
+        <li>Dubai (Red and Green Lines)</li>
+      </ul>
+    </li>
+    <li><strong>Mainline Challenges:</strong> Full GoA 3/4 automation on mixed-traffic mainlines is more difficult due to longer braking distances, complex routing, and obstacle detection requirements. These often operate at GoA 2 or integrate with ETCS Level 3.</li>
+  </ul>
+
+  <h3>3. By Communication Technology – Specific Systems</h3>
+  <ul>
+    <li><strong>Radio Spectrum:</strong> Systems use licensed bands, Wi-Fi, or proprietary RF systems depending on interference, bandwidth, and regulatory considerations.</li>
+    <li><strong>Millimeter Wave:</strong> Experimental systems are exploring ultra-high frequency mmWave to improve bandwidth for advanced CBTC services.</li>
+    <li><strong>Public Cellular Networks:</strong> Some CBTC systems are testing LTE or 5G for cost reduction. While promising, public networks raise concerns about latency, reliability, and cybersecurity in safety-critical environments.</li>
+  </ul>
+
+  <p>In short, CBTC systems are tailored to the infrastructure and operational needs of the railway. Technology choices balance cost, reliability, automation goals, and safety integrity levels.</p>
+
+  <div class="question-container">
+    <div class="question">1. Can you name a few major suppliers of CBTC technology and provide examples of where their systems are used?</div>
+    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Boeing, Nokia, and Apple — mostly for airport shuttles.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="b"> B. General Electric and SpaceX, with satellites for rail data.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Siemens (Trainguard MT), Thales (SelTrac), Alstom/Bombardier (CITYFLO); used in metros worldwide.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Dell and Cisco, with integrated fiberoptic station control.</label>
+
+    <div class="question">2. Why is the implementation of very high levels of automation (GoA 3/4) more challenging on mainline railways compared to urban metros?</div>
+    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Mainlines have mixed traffic, longer braking distances, and greater obstacle detection needs.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Urban metros lack electricity, which mainlines provide.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Urban lines only run once daily, making them easier to automate.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="d"> D. GoA 3/4 systems are banned on all non-elevated lines globally.</label>
+
+    <div class="question">3. What are some of the different radio frequency technologies used for communication in CBTC systems, and what are the potential advantages and disadvantages of using public cellular networks?</div>
+    <label class="answer-option"><input type="radio" name="q3" value="a"> A. Morse code over coax; public LTE offers no benefits.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="b"> B. Bluetooth mesh networks; public networks are unsafe.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="c"> C. Only inductive loops; cellular doesn’t support high-speed trains.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="d"> D. Licensed/unlicensed radio, millimeter wave, LTE/5G; public networks can lower costs but raise concerns about reliability and security.</label>
+
+    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 7E: Type of Equipment Used to Set Up an AC Single Rail Track Circuit</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    .content-container { margin-bottom: 30px; }
+    .question-container { margin-bottom: 20px; }
+    .question { font-weight: bold; }
+    .answer-option { display: block; margin-bottom: 8px; }
+    .correct-answer { background-color: #d4edda; }
+    .wrong-answer { background-color: #f8d7da; }
+    #submit-button {
+      padding: 18px 36px;
+      font-size: 1.4em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #submit-button:hover { background-color: #0056b3; }
+    #submit-button:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Module 7E: Type of Equipment Used to Set Up an AC Single Rail Track Circuit</h1>
+
+  <div class="content-container">
+    <p>Setting up an AC single rail track circuit involves a specific set of equipment tailored to its unique configuration:</p>
+    <ul>
+      <li><strong>Insulated Rail Joints:</strong> These non-conductive joints are installed on only one of the two running rails to electrically isolate the track block from adjacent sections.</li>
+      <li><strong>AC Power Source:</strong> This device, typically a transformer or oscillator, generates the alternating current signal that is fed into the track circuit. The frequency and voltage output are critical and must match the specifications of the receiver.</li>
+      <li><strong>AC Receiver:</strong> This is the detection unit, often an AC-sensitive relay or an electronic phase-selective device, located at the opposite end of the track block from the power source. It is designed to respond to the presence or absence (due to train shunting) of the specific AC signal.</li>
+      <li><strong>Connecting Wires/Cables:</strong> These are used to connect the AC power source and the AC receiver to the insulated and continuous rails. The gauge and insulation of these wires must be appropriate for the voltage and current involved.</li>
+      <li><strong>Bonding Straps (Optional):</strong> In some installations, particularly around insulated joints or to ensure good electrical continuity of the continuous rail, bonding straps might be used.</li>
+      <li><strong>Test and Calibration Equipment:</strong> This includes multimeters (capable of measuring AC voltage and current), oscilloscopes (for analyzing the AC waveform), and specialized shunt testing devices to verify the circuit's operation.</li>
+    </ul>
+  </div>
+
+  <h2>Module 7E Questions</h2>
+  <div id="quiz-container">
+    <div class="question-container">
+      <p class="question">1. What is the key difference in the type and placement of insulated rail joints used in an AC single rail track circuit compared to a double rail circuit?</p>
+      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Only one rail is insulated in single rail circuits</label>
+      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Both rails are insulated in single rail circuits</label>
+      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Insulated joints are not needed</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">2. What is the role of the AC receiver in a single rail track circuit system, and what property of the electrical signal does it respond to?</p>
+      <label class="answer-option"><input type="radio" name="q2" value="a"> A) It detects the presence or absence of AC signal</label>
+      <label class="answer-option"><input type="radio" name="q2" value="b"> B) It amplifies incoming voltage</label>
+      <label class="answer-option"><input type="radio" name="q2" value="c"> C) It blocks return current</label>
+    </div>
+
+    <div class="question-container">
+      <p class="question">3. Besides the power source and receiver, what other essential equipment is needed for the physical setup and verification of an AC single rail track circuit?</p>
+      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Test tools and proper cabling</label>
+      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Overhead line detectors</label>
+      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Axle counters only</label>
+    </div>
+
+    <button id="submit-button">Submit Answers</button>
+    <div id="results-container" style="display: none;">
+      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { name: "q1", correctAnswer: "a" },
+      { name: "q2", correctAnswer: "a" },
+      { name: "q3", correctAnswer: "a" }
+    ];
+
+    const submitButton = document.getElementById('submit-button');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreDisplay = document.getElementById('final-score');
+    const maxScoreDisplay = document.getElementById('max-score');
+
+    submitButton.addEventListener('click', () => {
+      let score = 0;
+      const questionContainers = document.querySelectorAll('.question-container');
+      maxScoreDisplay.textContent = questions.length;
+
+      questionContainers.forEach((qContainer, index) => {
+        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
+        const answerElements = qContainer.querySelectorAll('.answer-option');
+
+        if (selectedAnswer) {
+          if (selectedAnswer.value === questions[index].correctAnswer) {
+            score++;
+            answerElements.forEach(label => {
+              if (label.querySelector('input').value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          } else {
+            answerElements.forEach(label => {
+              const input = label.querySelector('input');
+              if (input.value === selectedAnswer.value) {
+                label.classList.add('wrong-answer');
+              } else if (input.value === questions[index].correctAnswer) {
+                label.classList.add('correct-answer');
+              }
+            });
+          }
+        } else {
+          answerElements.forEach(label => {
+            const input = label.querySelector('input');
+            if (input.value === questions[index].correctAnswer) {
+              label.classList.add('correct-answer');
+            }
+          });
+        }
+      });
+
+      finalScoreDisplay.textContent = score;
+      resultsContainer.style.display = 'block';
+      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+      submitButton.disabled = true;
+    });
+  </script>
+</body>
+</html>

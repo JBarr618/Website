@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Module 11A: Relay Fundamentals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #003366;
+    }
+    .question-container {
+      margin-top: 30px;
+    }
+    .question {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .answer-option {
+      display: block;
+      margin: 5px 0;
+    }
+    .submit-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: "d",
+        q2: "b",
+        q3: "a"
+      };
+
+      let score = 0;
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      alert("You got " + score + " out of 3 questions correct.");
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Module 11A: Relay Fundamentals</h1>
+
+  <p>To understand how relays are used in railway signaling, it's important to grasp some fundamental concepts related to their operation and characteristics:</p>
+
+  <ul>
+    <li><strong>Coil Voltage and Current:</strong> Relays require a specific voltage and current to energize their coil. Too little voltage may fail to activate the relay; too much may damage the coil.</li>
+    <li><strong>Contact Configuration:</strong> 
+      <ul>
+        <li><strong>Normally Open (NO):</strong> Open when de-energized, closed when energized.</li>
+        <li><strong>Normally Closed (NC):</strong> Closed when de-energized, open when energized.</li>
+        <li><strong>Changeover (CO or DPDT):</strong> Switches between NO and NC positions.</li>
+      </ul>
+    </li>
+    <li><strong>Operating Time:</strong> Time delay between energizing the coil and contact actuation, typically in milliseconds.</li>
+    <li><strong>Contact Rating:</strong> Specifies the maximum voltage and current the relay contacts can switch safely.</li>
+    <li><strong>Holding Current:</strong> The lower current needed to keep the relay energized after activation.</li>
+    <li><strong>Fail-Safe Design:</strong> Ensures a safe output state (like "stop") in case of power failure, often using spring or gravity return.</li>
+  </ul>
+
+  <p>Understanding these characteristics is essential for designing, installing, and maintaining safe and reliable railway signaling circuits using relays.</p>
+
+  <div class="question-container">
+    <div class="question">1. Why is it important to apply the correct voltage to a relay coil? What can happen if the voltage is too high or too low?</div>
+    <label class="answer-option"><input type="radio" name="q1" value="a"> The relay will overheat and always remain energized.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="b"> The armature will become permanently magnetized.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="c"> Relay contacts will weld shut automatically.</label>
+    <label class="answer-option"><input type="radio" name="q1" value="d"> Too little voltage may not energize the coil; too much may damage it.</label>
+
+    <div class="question">2. Describe the difference between normally open (NO) and normally closed (NC) relay contacts.</div>
+    <label class="answer-option"><input type="radio" name="q2" value="a"> NO contacts close when the relay is de-energized; NC contacts stay open permanently.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="b"> NO contacts close when energized; NC contacts open when energized.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="c"> NC contacts only conduct DC; NO contacts conduct AC.</label>
+    <label class="answer-option"><input type="radio" name="q2" value="d"> NO contacts require a fuse; NC contacts do not.</label>
+
+    <div class="question">3. What does the term "fail-safe design" mean in the context of railway signaling relays, and why is it important?</div>
+    <label class="answer-option"><input type="radio" name="q3" value="a"> Relays move to a safe state, like stop, during a power loss or fault.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="b"> Relays automatically reset themselves every 5 minutes to test reliability.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="c"> Relays ignore input voltage variations to maintain output.</label>
+    <label class="answer-option"><input type="radio" name="q3" value="d"> Relays include battery backup power for all applications.</label>
+
+    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
+  </div>
+
+</body>
+</html>
