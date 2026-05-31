@@ -1,283 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 1A - Introduction to Railroad Signal and Train Control</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    .align-right-image {
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 10px;
-      max-width: 300px;
-    }
-
-    .side-by-side-images {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 20px auto;
-      max-width: 90%;
-    }
-
-    .side-by-side-images img {
-      max-width: 400px;
-      height: auto;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin: 20px 10px 0 0;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1A - Introduction to Railroad Signal and Train Control</title>
 </head>
-<body>
-  <h1>Module 1A: Introduction to Railroad Signal and Train Control</h1>
 
-  <div class="intro-container">
-    <img
-      class="align-right-image"
-      src="images/semphore signal w mountain.png"
-      alt="Historical semaphore signal beside railroad tracks in a mountainous area."
-    />
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>Railroad signals are the language of the railway, conveying essential information to train crews regarding track occupancy, authorized speed, and movement authority. These signals are strategically placed along the tracks and utilize a combination of <b>lights, colors, and sometimes mechanical indicators</b> to communicate these instructions. Think of them as the traffic lights for trains, ensuring that multiple trains can safely operate on the same network of tracks without collision or conflict.</p>
+    <h1>🚦 Module 1A - Introduction to Railroad Signal and Train Control</h1>
 
-    <p>The evolution of railroad signals has been a journey driven by the need for increased safety and efficiency. Early methods relied on <b>manual flagmen and time-based train schedules,</b> which were prone to human error and limited the capacity of the railway. As train speeds and traffic volume increased, the need for more reliable and automated signaling systems became paramount. This led to the development of <b>mechanical signals</b>, such as semaphore signals.</p>
+    <h2 style="color: darkblue;">
+        Railroad Signals and Train Control
+    </h2>
 
-    <p>The introduction of <b>electric light signals</b> marked a significant advancement, offering better visibility in various weather conditions and allowing for more complex signaling aspects. Today, modern railroads utilize sophisticated <b>color light signals</b> and <b>computer-based interlocking systems</b> to manage train movements with a high degree of precision and safety.</p>
+    <hr>
 
-    <div class="side-by-side-images">
-      <img
-        src="images/Evolution Train Control.png"
-        alt="Infographic of evolution from manual to modern train control systems."
-      />
-      <img
-        src="images/Color Light Signal.png"
-        alt="Modern color light signal beside railway tracks at dusk."
-      />
-    </div>
-  </div>
+    <img src="images/semphore signal w mountain.png"
+         alt="Historical semaphore signal beside railroad tracks in a mountainous area."
+         style="float:right; max-width:300px; margin-left:20px; margin-bottom:10px;">
 
-  <h3>Module 1A Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">
-        Question 1: What are the primary ways in which railroad signals communicate information to train crews?
-      </p>
-      <label class="answer-option">
-        <input type="radio" name="q1" value="a" /> A) Lights, colors, and mechanical indicators
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q1" value="b" /> B) Audible bells and whistles
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q1" value="c" /> C) Passenger announcements
-      </label>
+    <p style="font-size: 22px;">
+        Railroad signals are the language of the railway, conveying essential information to train crews regarding track occupancy, authorized speed, and movement authority. These signals are strategically placed along the tracks and utilize a combination of lights, colors, and sometimes mechanical indicators to communicate these instructions.
+    </p>
+
+    <p style="font-size: 22px;">
+        The evolution of railroad signals has been a journey driven by the need for increased safety and efficiency. Early methods relied on manual flagmen and time-based train schedules, which were prone to human error and limited the capacity of the railway.
+    </p>
+
+    <p style="font-size: 22px;">
+        The introduction of electric light signals marked a significant advancement, offering better visibility in various weather conditions and allowing for more complex signaling aspects. Today, modern railroads utilize sophisticated color light signals and computer-based interlocking systems.
+    </p>
+
+    <div style="text-align:center; margin-top:25px;">
+        <img src="images/Evolution Train Control.png"
+             alt="Infographic of evolution from manual to modern train control systems."
+             style="max-width:400px; margin:10px;">
+
+        <img src="images/Color Light Signal.png"
+             alt="Modern color light signal beside railway tracks at dusk."
+             style="max-width:400px; margin:10px;">
     </div>
 
-    <div class="question-container">
-      <p class="question">
-        Question 2: Briefly describe one of the early methods used to manage train movements before the widespread adoption of automated signaling systems.
-      </p>
-      <label class="answer-option">
-        <input type="radio" name="q2" value="a" /> A) Manual flagmen and time-based schedules
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q2" value="b" /> B) GPS and wireless communication
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q2" value="c" /> C) Remote dispatching from satellites
-      </label>
-    </div>
+    <hr>
 
-    <div class="question-container">
-      <p class="question">
-        Question 3: What was a key advantage of the introduction of electric light signals over earlier mechanical signal types?
-      </p>
-      <label class="answer-option">
-        <input type="radio" name="q3" value="a" /> A) Better visibility in weather conditions and more complex aspects
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q3" value="b" /> B) More stylish appearance
-      </label>
-      <label class="answer-option">
-        <input type="radio" name="q3" value="c" /> C) Less electricity usage
-      </label>
-    </div>
+    <h2>Module Quiz</h2>
 
-    <button id="submit-button">Submit Answers</button>
+    <form id="quizForm">
 
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of
-      <span id="max-score">3</span>
-    </div>
+        <p>1. What are the primary ways railroad signals communicate information to train crews?</p>
+        <label><input type="radio" name="q1" value="correct"> Lights, colors, and mechanical indicators</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Audible bells and whistles</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Passenger announcements</label><br><br>
 
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-    <button id="next-button">Next ➡️</button>
-  </div>
+        <p>2. What was one early method used to manage train movements before automated signaling systems?</p>
+        <label><input type="radio" name="q2" value="correct"> Manual flagmen and time-based schedules</label><br>
+        <label><input type="radio" name="q2" value="wrong"> GPS and wireless communication</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Remote dispatching from satellites</label><br><br>
 
-  <script>
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
+        <p>3. What was a key advantage of electric light signals?</p>
+        <label><input type="radio" name="q3" value="correct"> Better visibility in weather conditions and more complex aspects</label><br>
+        <label><input type="radio" name="q3" value="wrong"> More stylish appearance</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Less electricity usage</label><br><br>
 
-    const questions = [
-      { name: "q1", correctAnswer: "a" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "a" }
-    ];
+        <button type="button" onclick="gradeQuiz()"
+            style="background-color:#0056b3; color:white; padding:15px 30px; font-size:18px; border:none; border-radius:10px; cursor:pointer;">
+            Submit Answers
+        </button>
 
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+        <button type="button" onclick="checkPassword()"
+            style="background-color:#0056b3; color:white; padding:15px 30px; font-size:18px; border:none; border-radius:10px; cursor:pointer; margin-left:10px;">
+            Next Module
+        </button>
 
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
+    </form>
 
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
-        } else {
-          answerElements.forEach((label) => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
+    <script>
+        function checkPassword() {
+            let password = prompt("Enter Password:");
+
+            if (password === "signal2026") {
+                window.location.href = "Module 1B.html";
+            } else {
+                alert("Incorrect Password");
             }
-          });
         }
-      });
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
+        function gradeQuiz() {
+            const answers = document.querySelectorAll('input[type="radio"]');
 
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
+            answers.forEach(answer => {
+                answer.disabled = true;
 
-      localStorage.setItem("module1aScore", score);
-      localStorage.setItem("module1aMax", questions.length);
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
 
-      nextButton.style.display = "inline-block";
-    });
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "Module 1B.html";
-    });
+                if (answer.value === "correct") {
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+            });
+        }
+    </script>
 
-    backButton.addEventListener("click", () => {
-      window.location.href = "Module 1.html";
-    });
+    <hr>
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+            <button style="background-color:#444; color:white; padding:12px 25px; font-size:16px; border:none; border-radius:8px; cursor:pointer; margin-right:10px;">
+                Home
+            </button>
+        </a>
+
+        <a href="Module 1.html">
+            <button style="background-color:#444; color:white; padding:12px 25px; font-size:16px; border:none; border-radius:8px; cursor:pointer;">
+                Back
+            </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <h3>Built From Real Railroad Experience</h3>
+        <p>Signal School 2026 Professional Railroad Signal Training</p>
+        <p>© 2026 Vantage Infrastructure LLC</p>
+    </footer>
+
 </body>
+
 </html>
