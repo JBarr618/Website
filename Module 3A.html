@@ -4,268 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 3A: Introduction to DC Track Circuits</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            font-size: 1.1em;
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .content-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .paragraph-container {
-            flex: 1;
-        }
-
-        .paragraph-container p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .image-container {
-            width: 400px;
-            flex-shrink: 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        #module-questions-container {
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        .question-container {
-            margin-bottom: 20px;
-        }
-
-        .question {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-
-        .answer-option {
-            display: block;
-            margin-bottom: 8px;
-            cursor: pointer;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            font-size: 1.1em;
-        }
-
-        .answer-option:hover {
-            background-color: #e0e0e0;
-        }
-
-        .answer-option input[type="radio"] {
-            margin-right: 10px;
-        }
-
-        #results-container {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.4em;
-        }
-
-        .correct-answer {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-            color: #155724;
-        }
-
-        .wrong-answer {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-        }
-
-        #submit-button, #home-button, #next-button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-right: 10px;
-        }
-
-        #submit-button:hover, #home-button:hover, #next-button:hover {
-            background-color: #0056b3;
-        }
-
-        #submit-button:disabled {
-            background-color: #6c757d;
-            cursor: not-allowed;
-        }
-
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 25px;
-        }
-
-        h3 {
-            font-size: 1.6em;
-            margin-bottom: 15px;
-        }
-    </style>
 </head>
-<body>
-    <h1>Module 3A: Introduction to DC Track Circuits</h1>
 
-    <div class="content-wrapper">
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>DC track circuits are a fundamental building block of modern railway signaling systems. Their primary purpose is to detect the presence of a train on a section of track. This seemingly simple function is crucial for ensuring safe train operations, as it provides the basis for preventing collisions and controlling train movements through signaling.</p>
-                <p>At its core, a DC track circuit utilizes the steel rails of the railway track as a part of an electrical circuit. A low-voltage DC (Direct Current) power source is connected to the rails at one end of a defined track section, and a relay (an electromagnetic switch) is connected across the rails at the other end. This track section is electrically isolated from adjacent sections using insulated joints in the rails.</p>
-            </div>
-            <div class="image-container">
-                <img src="/Pictures/Module 3/DC track Circuit Diagram.png" alt="Diagram showing feed and relay ends of DC track circuit." />
-            </div>
-        </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>When the track section is clear (no train present), the DC current flows from the power source, through one rail, across the relay coil, and back through the other rail to complete the circuit. This current energizes the relay, causing its contacts to close or remain closed, indicating that the track section is unoccupied.</p>
-            </div>
-            <div class="image-container">
-                <img src="/Pictures/Module 3/Unoccuppied and Occuppied Track Circuit.webp" alt="DC Track Circuit: Unoccupied vs Occupied." />
-            </div>
-        </div>
+    <h1>🚦 Module 3A: Introduction to DC Track Circuits</h1>
 
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>However, when a train enters the track section, its metal wheels and axles provide a low-resistance electrical path (a "short circuit") between the two rails. This short circuit diverts the majority of the DC current away from the relay coil. With insufficient current flowing through it, the relay de-energizes, causing its contacts to change state. This change in the relay's contacts signals that the track section is now occupied by a train.</p>
-                <p>DC track circuits can also be adapted to provide additional information beyond simple occupancy detection. By using different voltage levels, current characteristics, or by adding additional components, track circuits can be configured to detect broken rails or to transmit basic signaling information directly to the train.</p>
-                <p>In summary, the DC track circuit is a reliable and fail-safe method for detecting the presence of trains on a section of track. Its fundamental principle of using the rails as part of an electrical circuit to energize a relay provides a crucial input for railway signaling and safety systems.</p>
-            </div>
-        </div>
-    </div>
+    <h2 style="color: darkblue;">
+        Module 3A: Introduction to DC Track Circuits
+    </h2>
 
-    <div id="module-questions-container">
-        <h3>Module 3A Questions:</h3>
-        <div id="quiz-container">
-            <div class="question-container">
-                <p class="question">Question 1: What is the primary function of a DC Track Circuit?</p>
-                <label class="answer-option"><input type="radio" name="q1" value="a"> A) Detect the presence of a train</label>
-                <label class="answer-option"><input type="radio" name="q1" value="b"> B) Connect to the rails to create a circuit</label>
-                <label class="answer-option"><input type="radio" name="q1" value="c"> C) De-energize a relay</label>
-            </div>
-            <div class="question-container">
-                <p class="question">Question 2: What is the main source of power?</p>
-                <label class="answer-option"><input type="radio" name="q2" value="a"> A) AC power</label>
-                <label class="answer-option"><input type="radio" name="q2" value="b"> B) Audio Frequencies 20 Hz - 690 kHz</label>
-                <label class="answer-option"><input type="radio" name="q2" value="c"> C) Low Voltage DC Power</label>
-            </div>
-            <div class="question-container">
-                <p class="question">Question 3: What other information can DC Track Circuits provide?</p>
-                <label class="answer-option"><input type="radio" name="q3" value="a"> A) Detect a broken rail</label>
-                <label class="answer-option"><input type="radio" name="q3" value="b"> B) Alert that signal has failed</label>
-                <label class="answer-option"><input type="radio" name="q3" value="c"> C) Detect interference from other sources</label>
-            </div>
-            <button id="submit-button">Submit Answers</button>
-            <button id="home-button">🏠 Home</button>
-            <button id="next-button" style="display:none;">Next ➡️</button>
-            <div id="results-container" style="display: none;">
-                Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-            </div>
+    <hr>
+
+    <p style="font-size: 22px;">
+        DC track circuits are a fundamental building block of modern railway signaling systems. Their primary purpose is to detect the presence of a train on a section of track. This seemingly simple function is crucial for ensuring safe train operations, as it provides the basis for preventing collisions and controlling train movements through signaling.
+        At its core, a DC track circuit utilizes the steel rails of the railway track as a part of an electrical circuit. A low-voltage DC (Direct Current) power source is connected to the rails at one end of a defined track section, and a relay (an electromagnetic switch) is connected across the rails at the other end. This track section is electrically isolated from adjacent sections using insulated joints in the rails.
+        When the track section is clear (no train present), the DC current flows from the power source, through one rail, across the relay coil, and back through the other rail to complete the circuit. This current energizes the relay, causing its contacts to close or remain closed, indicating that the track section is unoccupied.
+
+    </p>
+
+    <p style="font-size: 22px;">
+        However, when a train enters the track section, its metal wheels and axles provide a low-resistance electrical path (a "short circuit") between the two rails. This short circuit diverts the majority of the DC current away from the relay coil. With insufficient current flowing through it, the relay de-energizes, causing its contacts to change state. This change in the relay's contacts signals that the track section is now occupied by a train.
+        DC track circuits can also be adapted to provide additional information beyond simple occupancy detection. By using different voltage levels, current characteristics, or by adding additional components, track circuits can be configured to detect broken rails or to transmit basic signaling information directly to the train.
+        In summary, the DC track circuit is a reliable and fail-safe method for detecting the presence of trains on a section of track. Its fundamental principle of using the rails as part of an electrical circuit to energize a relay provides a crucial input for railway signaling and safety systems.
+        </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/manual-vs-automatic-capacity.png"
+    alt="Comparison of train capacity between manual block and automatic block systems"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/manual-block-human-error.png"
+    alt="Illustration showing possible human communication error in manual block signaling"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/manual-vs-automatic-infrastructure.png"
+    alt="Comparison between manual block stations and automatic wayside signaling"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/manual-block-advantages-disadvantages-chart.png"
+    alt="Chart summarizing advantages and disadvantages of manual block signaling"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. Question 1: What is the primary function of a DC Track Circuit?</p>
+        <label><input type="radio" name="q1" value="correct"> Detect the presence of a train</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Connect to the rails to create a circuit</label><br>
+        <label><input type="radio" name="q1" value="wrong"> De-energize a relay</label><br><br>
+
+        <p>2. Question 2: What is the main source of power?</p>
+        <label><input type="radio" name="q2" value="wrong"> AC power</label><br>
+        <label><input type="radio" name="q2" value="correct"> Low Voltage DC Power</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Audio Frequencies 20 Hz - 690 kHz</label><br><br>
+
+        <p>3. What other information can DC Track Circuits provide?</p>
+        <label><input type="radio" name="q3" value="wrong"> Alert that signal has failed</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Detect interference from other sources</label><br>
+        <label><input type="radio" name="q3" value="correct"> Detect a broken rail</label><br><br>
+        <div class="question-container">
+
         </div>
+        </div>
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
     <script>
-        const quizContainer = document.getElementById('quiz-container');
-        const submitButton = document.getElementById('submit-button');
-        const resultsContainer = document.getElementById('results-container');
-        const finalScoreDisplay = document.getElementById('final-score');
-        const maxScoreDisplay = document.getElementById('max-score');
-        const homeButton = document.getElementById('home-button');
-        const nextButton = document.getElementById('next-button');
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-        const questions = [
-            { name: "q1", correctAnswer: "a" },
-            { name: "q2", correctAnswer: "c" },
-            { name: "q3", correctAnswer: "a" }
-        ];
-
-        submitButton.addEventListener('click', () => {
-            let score = 0;
-            const questionContainers = document.querySelectorAll('.question-container');
-            maxScoreDisplay.textContent = questions.length;
-
-            questionContainers.forEach((qContainer, index) => {
-                const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-                const answerElements = qContainer.querySelectorAll('.answer-option');
-
-                if (selectedAnswer) {
-                    if (selectedAnswer.value === questions[index].correctAnswer) {
-                        score++;
-                        answerElements.forEach(label => {
-                            const input = label.querySelector('input');
-                            if(input.value === questions[index].correctAnswer){
-                                label.classList.add('correct-answer');
-                            }
-                        });
-                    } else {
-                        answerElements.forEach(label => {
-                            const input = label.querySelector('input');
-                            if(input.value === selectedAnswer.value){
-                                label.classList.add('wrong-answer');
-                            } else if(input.value === questions[index].correctAnswer){
-                                label.classList.add('correct-answer');
-                            }
-                        });
-                    }
-                } else {
-                    answerElements.forEach(label => {
-                        const input = label.querySelector('input');
-                        if(input.value === questions[index].correctAnswer){
-                            label.classList.add('correct-answer');
-                        }
-                    });
-                }
-            });
-
-            finalScoreDisplay.textContent = score;
-            resultsContainer.style.display = 'block';
-            document.querySelectorAll('input[type="radio"]').forEach(button => button.disabled = true);
-            submitButton.disabled = true;
-            nextButton.style.display = 'inline-block';
-        });
-
-        homeButton.addEventListener('click', () => {
-            window.location.href = "/index.html";
-        });
-
-        nextButton.addEventListener('click', () => {
+        if(password === "signal2026") {
             window.location.href = "Module 3B.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
         });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
     </script>
 
-    <p style="font-size: 0.8em; text-align: center; color: gray;">
-        Built with guidance from ChatGPT, powered by OpenAI.
-    </p>
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 1A.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
 </html>
