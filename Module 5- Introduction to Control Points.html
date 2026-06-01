@@ -1,212 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 5: Introduction to Control Points</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5 - Introduction to Control Points</title>
 </head>
-<body>
-  <h1>Module 5: Introduction to Control Points</h1>
 
-  <div class="intro-container">
-    <p>Control points are critical components of railroad signaling systems, providing a centralized location for the control and monitoring of switches, signals, and other interlocking functions. They play a vital role in ensuring the safe and efficient movement of trains through complex track layouts.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>A control point is typically a small building or room housing the necessary equipment to operate and monitor the interlocking. This equipment includes control panels, signal machines, switch machines, and communication devices. Control points are often located at strategic locations within a railway network, such as junctions, terminals, and signal cabins.</p>
+    <h1>🚦 Module 5 - Introduction to Control Points</h1>
 
-    <p>The primary function of a control point is to allow operators to set and change routes through the interlocking. This is achieved through a combination of switches, levers, and buttons on the control panels, which interact with the interlocking logic to establish the desired path for a train. Operators also monitor the status of signals, switches, and track circuits through visual displays and audible alarms, ensuring that all components are functioning correctly and that trains are operating safely.</p>
+    <h2 style="color: darkblue;">
+        Introduction to Railroad Control Points
+    </h2>
 
-    <p>In addition to manual control, modern control points often incorporate advanced technologies such as computer-based control systems. These systems provide a more intuitive interface for operators, allowing them to interact with the interlocking through graphical displays and automated functions. They also offer enhanced capabilities for monitoring, diagnostics, and data analysis.</p>
-  </div>
+    <hr>
 
-  <h3>Module 5 Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the primary purpose of a control point in a railroad signaling system?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) To perform track maintenance</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) To control and monitor interlocking operations</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) To house train crews during layovers</label>
+    <p style="font-size: 22px;">
+        Control points are important parts of railroad signaling systems. They provide a location where switches,
+        signals, track circuits, and other interlocking functions can be controlled and monitored.
+    </p>
+
+    <p style="font-size: 22px;">
+        A control point helps manage train movements through complex track layouts such as junctions, crossovers,
+        terminals, sidings, and interlockings. Its purpose is to support safe and efficient train movement.
+    </p>
+
+    <p style="font-size: 22px;">
+        A control point may include equipment such as control panels, signal equipment, switch machines, track
+        circuits, communication devices, power supplies, relays, cables, and control logic.
+    </p>
+
+    <p style="font-size: 22px;">
+        The primary function of a control point is to allow authorized train routes to be established and monitored.
+        Operators or dispatchers can line routes, monitor signal indications, verify switch positions, and observe
+        track occupancy.
+    </p>
+
+    <p style="font-size: 22px;">
+        Older control points may use physical switches, levers, buttons, relays, and indication lights. Modern control
+        points often use computer-based control systems with graphical displays, event logs, diagnostics, and remote
+        monitoring.
+    </p>
+
+    <p style="font-size: 22px;">
+        These systems help operators and maintainers quickly understand the condition of the railroad and respond to
+        problems. Control points are therefore both safety devices and operational control locations.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is the primary purpose of a control point in a railroad signaling system?</p>
+        <label><input type="radio" name="q1" value="wrong"> To perform track maintenance only</label><br>
+        <label><input type="radio" name="q1" value="correct"> To control and monitor interlocking operations</label><br>
+        <label><input type="radio" name="q1" value="wrong"> To house train crews during layovers</label><br><br>
+
+        <p>2. What equipment may be found at a control point?</p>
+        <label><input type="radio" name="q2" value="wrong"> Passenger seats and ticket machines</label><br>
+        <label><input type="radio" name="q2" value="correct"> Control panels, signal equipment, switch machines, and communication devices</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Vending machines and newspapers</label><br><br>
+
+        <p>3. How do operators interact with a control point to set routes?</p>
+        <label><input type="radio" name="q3" value="wrong"> By placing trackside flags manually</label><br>
+        <label><input type="radio" name="q3" value="correct"> By using control panels, switches, levers, buttons, or computer displays</label><br>
+        <label><input type="radio" name="q3" value="wrong"> By calling train engineers on the radio only</label><br><br>
+
+        <p>4. What is one benefit of computer-based control systems?</p>
+        <label><input type="radio" name="q4" value="correct"> They improve monitoring, diagnostics, automation, and operator displays</label><br>
+        <label><input type="radio" name="q4" value="wrong"> They eliminate the need for electricity</label><br>
+        <label><input type="radio" name="q4" value="wrong"> They slow down train traffic for better safety</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. What types of equipment are typically found within a control point?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Passenger seats and ticket machines</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Control panels, signal and switch machines, communication devices</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Vending machines and newspapers</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. How do control point operators interact with the interlocking system to set up routes for trains?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) By placing trackside flags manually</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) By using control panels with switches, levers, and buttons</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) By calling train engineers on the radio</label>
-    </div>
-
-    <div class="question-container">
-      <p class="question">4. What are the benefits of using computer-based control systems in modern control points?</p>
-      <label class="answer-option"><input type="radio" name="q4" value="a" /> A) They provide advanced interfaces and enhance monitoring, diagnostics, and automation</label>
-      <label class="answer-option"><input type="radio" name="q4" value="b" /> B) They eliminate the need for electricity</label>
-      <label class="answer-option"><input type="radio" name="q4" value="c" /> C) They slow down train traffic for better safety</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">4</span>
-    </div>
-
-    <button id="back-button" onclick="location.href='/Modules/Module 4/Module 4F Troubleshooting an Interlocking.html'">⬅️ Back</button>
-    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
-    <button id="next-button" onclick="location.href='Module 5A- What is the Importance of a Control Point.html'">Next ➡️</button>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "b" },
-      { name: "q4", correctAnswer: "a" }
-    ];
-
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-5A.html";
         } else {
-          answerElements.forEach((label) => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      nextButton.style.display = "inline-block";
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="../Module 4/Module-4F.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

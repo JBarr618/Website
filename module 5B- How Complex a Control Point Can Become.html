@@ -1,207 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 5B: How Complex a Control Point Can Become</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5B - Control Point Complexity</title>
 </head>
-<body>
-  <h1>Module 5B: How Complex a Control Point Can Become</h1>
 
-  <div class="intro-container">
-    <p>Control points can vary greatly in complexity, depending on the size and complexity of the interlocking they serve. The most basic control points might only manage a few switches and signals, while larger, more sophisticated control points can handle hundreds or even thousands of components.</p>
-    <p>Several factors contribute to the complexity of a control point:</p>
-    <ul>
-      <li>Number of Switches and Signals: The more switches and signals that need to be controlled, the more complex the interlocking logic and the control panel interface become.</li>
-      <li>Track Layout: The layout of the track network, including the number of junctions, crossings, and sidings, directly affects the number of routes and potential conflicts that the interlocking must manage.</li>
-      <li>Level of Automation: Control points can range from fully manual operations to highly automated systems with advanced computer interfaces. Automated systems generally require more complex software and hardware.</li>
-      <li>Additional Features: Some control points may include additional features such as speed control, route setting displays, and diagnostic tools, further increasing their complexity.</li>
-    </ul>
-    <p>The complexity of a control point also influences the number of operators required to manage it. Smaller, simpler interlockings can often be operated by a single person, while larger, more complex interlockings may require multiple operators working in shifts.</p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h3>Module 5B Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What factors contribute to the complexity of a control point in a railway signaling system?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) The amount of sunshine at the location</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Number of switches, signals, track layout, level of automation, and added features</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Length of the trains passing through</label>
+    <h1>🚦 Module 5B - Control Point Complexity</h1>
+
+    <h2 style="color: darkblue;">
+        How Complex a Control Point Can Become
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Control points can vary greatly in complexity depending on the size of the interlocking they serve.
+        A simple control point may manage only a few switches and signals, while a large control point may
+        control many routes, signals, switches, track circuits, and communication systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        One major factor is the number of switches and signals. The more equipment that must be controlled,
+        the more complex the control logic, wiring, indications, testing, and operator interface become.
+    </p>
+
+    <p style="font-size: 22px;">
+        Track layout also affects complexity. Junctions, crossings, sidings, yards, crossovers, and multiple
+        routes create more possible movements and more potential conflicts that must be protected by the
+        interlocking system.
+    </p>
+
+    <p style="font-size: 22px;">
+        Automation also increases complexity. Manual systems may rely more on operator actions, while automated
+        systems use computer controls, software logic, diagnostics, event logs, and communication networks.
+    </p>
+
+    <p style="font-size: 22px;">
+        Additional features such as speed control, route setting displays, remote control, alarms, diagnostics,
+        and data recording can also increase the complexity of a control point.
+    </p>
+
+    <p style="font-size: 22px;">
+        The more complex the control point becomes, the more important proper design, testing, documentation,
+        training, and maintenance become. Larger control points may also require more operators or additional
+        support systems to manage train movements safely.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What factors contribute to control point complexity?</p>
+        <label><input type="radio" name="q1" value="wrong"> The amount of sunshine at the location</label><br>
+        <label><input type="radio" name="q1" value="correct"> Switches, signals, track layout, automation, and added features</label><br>
+        <label><input type="radio" name="q1" value="wrong"> The length of trains only</label><br><br>
+
+        <p>2. How does the number of switches and signals affect complexity?</p>
+        <label><input type="radio" name="q2" value="correct"> More switches and signals increase logic, wiring, and interface complexity</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Fewer switches make systems more complicated</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It has no effect on complexity</label><br><br>
+
+        <p>3. What is one tradeoff of using a fully automated control point?</p>
+        <label><input type="radio" name="q3" value="correct"> Automation can improve efficiency but adds software and hardware complexity</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Manual systems are always faster and more modern</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Automation removes the need for control logic</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. How does the number of switches and signals in an interlocking affect the complexity of the control point?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) More switches and signals increase control logic and interface complexity</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Fewer switches make systems overcomplicated</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) It has no real effect on complexity</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. What are the advantages and disadvantages of using a fully automated control point compared to a manual one?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) Automation increases efficiency but adds software/hardware complexity</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) Manual systems are faster and more modern</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) Automation reduces control entirely</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-
-    <button id="back-button" onclick="location.href='Module 5A- What is the Importance of a Control Point.html'">⬅️ Back</button>
-    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
-    <button id="next-button" onclick="location.href='Module 5C- How to Troubleshoot a Control Point Problem.html'">Next ➡️</button>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "a" }
-    ];
-
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-5C.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      nextButton.style.display = "inline-block";
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-5A.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
-</html>
 
+</html>

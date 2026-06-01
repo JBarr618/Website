@@ -1,203 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 6A: What is an AC Double Rail Track Circuit?</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6A - What is an AC Double Rail Track Circuit?</title>
 </head>
-<body>
-  <h1>Module 6A: What is an AC Double Rail Track Circuit?</h1>
 
-  <div class="intro-container">
-    <p>An AC double rail track circuit is a type of train detection system that utilizes alternating current and has both rails of the track electrically isolated from adjacent sections by insulated rail joints. This means that a defined segment of track, the "block," has a clear electrical boundary on both running rails. An AC power source is connected across these two insulated rails at one end of the block, and an AC-sensitive detection device, typically a relay or a more sophisticated electronic receiver, is connected across the rails at the opposite end.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>The fundamental principle of operation relies on the impedance of the circuit. When the track section is clear of any trains, the AC signal flows unimpeded from the source, through both rails, to the receiver, which is designed to be sensitive to the specific frequency of the applied AC. This energizes the receiver, indicating an unoccupied track.</p>
+    <h1>🚦 Module 6A - What is an AC Double Rail Track Circuit?</h1>
 
-    <p>The presence of a train within the block changes the electrical characteristics of the circuit. The metal wheels and axles of the train create a low-impedance shunt across the two rails. This low-impedance path offers an easier route for the AC current to flow, effectively bypassing the high impedance of the receiver at the other end. Consequently, the current through the receiver drops significantly, causing it to de-energize and signal that the track section is now occupied. The "double rail" aspect signifies that both rails are part of the signaling circuit and are insulated at the block boundaries.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        Understanding AC Double Rail Track Circuits
+    </h2>
 
-  <h3>Module 6A Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. In an AC double rail track circuit, how many rails are insulated at the boundaries of a track block?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) One rail</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Both rails</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) None</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        An AC double rail track circuit is a train detection system that uses alternating current and has both rails
+        electrically isolated from adjacent track sections by insulated rail joints. This creates a defined track
+        block with clear electrical boundaries on both running rails.
+    </p>
+
+    <p style="font-size: 22px;">
+        An AC power source is connected across the two insulated rails at one end of the block. An AC-sensitive relay
+        or electronic receiver is connected across the rails at the opposite end.
+    </p>
+
+    <p style="font-size: 22px;">
+        When the track section is clear, the AC signal flows from the source through the rails to the receiver. The
+        receiver energizes and indicates that the track section is unoccupied.
+    </p>
+
+    <p style="font-size: 22px;">
+        When a train enters the block, the metal wheels and axles create a low-impedance shunt across the two rails.
+        This shunt provides an easier path for current and reduces the current reaching the receiver.
+    </p>
+
+    <p style="font-size: 22px;">
+        When the receiver de-energizes, the track circuit indicates that the track section is occupied. This is the
+        basic train detection principle used by AC double rail track circuits.
+    </p>
+
+    <p style="font-size: 22px;">
+        The term double rail means that both rails are part of the signaling circuit and both rails are insulated at
+        the block boundaries.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. In an AC double rail track circuit, how many rails are insulated at the block boundaries?</p>
+        <label><input type="radio" name="q1" value="wrong"> One rail</label><br>
+        <label><input type="radio" name="q1" value="correct"> Both rails</label><br>
+        <label><input type="radio" name="q1" value="wrong"> None of the rails</label><br><br>
+
+        <p>2. How is a train detected electrically in an AC double rail track circuit?</p>
+        <label><input type="radio" name="q2" value="wrong"> The signal turns off when the train passes</label><br>
+        <label><input type="radio" name="q2" value="correct"> The train forms a shunt across the rails</label><br>
+        <label><input type="radio" name="q2" value="wrong"> The train activates a mechanical switch</label><br><br>
+
+        <p>3. What does double rail mean in this type of track circuit?</p>
+        <label><input type="radio" name="q3" value="wrong"> Two trains can use the block at the same time</label><br>
+        <label><input type="radio" name="q3" value="correct"> Both rails are part of the signaling circuit and insulated at the block boundaries</label><br>
+        <label><input type="radio" name="q3" value="wrong"> A redundant signal is included</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Explain how the presence of a train is detected electrically in an AC double rail track circuit. What creates the change in the circuit?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) The signal turns off when a train passes</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) The train forms a shunt across the rails</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) The train activates a switch</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. What does the "double rail" designation specifically refer to in the context of this type of track circuit?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) Two trains can use the block at once</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) Both rails are part of the signaling circuit and insulated at the block boundaries</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) A redundant signal is included</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-
-    <button id="back-button" onclick="location.href='Module 6- Introduction to AC Double Rail Track Circuits.html'">⬅️ Back</button>
-    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
-    <button id="next-button" onclick="location.href='Module 6B- Setting Up an AC Double Rail Track Circuit copy.html'">Next ➡️</button>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-6B.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      nextButton.style.display = "inline-block";
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-6.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
-</html>
 
+</html>

@@ -1,171 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 4B: What Types of Equipment are Used in an Interlocking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.8;
-      font-size: 1.2em;
-    }
-
-    .content-container {
-      margin-bottom: 30px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-weight: bold;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-
-    #submit-button, #next-button, #home-button {
-      padding: 14px 28px;
-      font-size: 1.2em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover:enabled, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button:disabled {
-      background-color: #999;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4B - Equipment Used in an Interlocking</title>
 </head>
-<body>
-  <h1>Module 4B: What Types of Equipment are Used in an Interlocking</h1>
 
-  <div class="content-container">
-    <p>Interlockings rely on a combination of mechanical, electrical, and electronic components to achieve their vital functions. The core elements include:</p>
-    <ul>
-      <li><strong>Track Switches (Points):</strong> Movable sections of track that allow trains to change direction or switch between tracks. Typically operated by switch machines, either manually or remotely.</li>
-      <li><strong>Signals:</strong> Visual and audible devices that inform train crews about route status, speed limits, and safety procedures, interconnected with interlocking logic.</li>
-      <li><strong>Interlocking Logic:</strong> A complex network of circuits and logic gates that coordinate switches and signals, ensuring only one valid route at a time.</li>
-      <li><strong>Switch Machines:</strong> Motorized devices used to control the movement of track switches, operated from control towers or signal centers.</li>
-      <li><strong>Signal Machines:</strong> Devices (electronic or electro-mechanical) that control lights and indications of signals.</li>
-      <li><strong>Track Circuits:</strong> Electrical circuits that detect train presence on a track section and feed information to the interlocking logic.</li>
-    </ul>
-    <p>Modern interlockings also use computers, microprocessors, and digital communications for advanced control, real-time monitoring, and remote diagnostics.</p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h2>Module 4B Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What are the two essential moving components of an interlocking system that work together to control train movements?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Signal wires and batteries</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Switch machines and signal machines</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Track ballast and frogs</label>
+    <h1>🚦 Module 4B - Equipment Used in an Interlocking</h1>
+
+    <h2 style="color: darkblue;">
+        What Types of Equipment Are Used in an Interlocking?
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Interlockings rely on a combination of mechanical, electrical, and electronic equipment to safely control train
+        movements. Each component has a specific purpose, and all components must work together to prevent conflicting
+        routes.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Track switches</b>, also called points, are movable sections of rail that allow trains to move from one track
+        to another. These switches are normally operated by <b>switch machines</b>, which move, lock, and detect the
+        position of the switch.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Signals</b> provide visual indications to train crews. They tell the crew whether to stop, proceed, or move at
+        a restricted speed based on the route that has been established and the condition of the track ahead.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Interlocking logic</b> is the control logic that coordinates switches, signals, and track occupancy. Its job is
+        to make sure only safe routes can be established and that conflicting routes are blocked.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Track circuits</b> detect the presence of trains within a section of track. This information is sent back to
+        the interlocking logic so the system knows whether a track section is occupied or clear.
+    </p>
+
+    <p style="font-size: 22px;">
+        Modern interlockings may also include computers, microprocessors, communication networks, diagnostic systems,
+        power supplies, relays, cables, and control interfaces. These systems allow dispatchers and maintainers to monitor
+        and control the interlocking safely and efficiently.
+    </p>
+
+    <!-- Image placeholder for later -->
+    <!--
+    <img src="../../pictures/Module 4/interlocking-equipment.png"
+    alt="Interlocking equipment including switch machine signal track circuit and control logic"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What are two important pieces of equipment used to control train movements in an interlocking?</p>
+        <label><input type="radio" name="q1" value="wrong"> Signal wires and batteries only</label><br>
+        <label><input type="radio" name="q1" value="correct"> Switch machines and signal equipment</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Track ballast and frogs only</label><br><br>
+
+        <p>2. What is the role of interlocking logic?</p>
+        <label><input type="radio" name="q2" value="wrong"> It controls train speed directly from the locomotive</label><br>
+        <label><input type="radio" name="q2" value="correct"> It helps ensure only safe routes are active and blocks conflicting movements</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It only powers the signal lights</label><br><br>
+
+        <p>3. Which component detects the presence of a train on the track?</p>
+        <label><input type="radio" name="q3" value="wrong"> Signal machine</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Switch machine</label><br>
+        <label><input type="radio" name="q3" value="correct"> Track circuit</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. What is the role of the interlocking logic in ensuring safe and efficient train operations?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) It controls train speed directly</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) It ensures only one safe route is active and blocks conflicting movements</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) It powers the signal lights</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. Which component detects the presence of a train on the track?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Signal machine</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Switch machine</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Track circuit</label>
-    </div>
+        if(password === "signal2026") {
+            window.location.href = "Module-4C.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
 
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
+    function gradeQuiz() {
 
-    <button id="home-button">🏠 Home</button>
-    <button id="next-button" disabled>➡️ Next Module</button>
-  </div>
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "c" }
-    ];
+        answers.forEach(answer => {
 
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-    const homeButton = document.getElementById('home-button');
-    const nextButton = document.getElementById('next-button');
+            answer.disabled = true;
 
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
 
-      document.querySelectorAll('.question-container').forEach((container, index) => {
-        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const options = container.querySelectorAll('.answer-option');
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
 
-        options.forEach(opt => {
-          const input = opt.querySelector('input');
-          if (input.value === questions[index].correctAnswer) {
-            opt.classList.add('correct-answer');
-          }
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
         });
 
-        if (selected && selected.value === questions[index].correctAnswer) {
-          score++;
-        } else if (selected) {
-          selected.parentElement.classList.add('wrong-answer');
-        }
-      });
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-      submitButton.disabled = true;
+    <hr>
 
-      localStorage.setItem("module4bScore", score);
-      localStorage.setItem("module4bMax", questions.length);
+    <div style="margin-top:30px;">
 
-      nextButton.disabled = false;
-    });
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
 
-    homeButton.addEventListener('click', () => {
-      window.location.href = '/index.html';
-    });
+        <a href="Module-4.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
 
-    nextButton.addEventListener('click', () => {
-      window.location.href = 'Module 4C Setting Up an Interlocking.html';
-    });
-  </script>
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

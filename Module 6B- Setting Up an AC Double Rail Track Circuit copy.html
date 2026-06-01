@@ -1,201 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 6B: Why is an AC Double Rail Track Circuit Used?</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6B - Why is an AC Double Rail Track Circuit Used?</title>
 </head>
-<body>
-  <h1>Module 6B: Why is an AC Double Rail Track Circuit Used?</h1>
 
-  <div class="intro-container">
-    <p>AC double rail track circuits are primarily used in railway signaling systems for two key reasons:</p>
-    <p><strong>1. Compatibility with Electrified Railways:</strong> In electrified railways, the traction power supplied to trains is typically alternating current (AC). This AC current flows through the rails, returning to the substation via the rails or dedicated return conductors. Introducing DC track circuits in such an environment would lead to interference and potential disruptions. AC double rail track circuits, with their inherent compatibility with AC traction, are designed to function reliably even in the presence of this high-current return flow.</p>
-    <p><strong>2. Improved Reliability in AC Traction Areas:</strong> In addition to compatibility, AC double rail track circuits offer a significant advantage in terms of reliability. The impedance bonds used in AC double rail circuits help to minimize the effects of traction return currents on the track circuit itself. This reduces the risk of false indications or system malfunctions caused by the presence of the traction current.</p>
-    <p>Overall, AC double rail track circuits are a more suitable and reliable option for train detection in electrified railway environments compared to DC track circuits. They provide a robust and accurate means of monitoring track occupancy and ensuring the safe operation of trains even in the presence of high-voltage traction power.</p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h3>Module 6B Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the primary challenge that DC track circuits face in electrified railway environments?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Inadequate signal range</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Interference from AC traction return current</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Overheating of rail joints</label>
+    <h1>🚦 Module 6B - Why is an AC Double Rail Track Circuit Used?</h1>
+
+    <h2 style="color: darkblue;">
+        Purpose of AC Double Rail Track Circuits
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        AC double rail track circuits are used in railroad signaling because they are better suited for certain
+        railway environments, especially electrified territory where traction return current flows through the rails.
+    </p>
+
+    <p style="font-size: 22px;">
+        In electrified railways, traction power can create return currents that travel through the rails or dedicated
+        return paths. These currents can interfere with DC track circuits and may cause unreliable operation,
+        false indications, or detection problems.
+    </p>
+
+    <p style="font-size: 22px;">
+        AC double rail track circuits use an alternating current signal that can be selected and tuned to operate
+        reliably even where traction return current is present. This makes them more compatible with AC traction
+        territory than basic DC track circuits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Impedance bonds are an important part of many AC double rail track circuits. They allow traction return
+        current to continue flowing through the rails while helping protect the track circuit signal from being
+        shorted or disrupted.
+    </p>
+
+    <p style="font-size: 22px;">
+        This helps reduce false indications and improves the reliability of train detection. A properly designed AC
+        double rail track circuit can provide accurate track occupancy information even in areas with heavy traction
+        power currents.
+    </p>
+
+    <p style="font-size: 22px;">
+        AC double rail track circuits may also offer improved performance in some non-electrified areas where
+        environmental conditions, leakage, or interference make DC track circuits less reliable.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What challenge can DC track circuits face in electrified railway environments?</p>
+        <label><input type="radio" name="q1" value="wrong"> Inadequate signal range only</label><br>
+        <label><input type="radio" name="q1" value="correct"> Interference from AC traction return current</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Overheating of rail joints only</label><br><br>
+
+        <p>2. How do impedance bonds help AC double rail track circuits?</p>
+        <label><input type="radio" name="q2" value="correct"> They allow traction return current to flow while helping protect the track circuit signal</label><br>
+        <label><input type="radio" name="q2" value="wrong"> They amplify signal strength across all long distances</label><br>
+        <label><input type="radio" name="q2" value="wrong"> They convert AC power to DC power</label><br><br>
+
+        <p>3. What is another possible advantage of AC double rail track circuits?</p>
+        <label><input type="radio" name="q3" value="correct"> Improved performance and fewer false indications in some conditions</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Higher maintenance requirements as the main benefit</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Reduced sensitivity to rail gaps</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. How do impedance bonds help to improve the reliability of AC double rail track circuits in such environments?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) By allowing return current to flow and blocking signal frequency interference</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) By amplifying signal strength across long distances</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) By converting AC to DC</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. Can you think of any other potential advantages of AC double rail track circuits over DC track circuits, even in non-electrified areas?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) Improved performance and fewer false indications</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) Higher maintenance requirements</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) Reduced sensitivity to rail gaps</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-
-    <button id="back-button" onclick="location.href='Module 6A- What is an AC Double Rail Track Circuit.html'">⬅️ Back</button>
-    <button id="home-button" onclick="location.href='/index.html'">🏠 Home</button>
-    <button id="next-button" onclick="location.href='Module 6C- Type of Equipment Used to Set Up an AC Double Rail Track Circuit.html'">Next ➡️</button>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "a" }
-    ];
-
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-6C.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      nextButton.style.display = "inline-block";
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-6A.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

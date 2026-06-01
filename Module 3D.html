@@ -1,296 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 3D: Direct Current (DC) Track Circuits - Setting Up a DC Track Circuit.</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch; /* Make body stretch to viewport height */
-            min-height: 100vh; /* Ensure body takes at least the full viewport height */
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            font-size: 1.1em; /* Slightly increase the base font size of the body */
-        }
-
-        body > p { /* Target all direct paragraphs under the body */
-            margin-bottom: 10px; /* Reduce the default bottom margin */
-            font-size: 1.2em; /* Increase the font size of direct paragraphs */
-            line-height: 1.6; /* Improve readability with line height */
-        }
-
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; /* Allow the wrapper to take up available vertical space */
-        }
-
-        .content-container {
-            display: flex;
-            align-items: flex-start; /* Align items to the top within the container */
-            margin-bottom: 20px; /* Add some space below each container */
-        }
-
-        /* Apply flex column and even spacing to the first three content containers */
-        body > .content-wrapper > .content-container:nth-child(1),
-        body > .content-wrapper > .content-container:nth-child(2),
-        body > .content-wrapper > .content-container:nth-child(3) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly; /* Distribute space evenly within the container */
-            flex-grow: 1; /* Allow these containers to grow and take up equal space */
-            margin-bottom: 0; /* Remove default bottom margin for these */
-        }
-
-        .paragraph-container p { /* Target paragraphs within paragraph-container */
-            font-size: 1.2em; /* Increase font size of paragraphs in the main content */
-            line-height: 1.6; /* Improve readability */
-        }
-
-        .image-container {
-            width: 400px; /* Fixed width for images */
-            margin-left: 20px;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: 400px;
-            display: block; /* Prevent extra space below inline images */
-        }
-
-        #module-questions-container {
-            margin-top: auto; /* Push questions to the bottom */
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        .question-container {
-            margin-bottom: 20px;
-        }
-        .question {
-            font-size: 1.3em; /* Increase question font size */
-            margin-bottom: 10px;
-        }
-        .answer-option {
-            display: block;
-            margin-bottom: 8px; /* Increase spacing between answer options */
-            cursor: pointer;
-            padding: 12px; /* Increase padding for better touch/click area */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            font-size: 1.1em; /* Increase answer option font size */
-        }
-        .answer-option:hover {
-            background-color: #e0e0e0;
-        }
-        .answer-option input[type="radio"] {
-            margin-right: 10px;
-        }
-        #results-container {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.4em; /* Increase results font size */
-        }
-        .correct-answer {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-            color: #155724;
-        }
-        .wrong-answer {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-            color: #721c24;
-        }
-
-        #submit-button {
-            padding: 15px 30px; /* Increase button padding */
-            font-size: 1.2em; /* Increase button font size */
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #submit-button:hover {
-            background-color: #0056b3;
-        }
-
-        #submit-button:disabled {
-            background-color: #6c757d;
-            cursor: not-allowed;
-        }
-
-        h1 {
-            font-size: 2.2em; /* Increase the main heading font size */
-            margin-bottom: 25px;
-        }
-
-        h3 {
-            font-size: 1.6em; /* Increase the module question heading font size */
-            margin-bottom: 15px;
-        }
-
-    </style>
+    <title>Module 3D - Setting Up a DC Track Circuit</title>
 </head>
-<body>
-    <h1>Module 3D: Direct Current (DC) Track Circuits - Setting Up a DC Track Circuit.</h1>
 
-    <div class="content-wrapper">
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>Setting up a DC track circuit involves a precise and systematic process to ensure reliable train detection. The first crucial step is <b>defining the track block</b> that the circuit will protect. This is achieved by installing <b>insulated rail joints</b> at the beginning and end of the desired section. These joints must be properly installed and tested to guarantee electrical isolation from adjacent track sections. The length of a track circuit can vary depending on factors such as train speed, signal spacing, and the sensitivity requirements of the system..</div>
-            <div class="image-container">
-                 <img src="Pictures/Module 3/Installing a glued Insulated Joint.jpeg" alt="4 man Track Crew installing the insulated joint into the track. 1 man working with a long handled one and a half inch open end wrench. He is tightening the nuts that the other 3 men are pushing through the holes drilled in the rail and the Insulated Joint Bars placed both sides of the rail. "> 
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>Once the block is defined, the <b>power source</b> needs to be connected to the rails at one end of the section. The polarity of the connection is important and must be consistent with the relay connection at the other end. Secure and reliable connections are essential to minimize voltage drops and ensure consistent current flow. Similarly, the <b>track relay</b> is installed at the opposite end of the track section and connected across the rails. The relay's coil must be compatible with the voltage and current characteristics of the power source and the expected resistance of the track circuit..</p>
-                </div>
-            <div class="image-container">
-                <img src="Pictures/Module 3/DC relay.jpeg" alt="Picture of a close up of a Track Relay which you saw previously. relay's coil must be compatible with the voltage and current characteristics of the power source and the expected resistance of the track circuit.">
-            </div>
-        </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-        <div class="content-container">
-            <div class="paragraph-container">
-                <p>Finally, thorough <b>testing and calibration</b> are required after the initial setup. This involves measuring the voltage and current at various points in the circuit, ensuring the relay operates correctly when a shunt (simulating a train) is applied, and verifying that the insulated joints are effectively isolating the section. Proper documentation of the setup parameters and test results is also critical for future maintenance and troubleshooting. The entire process must adhere to established railroad standards and safety regulations to guarantee the reliable and safe operation of the track circuit.</p>
-            </div>
-            <div class="image-container">
-                <img src="Pictures/Module 3/Maintainer Testing Track Circuit.jpg" alt="Signal Maintenance Technician taking voltage and current measurements across both rails using a multimeter.">
-            </div>
-        </div>
-    </div>
+    <h1>🚦 Module 3D - Setting Up a DC Track Circuit</h1>
 
-    <div id="module-questions-container">
-        <h3>Module 3D: Questions:</h3>
-        <div id="quiz-container">
-            <div class="question-container">
-                <p class="question">Question 1: What is the first crucial step in setting up a DC track circuit, and how is it achieved?</p>
-                <label class="answer-option">
-                    <input type="radio" name="q1" value="a"> A)First crucial step in setting up the Dc track circuit is to make sure that the Rails are cleaned and polished.
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q1" value="b"> B) First crucial step is defining the lenght of the block. Using Insulated Joints will help determine the block begining and end of the section.
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q1" value="c"> C) First crucial step in setting up the Dc track circuit is to make sure to count how crossties and track clips were used on the rail. which could effect the setup.
-                </label>
-            </div>
+    <h2 style="color: darkblue;">
+        Direct Current Track Circuits - Setting Up a DC Track Circuit
+    </h2>
 
-            <div class="question-container">
-                <p class="question">Question 2:  Where are the power source and the track relay typically connected in relation to the defined track block??</p>
-                <label class="answer-option">
-                    <input type="radio" name="q2" value="a"> A) Attach the positive and negative track wires at both ends to determine the section of track. 
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q2" value="b"> B) Connect the rectifier to the rails at one end and the rails track realy at the other end. Use metal flags to mark the track section.
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q2" value="c"> C)The power source needs to be connected to the rails at one end and the track relay at the other end or far end. Doing so will help define the block limits defined. 
-                </label>
-            </div>
-            <div class="question-container">
-                <p class="question">Question 3:	Why is thorough testing and calibration a critical part of the DC track circuit setup process? What are some of the things that need to be verified?</p>
-                <label class="answer-option">
-                    <input type="radio" name="q3" value="a"> A) Thorough testing and calibration is crtical to ensuring that the relay operates correctly when a shunt (simulating a train) is applied, and verifying that the insulated joints are effectively isolating the section of track. Proper documentation of the setup parameters and test results is also critical for future maintenance and troubleshooting. 
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q3" value="b"> B) Thorough testing and calibration is an important part of the setup process to ensure that the resistors are probably placed in the circuit . You need to verify the location of the resistors and their values and tolerance.
-                </label>
-                <label class="answer-option">
-                    <input type="radio" name="q3" value="c"> C) Thorough testing and calibration is a critical part of the DC track circuit setup to ensure that the Ac track circuit share the rails. Verify that the Ac outlet is working and the DC charger is working.  
-            </div>
+    <hr>
 
-            <button id="submit-button">Submit Answers</button>
+    <p style="font-size: 22px;">
+        Setting up a DC track circuit involves a precise and systematic process to ensure reliable train detection.
+        The first crucial step is <b>defining the track block</b> that the circuit will protect. This is achieved by
+        installing <b>insulated rail joints</b> at the beginning and end of the desired section.
+    </p>
 
-            <div id="results-container" style="display: none;">
-                Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-            </div>
-        </div>
+    <img src="../../pictures/Module 3/Installing a glued Insulated Joint.jpeg"
+    alt="Track crew installing an insulated joint into the track."
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <p style="font-size: 22px;">
+        These joints must be properly installed and tested to guarantee electrical isolation from adjacent track sections.
+        The length of a track circuit can vary depending on factors such as train speed, signal spacing, and the sensitivity
+        requirements of the system.
+    </p>
+
+    <p style="font-size: 22px;">
+        Once the block is defined, the <b>power source</b> needs to be connected to the rails at one end of the section.
+        The polarity of the connection is important and must be consistent with the relay connection at the other end.
+        Secure and reliable connections are essential to minimize voltage drops and ensure consistent current flow.
+    </p>
+
+    <img src="../../pictures/Module 3/DC relay.jpeg"
+    alt="DC track relay."
+    style="width:350px; border-radius:10px;">
+
+    <p style="font-size: 22px;">
+        The <b>track relay</b> is installed at the opposite end of the track section and connected across the rails.
+        The relay coil must be compatible with the voltage and current characteristics of the power source and the expected
+        resistance of the track circuit.
+    </p>
+
+    <p style="font-size: 22px;">
+        Finally, thorough <b>testing and calibration</b> are required after the initial setup. This involves measuring
+        voltage and current at various points in the circuit, ensuring the relay operates correctly when a shunt is applied,
+        and verifying that the insulated joints are effectively isolating the section.
+    </p>
+
+    <img src="../../pictures/Module 3/Maintainer Testing Track Circuit.jpg"
+    alt="Signal maintainer testing voltage and current across the rails."
+    style="width:350px; border-radius:10px;">
+
+    <p style="font-size: 22px;">
+        Proper documentation of setup parameters and test results is also critical for future maintenance and troubleshooting.
+        The entire process must follow established railroad standards and safety regulations to guarantee reliable and safe
+        operation of the track circuit.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is the first crucial step in setting up a DC track circuit?</p>
+        <label><input type="radio" name="q1" value="wrong"> Clean and polish the rails before setup</label><br>
+        <label><input type="radio" name="q1" value="correct"> Define the block using insulated joints at the beginning and end of the section</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Count the number of crossties and track clips</label><br><br>
+
+        <p>2. Where are the power source and track relay typically connected?</p>
+        <label><input type="radio" name="q2" value="wrong"> Positive and negative wires are attached at both ends only</label><br>
+        <label><input type="radio" name="q2" value="wrong"> The rectifier is connected at one end and metal flags mark the other end</label><br>
+        <label><input type="radio" name="q2" value="correct"> The power source is connected at one end and the track relay is connected at the other end</label><br><br>
+
+        <p>3. Why is testing and calibration critical after setting up a DC track circuit?</p>
+        <label><input type="radio" name="q3" value="correct"> To verify relay operation, shunt response, insulated joint isolation, and proper documentation</label><br>
+        <label><input type="radio" name="q3" value="wrong"> To verify resistor placement only</label><br>
+        <label><input type="radio" name="q3" value="wrong"> To verify AC outlet operation for an AC track circuit</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
     <script>
-        const quizContainer = document.getElementById('quiz-container');
-        const submitButton = document.getElementById('submit-button');
-        const resultsContainer = document.getElementById('results-container');
-        const finalScoreDisplay = document.getElementById('final-score');
-        const maxScoreDisplay = document.getElementById('max-score');
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-        const questions = [
-            {
-                name: "q1",
-                correctAnswer: "b"
-            },
-            {
-                name: "q2",
-                correctAnswer: "c"
-            },
-            {
-                name: "q3",
-                correctAnswer: "a"
+        if(password === "signal2026") {
+            window.location.href = "Module-3E.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
             }
-        ];
 
-        submitButton.addEventListener('click', () => {
-            let score = 0;
-            const questionContainers = document.querySelectorAll('.question-container');
-            maxScoreDisplay.textContent = questions.length;
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
 
-            questionContainers.forEach((qContainer, index) => {
-                const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-                const answerElements = qContainer.querySelectorAll('.answer-option');
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
 
-
-                if (selectedAnswer) {
-                    if (selectedAnswer.value === questions[index].correctAnswer) {
-                        score++;
-                         //Find the label of the correct answer and color it
-                        answerElements.forEach(label => {
-                            const input = label.querySelector('input');
-                            if(input.value === questions[index].correctAnswer){
-                                label.classList.add('correct-answer');
-                            }
-                        });
-                    }
-                    else{
-                         //Find the label of the wrong answer and color it
-                         answerElements.forEach(label => {
-                            const input = label.querySelector('input');
-                            if(input.value === selectedAnswer.value){
-                                label.classList.add('wrong-answer');
-                            }
-                            else if(input.value === questions[index].correctAnswer){
-                                 label.classList.add('correct-answer');
-                            }
-                        });
-                    }
-                }
-                else {
-                    answerElements.forEach(label => {
-                         const input = label.querySelector('input');
-                         if(input.value === questions[index].correctAnswer){
-                            label.classList.add('correct-answer');
-                        }
-                    });
-                }
-            });
-
-            finalScoreDisplay.textContent = score;
-            resultsContainer.style.display = 'block';
-            //Disable ability to change answers after submit
-            const allRadioButtons = document.querySelectorAll('input[type="radio"]');
-            allRadioButtons.forEach(button => {
-                button.disabled = true;
-            });
-            submitButton.disabled = true;
         });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
     </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-3C.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
-</html> 
+
+</html>

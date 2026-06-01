@@ -1,259 +1,213 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 3F - Troubleshooting a DC Track Circuit</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    .align-right-image {
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 10px;
-      max-width: 300px;
-    }
-
-    .align-left-image {
-      float: left;
-      margin-right: 20px;
-      margin-bottom: 10px;
-      max-width: 300px;
-    }
-
-    .image-caption {
-      font-size: 0.9em;
-      color: #555;
-      text-align: center;
-      clear: both;
-      padding-top: 5px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button, #purchase-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #purchase-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button, #purchase-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3F - Troubleshooting a DC Track Circuit</title>
 </head>
-<body>
-  <h1>Module 3F: Troubleshooting a DC Track Circuit</h1>
 
-  <div class="intro-container">
-    <img class="align-right-image" src="/Pictures/Module 3/Signal Maintainer Placing a Shunt on Tracks.jpeg" alt="Signal Maintainer placing a shunt on the track to troubleshoot the track circuit.">
-    <p>Troubleshooting DC track circuit problems requires a systematic approach and a good understanding of how the system works. Common issues can manifest in various ways, including false "occupied" indications, where the system indicates a train is present when it isn't, or failure to detect a train, a far more dangerous situation. A false "occupied" indication might be caused by low insulation resistance, a broken rail, a faulty relay, or even debris across the rails acting as a shunt.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <img class="align-left-image" src="/Pictures/Module 3/Maintainer Testing Track Circuit.jpg" alt="Signal Maintainer troubleshooting the track circuit with meters attached to rails.">
-    <p>To isolate the problem, one should first visually inspect the track circuit for any obvious issues like broken wires, damaged components, or debris on the rails. Then, voltage and current measurements should be taken at various points to pinpoint any breaks in the circuit or areas of excessive resistance. A shunt test can be performed to verify the relay's response. If the relay doesn't de-energize reliably, the relay itself may be faulty or the circuit may have insufficient current.</p>
+    <h1>🚦 Module 3F - Troubleshooting a DC Track Circuit</h1>
 
-    <p>Low insulation resistance is a frequent culprit. A track insulation tester (megger) can be used to measure the resistance between the rails and the ground. If the resistance is below the specified threshold, the track needs to be inspected for sources of leakage, such as wet ballast or conductive debris bridging the rails. Relay malfunctions can be identified by checking the relay's coil resistance and the condition of its contacts. A faulty relay may need cleaning, adjustment, or replacement. Thorough documentation of the troubleshooting steps and any repairs made is essential for future maintenance and analysis.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        Direct Current Track Circuits - Troubleshooting a DC Track Circuit
+    </h2>
 
-  <h3>Module 3F Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">Question 1: What are two common ways in which problems with a DC track circuit can manifest themselves?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Wrong switch position and track misalignment</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Signal timing delay and low speed train detection</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) False 'occupied' indications and failure to detect a train</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        Troubleshooting DC track circuit problems requires a systematic approach and a good understanding
+        of how the system works. Common problems include false occupied indications, where the system
+        shows a train present when the track is actually clear, or failure to detect a train, which is a
+        much more dangerous condition.
+    </p>
+
+    <img src="../../pictures/Module 3/Signal Maintainer Placing a Shunt on Tracks.jpeg"
+    alt="Signal maintainer placing a shunt on the track."
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <p style="font-size: 22px;">
+        A false occupied indication may be caused by low insulation resistance, a broken rail, a faulty
+        relay, damaged wiring, or debris across the rails acting as a shunt. The first step is to visually
+        inspect the track circuit for obvious problems such as broken wires, damaged components, wet ballast,
+        or conductive material across the rails.
+    </p>
+
+    <p style="font-size: 22px;">
+        Voltage and current measurements should then be taken at different points in the circuit to locate
+        opens, shorts, weak connections, or excessive resistance. A shunt test can also be performed to verify
+        that the relay drops properly when a train or shunt condition is simulated.
+    </p>
+
+    <img src="../../pictures/Module 3/Maintainer Testing Track Circuit.jpg"
+    alt="Signal maintainer testing a track circuit with meters."
+    style="width:350px; border-radius:10px;">
+
+    <p style="font-size: 22px;">
+        If the relay does not de-energize reliably during the shunt test, the relay may be defective, the
+        circuit may have insufficient current, or there may be another resistance or connection problem in
+        the circuit.
+    </p>
+
+    <p style="font-size: 22px;">
+        Low insulation resistance is another common cause of DC track circuit trouble. A track insulation
+        tester, often called a megger, can be used to measure resistance between the rails and ground.
+        Wet ballast, dirt, salt, debris, or damaged insulation can create leakage paths that reduce track
+        circuit performance.
+    </p>
+
+    <p style="font-size: 22px;">
+        Relay problems can be checked by testing coil resistance and inspecting the relay contacts. A faulty
+        relay may require cleaning, adjustment, repair, or replacement. All troubleshooting steps, readings,
+        and repairs should be documented for future maintenance and trend analysis.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What are two common ways DC track circuit problems can appear?</p>
+        <label><input type="radio" name="q1" value="wrong"> Wrong switch position and track misalignment</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Signal timing delay and low speed train detection</label><br>
+        <label><input type="radio" name="q1" value="correct"> False occupied indications and failure to detect a train</label><br><br>
+
+        <p>2. What are some first steps when troubleshooting a DC track circuit?</p>
+        <label><input type="radio" name="q2" value="correct"> Visually inspect the track and measure voltage and current at different points</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Call the dispatcher and test the PTC antennas</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Replace the relay before taking any readings</label><br><br>
+
+        <p>3. How is low insulation resistance usually measured?</p>
+        <label><input type="radio" name="q3" value="wrong"> With a voltmeter only</label><br>
+        <label><input type="radio" name="q3" value="wrong"> With an ammeter only</label><br>
+        <label><input type="radio" name="q3" value="correct"> With a megger or insulation resistance tester</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">Question 2: What are some of the first steps one should take when troubleshooting a DC track circuit problem?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Visually inspect the track and measure voltage and current at various points</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Call the dispatcher and test the PTC antennas</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Replace the relay and shunt the rails repeatedly</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">Question 3: How is low insulation resistance typically measured, and what are some potential causes of this issue?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) Using a voltmeter; causes include broken rails and open relays</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) Using an ammeter; causes include relay malfunctions and wheel flats</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) Using a megger; causes include wet ballast and conductive debris</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of
-      <span id="max-score">3</span>
-    </div>
-
-    <button id="purchase-button">🔐 Purchase or Enter Password to Continue</button>
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-    <button id="next-button">Next ➡️</button>
-  </div>
-
-  <script>
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-    const purchaseButton = document.getElementById("purchase-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
-
-    const questions = [
-      { name: "q1", correctAnswer: "c" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "c" }
-    ];
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach((label) => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-4.html";
         } else {
-          answerElements.forEach((label) => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      localStorage.setItem("module3fScore", score);
-      localStorage.setItem("module3fMax", questions.length);
-      purchaseButton.style.display = "inline-block";
-    });
+    function gradeQuiz() {
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "Module3G.html";
-    });
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-    purchaseButton.addEventListener("click", () => {
-      const password = prompt("Enter password to unlock next module:");
-      if (password === "railroad2025") {
-        nextButton.style.display = "inline-block";
-        purchaseButton.style.display = "none";
-        alert("Access granted.");
-      } else {
-        alert("Incorrect password. Please purchase or try again.");
-      }
-    });
+        answers.forEach(answer => {
 
-    backButton.addEventListener("click", () => {
-      window.location.href = "Module3E.html";
-    });
+            answer.disabled = true;
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-3E.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
-
-
-

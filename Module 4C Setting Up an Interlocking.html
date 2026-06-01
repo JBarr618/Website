@@ -1,155 +1,213 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 4C: Setting Up an Interlocking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.8;
-      font-size: 1.2em;
-    }
-    .content-container {
-      margin-bottom: 30px;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-weight: bold;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #submit-button, #next-button, #home-button {
-      padding: 14px 28px;
-      font-size: 1.2em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-    #submit-button:hover, #next-button:hover:enabled, #home-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-    #next-button:disabled {
-      background-color: #999;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4C - Setting Up an Interlocking</title>
 </head>
-<body>
-  <h1>Module 4C: Setting Up an Interlocking</h1>
 
-  <div class="content-container">
-    <p>Setting up an interlocking is a complex and meticulous process that requires careful planning and coordination. The first step is to design the interlocking layout, taking into account the specific track configuration, signal locations, and operational requirements. This often involves using specialized software to create detailed diagrams and simulations.</p>
-    <p>Once the design is finalized, the physical installation of the interlocking components begins. This includes laying the track, installing switches and signals, and connecting the wiring and cables. Careful attention must be paid to the alignment and positioning of the equipment to ensure proper operation.</p>
-    <p>After the physical installation, thorough testing and commissioning are essential. This involves verifying that all signals, switches, and interlocking logic are functioning correctly. Rigorous tests are conducted to ensure that conflicting routes cannot be set up and that trains can safely proceed through the interlocking in any authorized direction.</p>
-    <p>Once the testing is complete and all issues are resolved, the interlocking is put into service. This typically involves transferring control from the manual mode to the interlocking system, allowing it to take over the management of train movements. Regular maintenance and inspections are also crucial to ensure the continued reliability and safety of the interlocking.</p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h2>Module 4C Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What are the key steps involved in setting up a new interlocking system?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Drawing plans, waiting, and observing train behavior</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Design, installation, testing, and commissioning</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Laying ballast and painting signals</label>
+    <h1>🚦 Module 4C - Setting Up an Interlocking</h1>
+
+    <h2 style="color: darkblue;">
+        Setting Up a Railroad Interlocking
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Setting up an interlocking is a complex process that requires careful planning, design, installation,
+        testing, and commissioning. The first step is to design the interlocking layout based on the track
+        configuration, signal locations, switch locations, and operating requirements.
+    </p>
+
+    <p style="font-size: 22px;">
+        The design process often includes detailed drawings, route charts, control tables, software logic,
+        and simulations. These documents help verify that the interlocking will safely control train movements
+        before any field equipment is placed into service.
+    </p>
+
+    <p style="font-size: 22px;">
+        Once the design is approved, the physical installation begins. This includes installing switches,
+        switch machines, signals, track circuits, cables, power equipment, cases, houses, and communication
+        equipment needed for the interlocking system.
+    </p>
+
+    <p style="font-size: 22px;">
+        Proper alignment, wiring, grounding, bonding, and equipment placement are critical. Each piece of
+        equipment must be installed correctly so the interlocking logic can safely monitor and control the
+        field devices.
+    </p>
+
+    <p style="font-size: 22px;">
+        After installation, thorough testing and commissioning are required. This includes verifying switch
+        correspondence, signal indications, route locking, approach locking, traffic locking, track occupancy,
+        and interlocking logic.
+    </p>
+
+    <p style="font-size: 22px;">
+        Testing must confirm that conflicting routes cannot be established and that trains can only be
+        authorized through safe routes. Once testing is complete and all issues are corrected, the interlocking
+        can be placed into service.
+    </p>
+
+    <p style="font-size: 22px;">
+        After being placed in service, regular maintenance and inspections are needed to ensure continued
+        reliability and safety. This includes equipment checks, periodic tests, inspections, software reviews,
+        and documentation updates.
+    </p>
+
+    <!-- Image placeholder for later -->
+    <!--
+    <img src="../../pictures/Module 4/interlocking-setup.png"
+    alt="Railroad interlocking setup with switches signals track circuits and control logic"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What are the key steps involved in setting up a new interlocking system?</p>
+        <label><input type="radio" name="q1" value="wrong"> Drawing plans, waiting, and observing train behavior</label><br>
+        <label><input type="radio" name="q1" value="correct"> Design, installation, testing, and commissioning</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Laying ballast and painting signals only</label><br><br>
+
+        <p>2. Why is testing and commissioning essential before placing an interlocking in service?</p>
+        <label><input type="radio" name="q2" value="wrong"> To validate only the color of signal lights</label><br>
+        <label><input type="radio" name="q2" value="correct"> To verify operation and prevent conflicting routes</label><br>
+        <label><input type="radio" name="q2" value="wrong"> To determine train weight limits</label><br><br>
+
+        <p>3. What maintenance is needed to keep an interlocking reliable?</p>
+        <label><input type="radio" name="q3" value="correct"> Regular inspections, logic testing, and equipment checks</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Painting rails and replacing signs only</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Switching track configurations randomly</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Why is thorough testing and commissioning essential before putting an interlocking into service?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) To validate colors of signal lights</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) To verify functionality and ensure safety by preventing conflicting routes</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) To determine train weight limits</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. What types of ongoing maintenance and inspections are typically required to ensure the continued reliability of an interlocking system?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Regular inspections, logic testing, and equipment checks</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Painting rails and replacing signs</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Switching track configurations randomly</label>
-    </div>
+        if(password === "signal2026") {
+            window.location.href = "Module-4D.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
 
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
+    function gradeQuiz() {
 
-    <button id="home-button">🏠 Home</button>
-    <button id="next-button" disabled>➡️ Next Module</button>
-  </div>
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "a" }
-    ];
+        answers.forEach(answer => {
 
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-    const homeButton = document.getElementById('home-button');
-    const nextButton = document.getElementById('next-button');
+            answer.disabled = true;
 
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
 
-      document.querySelectorAll('.question-container').forEach((container, index) => {
-        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const options = container.querySelectorAll('.answer-option');
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
 
-        options.forEach(opt => {
-          const input = opt.querySelector('input');
-          if (input.value === questions[index].correctAnswer) {
-            opt.classList.add('correct-answer');
-          }
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
         });
 
-        if (selected && selected.value === questions[index].correctAnswer) {
-          score++;
-        } else if (selected) {
-          selected.parentElement.classList.add('wrong-answer');
-        }
-      });
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-      submitButton.disabled = true;
+    <hr>
 
-      localStorage.setItem("module4cScore", score);
-      localStorage.setItem("module4cMax", questions.length);
+    <div style="margin-top:30px;">
 
-      nextButton.disabled = false;
-    });
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
 
-    homeButton.addEventListener('click', () => {
-      window.location.href = '/index.html';
-    });
+        <a href="Module-4B.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
 
-    nextButton.addEventListener('click', () => {
-      window.location.href = 'Modules/Module 4/Module 4C Setting Up an Interlocking.html';
-    });
-  </script>
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

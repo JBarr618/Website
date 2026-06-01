@@ -1,241 +1,203 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 5C: How to Troubleshoot a Control Point Problem</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
-
-    h1 {
-      padding: 20px;
-    }
-
-    .intro-container {
-      overflow: auto;
-      padding: 20px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .question-container {
-      margin-bottom: 20px;
-    }
-
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .correct-answer {
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      color: #155724;
-    }
-
-    .wrong-answer {
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      color: #721c24;
-    }
-
-    #submit-button, #next-button, #back-button, #home-button, #purchase-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #purchase-button:hover {
-      background-color: #0056b3;
-    }
-
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-
-    #next-button, #purchase-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5C - Troubleshooting a Control Point Problem</title>
 </head>
-<body>
-  <h1>Module 5C: How to Troubleshoot a Control Point Problem</h1>
 
-  <div class="intro-container">
-    <p>Troubleshooting a control point problem can be challenging due to the interconnected nature of its components and the potential for various issues to arise. Common problems include malfunctioning switches or signals, faulty interlocking logic, power outages, and track circuit failures. To diagnose and resolve these issues, a systematic approach is essential.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>One common technique is to isolate the problem area by dividing the interlocking into smaller sections and testing each component individually. This can involve checking the wiring and connections, verifying the operation of switches and signals, and using specialized diagnostic tools to identify any electrical faults. Signal aspect testing is also crucial to ensure that the signals accurately reflect the status of the track and the routes.</p>
+    <h1>🚦 Module 5C - Troubleshooting a Control Point Problem</h1>
 
-    <p>In some cases, computerized fault-finding systems can be used to streamline the troubleshooting process. These systems can analyze data from various sensors and components to quickly identify the source of a problem. In addition to troubleshooting, regular maintenance and inspections are crucial to prevent issues from arising in the first place. This includes inspecting and cleaning switches and signals, checking the integrity of the wiring, and conducting periodic tests on the entire interlocking system.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        How to Troubleshoot a Control Point Problem
+    </h2>
 
-  <h3>Module 5C Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What are some common types of problems that can occur within an interlocking system?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Dirty train cabins</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Malfunctioning switches or signals</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Late passenger announcements</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        Troubleshooting a control point problem requires a careful and systematic approach because many pieces of
+        equipment work together. Switches, signals, track circuits, power supplies, control logic, communication systems,
+        and wiring can all affect how the control point operates.
+    </p>
+
+    <p style="font-size: 22px;">
+        Common problems include malfunctioning switches or signals, incorrect indications, faulty interlocking logic,
+        power outages, communication failures, wiring problems, and track circuit failures.
+    </p>
+
+    <p style="font-size: 22px;">
+        The first step is to identify the symptom. The maintainer should review alarms, indications, dispatcher reports,
+        field observations, and event logs to determine what the system is doing incorrectly.
+    </p>
+
+    <p style="font-size: 22px;">
+        Next, the problem area should be isolated. This means narrowing the trouble down to a specific circuit, device,
+        route, signal, switch machine, track circuit, power source, or communication path.
+    </p>
+
+    <p style="font-size: 22px;">
+        Testing may include checking voltage, current, continuity, relay operation, switch correspondence, signal
+        indications, track occupancy, and cable connections. Diagnostic software and computerized fault-finding systems
+        can also help identify problems faster.
+    </p>
+
+    <p style="font-size: 22px;">
+        After the problem is found and corrected, the control point should be retested to verify proper operation.
+        All readings, repairs, test results, and observations should be documented for future troubleshooting and
+        maintenance history.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is one common control point problem?</p>
+        <label><input type="radio" name="q1" value="wrong"> Dirty train cabins</label><br>
+        <label><input type="radio" name="q1" value="correct"> Malfunctioning switches or signals</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Late passenger announcements</label><br><br>
+
+        <p>2. Why is isolating the problem area important?</p>
+        <label><input type="radio" name="q2" value="correct"> It helps diagnose the issue more efficiently</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It keeps the area clean for operators</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It reduces power consumption only</label><br><br>
+
+        <p>3. How can computerized fault-finding systems help?</p>
+        <label><input type="radio" name="q3" value="correct"> By analyzing sensor data, alarms, and logs to identify faults</label><br>
+        <label><input type="radio" name="q3" value="wrong"> By manually switching track power</label><br>
+        <label><input type="radio" name="q3" value="wrong"> By changing the color of track lights</label><br><br>
+
+        <p>4. Why are regular maintenance and inspections important?</p>
+        <label><input type="radio" name="q4" value="correct"> They help prevent system issues and support long-term reliability</label><br>
+        <label><input type="radio" name="q4" value="wrong"> They help clean station platforms</label><br>
+        <label><input type="radio" name="q4" value="wrong"> They are required by marketing teams</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Describe the importance of isolating the problem area when troubleshooting an interlocking.</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Helps diagnose the issue more efficiently</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Keeps the area clean for operators</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Reduces power consumption</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. How can computerized fault-finding systems aid in the troubleshooting process?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) By analyzing sensor data to identify faults</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) By manually switching track power</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) By changing the color of track lights</label>
-    </div>
-
-    <div class="question-container">
-      <p class="question">4. Why are regular maintenance and inspections crucial for ensuring the reliable operation of an interlocking?</p>
-      <label class="answer-option"><input type="radio" name="q4" value="a" /> A) They prevent system issues and ensure long-term function</label>
-      <label class="answer-option"><input type="radio" name="q4" value="b" /> B) They help clean station platforms</label>
-      <label class="answer-option"><input type="radio" name="q4" value="c" /> C) They are required by marketing teams</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of
-      <span id="max-score">4</span>
-    </div>
-
-    <button id="purchase-button">🔒 Purchase or Enter Password to Continue</button>
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-    <button id="next-button">Next ➡️</button>
-  </div>
-
-  <script>
-    const submitButton = document.getElementById("submit-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
-    const nextButton = document.getElementById("next-button");
-    const purchaseButton = document.getElementById("purchase-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
-
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "a" },
-      { name: "q4", correctAnswer: "a" }
-    ];
-
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
-
-      document.querySelectorAll(".question-container").forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll(".answer-option");
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector("input");
-              if (input.value === selectedAnswer.value) {
-                label.classList.add("wrong-answer");
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add("correct-answer");
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-5D.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector("input");
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add("correct-answer");
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(rb => rb.disabled = true);
-      submitButton.disabled = true;
-      localStorage.setItem("module5cScore", score);
-      localStorage.setItem("module5cMax", questions.length);
-      purchaseButton.style.display = "inline-block";
-    });
+    function gradeQuiz() {
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "/Modules/Module 5/Module 5D.html";
-    });
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-    purchaseButton.addEventListener("click", () => {
-      const password = prompt("Enter password to unlock next module:");
-      if (password === "railroad2025") {
-        nextButton.style.display = "inline-block";
-        purchaseButton.style.display = "none";
-        alert("Access granted.");
-      } else {
-        alert("Incorrect password. Please purchase or try again.");
-      }
-    });
+        answers.forEach(answer => {
 
-    backButton.addEventListener("click", () => {
-      window.location.href = "odule 5B- How Complex a Control Point Can Become.html";
-    });
+            answer.disabled = true;
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-5B.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
-</html>
 
+</html>

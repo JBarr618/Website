@@ -1,147 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 6E: Testing AC Double Rail Track Circuits (Continued)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .content-container {
-      margin-bottom: 30px;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-weight: bold;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6E - Testing AC Double Rail Track Circuits Continued</title>
 </head>
-<body>
-  <h1>Module 6E: Testing AC Double Rail Track Circuits (Continued)</h1>
 
-  <div class="content-container">
-    <p>A crucial aspect of AC double rail track circuit testing, especially in electrified areas, is verifying the integrity and balance of the impedance bonds. An imbalance in the impedance of the two bonds at the ends of a track circuit can lead to unwanted AC traction currents flowing through the receiver, potentially causing false "clear" indications. Specialized testing equipment is used to measure the impedance of each bond and ensure they are within acceptable tolerance levels.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>Furthermore, broken rail detection capabilities are often tested in AC track circuits. A break in one of the rails should disrupt the flow of the AC signal to the receiver, causing it to de-energize and indicate an occupied (and potentially broken) track. This functionality is vital for safety. The testing involves simulating a rail break and observing the receiver's response.</p>
+    <h1>🚦 Module 6E - Testing AC Double Rail Track Circuits Continued</h1>
 
-    <p>Finally, regular maintenance testing is essential. This includes visual inspections of all components (insulated joints, impedance bonds, wiring), checking for any signs of damage or corrosion, and repeating the electrical tests to ensure the track circuit continues to operate within its specified parameters over time. Keeping detailed records of all tests and maintenance activities is crucial for identifying trends and ensuring the long-term reliability of the system.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        Additional Testing for AC Double Rail Track Circuits
+    </h2>
 
-  <h2>Module 6E Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. Why is it important to verify the integrity and balance of impedance bonds during the testing of AC double rail track circuits? What can happen if they are imbalanced?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) It can cause excessive noise from the rails</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) It may allow traction current into the receiver, leading to false "clear" indications</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) It prevents track painting operations</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        A critical part of AC double rail track circuit testing is verifying the integrity and balance of the impedance
+        bonds. This is especially important in electrified areas where traction return current may be present.
+    </p>
+
+    <p style="font-size: 22px;">
+        If the impedance bonds are damaged, improperly connected, or imbalanced, unwanted traction current may affect
+        the receiver. This can create unsafe or unreliable indications, including the possibility of a false clear
+        condition.
+    </p>
+
+    <p style="font-size: 22px;">
+        Specialized testing equipment may be used to measure the impedance of each bond and confirm that the bonds are
+        within acceptable tolerance. Proper bond balance helps protect the track circuit signal and supports reliable
+        train detection.
+    </p>
+
+    <p style="font-size: 22px;">
+        Broken rail detection is another important test. A break in one rail should interrupt the AC signal path and
+        cause the receiver to de-energize, indicating an occupied or unsafe track condition.
+    </p>
+
+    <p style="font-size: 22px;">
+        Broken rail detection can be tested by simulating a rail break and observing whether the receiver drops as
+        expected. This fail-safe response is important for railroad safety.
+    </p>
+
+    <p style="font-size: 22px;">
+        Regular maintenance testing should include visual inspections of insulated joints, impedance bonds, wiring,
+        connections, and track circuit equipment. Maintainers should look for damage, corrosion, loose wiring, poor
+        bonding, and signs of deterioration.
+    </p>
+
+    <p style="font-size: 22px;">
+        Electrical testing should also be repeated periodically to confirm that the track circuit continues to operate
+        within specified limits. All test results should be documented and compared with previous readings to identify
+        trends before they become failures.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. Why is it important to verify impedance bond integrity and balance?</p>
+        <label><input type="radio" name="q1" value="wrong"> It can cause excessive noise from the rails</label><br>
+        <label><input type="radio" name="q1" value="correct"> Imbalanced bonds may allow unwanted traction current into the receiver and cause false clear indications</label><br>
+        <label><input type="radio" name="q1" value="wrong"> It prevents track painting operations</label><br><br>
+
+        <p>2. How is broken rail detection typically tested?</p>
+        <label><input type="radio" name="q2" value="wrong"> By tapping the rail with a hammer only</label><br>
+        <label><input type="radio" name="q2" value="correct"> By simulating a rail break and checking whether the receiver de-energizes</label><br>
+        <label><input type="radio" name="q2" value="wrong"> By increasing the signal voltage</label><br><br>
+
+        <p>3. What is included in regular maintenance testing?</p>
+        <label><input type="radio" name="q3" value="wrong"> Painting rails and testing internet connection</label><br>
+        <label><input type="radio" name="q3" value="correct"> Inspecting components, checking for damage or corrosion, and performing electrical tests</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Scheduling train arrivals manually</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. How is the broken rail detection capability of an AC double rail track circuit typically tested?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) By tapping the rail with a hammer</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) By simulating a rail break and checking if the receiver de-energizes</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) By increasing the signal voltage</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. What are some of the key aspects covered during regular maintenance testing of AC double rail track circuits?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Painting rails and testing internet connection</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Inspecting components, checking for damage or corrosion, and performing electrical tests</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Scheduling train arrivals manually</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-6F.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-6D.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

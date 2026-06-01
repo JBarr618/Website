@@ -1,152 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 6C: Type of Equipment Used to Set Up an AC Double Rail Track Circuit</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .content-container {
-      margin-bottom: 30px;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-weight: bold;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6C - Equipment Used for AC Double Rail Track Circuits</title>
 </head>
-<body>
-  <h1>Module 6C: Type of Equipment Used to Set Up an AC Double Rail Track Circuit</h1>
 
-  <div class="content-container">
-    <p>Setting up an AC double rail track circuit requires several key pieces of equipment, each serving a specific purpose:</p>
-    <ul>
-      <li><strong>Insulated Rail Joints:</strong> These are non-conductive joints that electrically isolate adjacent track sections, defining the boundaries of the track block. They are typically made of materials like porcelain or fiber glass.</li>
-      <li><strong>Impedance Bonds:</strong> These are inductive devices connected across the rails at the insulated joints. They allow the traction return current to flow while minimizing interference with the AC track circuit signal.</li>
-      <li><strong>AC Power Source:</strong> This is usually a transformer that supplies the alternating current to the track circuit. The voltage and frequency of the source must be carefully matched to the receiver's specifications.</li>
-      <li><strong>AC Receiver:</strong> This device, typically a relay or a more sophisticated electronic unit, detects the presence or absence of a train within the track block based on the AC signal strength.</li>
-      <li><strong>Track Circuit Feeder Cables:</strong> These cables carry the AC power from the source to the track rails and the receiver.</li>
-      <li><strong>Bonding Wires:</strong> These are used to connect the rails and other components together, ensuring a continuous electrical path for the track circuit.</li>
-    </ul>
-    <p>In addition to these basic components, other specialized equipment may be used depending on the specific requirements of the track circuit installation, such as surge protectors, lightning arrestors, and calibration devices.</p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h2>Module 6C Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. Which components are essential for creating the electrical isolation needed in an AC double rail track circuit?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Bonding wires</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Track feeder cables</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Insulated rail joints</label>
+    <h1>🚦 Module 6C - Equipment Used for AC Double Rail Track Circuits</h1>
+
+    <h2 style="color: darkblue;">
+        Type of Equipment Used to Set Up an AC Double Rail Track Circuit
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Setting up an AC double rail track circuit requires several key pieces of equipment. Each component has a
+        specific purpose and must work together to provide reliable train detection.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Insulated rail joints</b> are used to electrically isolate the track circuit from adjacent track sections.
+        These joints define the limits of the track block and help keep the track circuit signal within the intended
+        section.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Impedance bonds</b> are used in electrified territory to allow traction return current to pass through the
+        rails while helping protect the AC track circuit signal. They are an important part of many AC double rail
+        track circuit installations.
+    </p>
+
+    <p style="font-size: 22px;">
+        An <b>AC power source</b>, usually supplied through a transformer or similar device, provides the alternating
+        current signal for the track circuit. The voltage and frequency must match the requirements of the receiver or
+        relay.
+    </p>
+
+    <p style="font-size: 22px;">
+        An <b>AC receiver</b> or AC-sensitive relay detects the track circuit signal. When the track is clear, the
+        receiver remains energized. When a train shunts the rails, the signal drops and the receiver indicates
+        occupancy.
+    </p>
+
+    <p style="font-size: 22px;">
+        <b>Feeder cables</b>, <b>bonding wires</b>, surge protection, lightning arrestors, and calibration equipment may
+        also be used. These components help maintain a reliable electrical path, protect equipment, and support proper
+        setup and testing.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. Which component creates the electrical isolation needed in an AC double rail track circuit?</p>
+        <label><input type="radio" name="q1" value="wrong"> Bonding wires only</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Track feeder cables only</label><br>
+        <label><input type="radio" name="q1" value="correct"> Insulated rail joints</label><br><br>
+
+        <p>2. What is the purpose of impedance bonds?</p>
+        <label><input type="radio" name="q2" value="wrong"> They amplify the AC signal for all long distances</label><br>
+        <label><input type="radio" name="q2" value="correct"> They allow traction return current to pass while helping protect the track circuit signal</label><br>
+        <label><input type="radio" name="q2" value="wrong"> They power the signals directly</label><br><br>
+
+        <p>3. What specialized equipment may also be used with AC double rail track circuits?</p>
+        <label><input type="radio" name="q3" value="wrong"> Ticket printers and clocks</label><br>
+        <label><input type="radio" name="q3" value="correct"> Surge protectors, lightning arrestors, and calibration devices</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Signal flags and loudspeakers</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. What is the purpose of impedance bonds in an AC double rail track circuit, and why are they necessary?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) They amplify the AC signal for longer distances</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) They allow traction return current while isolating the track circuit signal</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) They power the signals directly</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. Besides the basic components listed, what other specialized equipment might be used in setting up an AC double rail track circuit?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Ticket printers and clocks</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Surge protectors, lightning arrestors, and calibration devices</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Signal flags and loudspeakers</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "c" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-6D.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-6B.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
