@@ -1,135 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 9: Introduction to Type C Track Circuits</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-    .content-container { margin-bottom: 30px; }
-    .question-container { margin-bottom: 20px; }
-    .question { font-weight: bold; }
-    .answer-option { display: block; margin-bottom: 8px; }
-    .correct-answer { background-color: #d4edda; }
-    .wrong-answer { background-color: #f8d7da; }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover { background-color: #0056b3; }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 9 - Introduction to Type C Track Circuits</title>
 </head>
-<body>
-  <h1>Module 9: Introduction to Type C Track Circuits</h1>
 
-  <div class="content-container">
-    <p>
-      Type C Track Circuits represent another evolution in AC track circuit technology, specifically designed to provide reliable train detection and broken rail detection in challenging environments, particularly in electrified territory with high levels of AC traction return current. Unlike simpler AC circuits, Type C circuits often employ two different AC frequencies that are transmitted simultaneously along the rails.
-    </p>
-    <p>
-      The principle of operation involves transmitting one frequency for train detection and another distinct frequency for broken rail detection. The receiver at the other end of the track block is equipped with filters and detection circuitry to analyze both frequencies independently. The presence of a train shunts both frequencies, leading to a change in the received signal characteristics for the train detection frequency.
-    </p>
-    <p>
-      The broken rail detection aspect in Type C circuits often relies on the behavior of the second frequency. A break in one or both rails will significantly alter the impedance characteristics for this specific frequency, causing a detectable change in the received signal level or phase. This allows the system to identify a broken rail even if a train is not present.
-    </p>
-    <p>
-      Type C track circuits are known for their high immunity to AC traction interference due to the use of distinct frequencies and sophisticated filtering techniques in the receiver. They can also offer robust broken rail detection capabilities and are often used in critical areas where safety and reliability are paramount. While they can be more complex in their design and setup compared to simpler AC or DC circuits, their enhanced performance in demanding environments makes them a valuable signaling technology.
-    </p>
-  </div>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <h2>Module 9 Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the key distinguishing feature of Type C track circuits compared to other AC track circuit types in terms of signal transmission?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) They transmit two different AC frequencies simultaneously</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) They operate using battery-powered relays</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) They use audio tones instead of AC signals</label>
+    <h1>🚦 Module 9 - Introduction to Type C Track Circuits</h1>
+
+    <h2 style="color: darkblue;">
+        Introduction to Type C Track Circuits
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Type C track circuits are an advanced form of AC track circuit technology used for reliable train detection and
+        broken rail detection in difficult railroad environments.
+    </p>
+
+    <p style="font-size: 22px;">
+        They are especially useful in electrified territory where high levels of AC traction return current can interfere
+        with simpler track circuit designs.
+    </p>
+
+    <p style="font-size: 22px;">
+        A key feature of Type C track circuits is that they often use two different AC frequencies transmitted through
+        the rails at the same time.
+    </p>
+
+    <p style="font-size: 22px;">
+        One frequency may be used primarily for train detection, while another frequency may be used for broken rail
+        detection. The receiver uses filters and detection circuits to analyze these frequencies separately.
+    </p>
+
+    <p style="font-size: 22px;">
+        When a train enters the block, its wheels and axles shunt the track circuit and change the received signal
+        characteristics used for train detection.
+    </p>
+
+    <p style="font-size: 22px;">
+        A broken rail can affect the second frequency by changing the impedance, signal level, or phase of the circuit.
+        This allows the system to detect a possible broken rail even when no train is present.
+    </p>
+
+    <p style="font-size: 22px;">
+        Type C track circuits are known for strong immunity to AC traction interference because they use distinct
+        frequencies and filtering techniques. Although they are more complex than simpler AC or DC circuits, they provide
+        high reliability in demanding signaling environments.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is a key feature of Type C track circuits?</p>
+        <label><input type="radio" name="q1" value="correct"> They transmit two different AC frequencies simultaneously</label><br>
+        <label><input type="radio" name="q1" value="wrong"> They operate using battery-powered relays only</label><br>
+        <label><input type="radio" name="q1" value="wrong"> They use audio tones instead of AC signals</label><br><br>
+
+        <p>2. How does a Type C track circuit help separate train detection and broken rail detection?</p>
+        <label><input type="radio" name="q2" value="wrong"> By using the same signal at different voltages only</label><br>
+        <label><input type="radio" name="q2" value="wrong"> By checking relay current under load only</label><br>
+        <label><input type="radio" name="q2" value="correct"> By analyzing two separate frequencies, each serving a specific function</label><br><br>
+
+        <p>3. What is a major advantage of Type C track circuits in electrified railway environments?</p>
+        <label><input type="radio" name="q3" value="wrong"> They are always cheaper to install than DC circuits</label><br>
+        <label><input type="radio" name="q3" value="correct"> They are highly resistant to AC traction interference</label><br>
+        <label><input type="radio" name="q3" value="wrong"> They can operate without any insulated joints</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. How does a Type C track circuit typically differentiate between train occupancy and a broken rail condition?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) By using the same signal but at different voltages</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) By checking the relay current under load</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) By analyzing two separate frequencies, each for a specific function</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. What is a significant advantage of Type C track circuits in electrified railway environments with high AC traction return current?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) They are cheaper to install than DC circuits</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) They are highly immune to AC traction interference</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) They can operate without insulated joints</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "a" },
-      { name: "q2", correctAnswer: "c" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-9A.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="../Module 8/Module-8E.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

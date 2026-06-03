@@ -1,147 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 7A: What is an AC Single Rail Track Circuit?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    .content-container {
-      margin-bottom: 30px;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-weight: bold;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7A - What is an AC Single Rail Track Circuit?</title>
 </head>
-<body>
-  <h1>Module 7A: What is an AC Single Rail Track Circuit?</h1>
 
-  <div class="content-container">
-    <p>An AC single rail track circuit is a type of train detection system that utilizes alternating current and employs insulated rail joints on only one of the two running rails to define the boundaries of a track block. The other rail remains continuous, providing a common electrical path for multiple track circuits and often serving as the return for AC traction current in electrified areas. This configuration simplifies the track work and reduces the number of insulated joints required.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>In this setup, the AC power source is connected between the insulated rail and the continuous rail at the beginning of a track block. Similarly, the AC-sensitive receiver is connected between the insulated rail and the continuous rail at the end of the same block. The alternating current signal flows from the source, along the insulated rail, through the train wheels and axles (when present), to the continuous rail, and back to the receiver.</p>
+    <h1>🚦 Module 7A - What is an AC Single Rail Track Circuit?</h1>
 
-    <p>When a train occupies the track section, its conductive wheels and axles create a low-impedance path (a shunt) between the insulated rail and the continuous rail. This shunt diverts the majority of the AC current away from the receiver, causing its output (e.g., relay de-energization) to change state, indicating that the track block is occupied. The "single rail" designation refers to the fact that only one of the two rails is segmented by insulated joints to create the defined electrical block for the track circuit.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        Understanding AC Single Rail Track Circuits
+    </h2>
 
-  <h2>Module 7A Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the defining characteristic of an AC single rail track circuit in terms of insulated rail joint placement?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Joints are placed on both rails for added redundancy</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Only one rail has insulated joints to define the block</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Insulated joints are not used at all</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        An AC single rail track circuit is a train detection system that uses alternating current and places insulated
+        rail joints on only one of the two running rails to define the track block.
+    </p>
+
+    <p style="font-size: 22px;">
+        The other rail remains continuous and provides a common electrical path for multiple track circuits. In
+        electrified territory, the continuous rail may also serve as part of the return path for AC traction current.
+    </p>
+
+    <p style="font-size: 22px;">
+        In this setup, the AC power source is connected between the insulated rail and the continuous rail at one end
+        of the block. The AC receiver is connected between the same two rails at the opposite end of the block.
+    </p>
+
+    <p style="font-size: 22px;">
+        When the track is clear, the AC signal flows through the insulated rail, through the receiver, and returns by
+        way of the continuous rail. This keeps the receiver energized and indicates that the track is unoccupied.
+    </p>
+
+    <p style="font-size: 22px;">
+        When a train enters the block, the wheels and axles create a low-impedance shunt between the insulated rail and
+        the continuous rail. This bypasses the receiver and causes it to de-energize, indicating occupancy.
+    </p>
+
+    <p style="font-size: 22px;">
+        The term single rail means that only one rail is segmented by insulated joints to create the defined electrical
+        block for the track circuit.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is the defining characteristic of an AC single rail track circuit?</p>
+        <label><input type="radio" name="q1" value="wrong"> Insulated joints are placed on both rails</label><br>
+        <label><input type="radio" name="q1" value="correct"> Only one rail has insulated joints to define the block</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Insulated joints are not used at all</label><br><br>
+
+        <p>2. What is the current path when no train is present?</p>
+        <label><input type="radio" name="q2" value="correct"> Through the insulated rail, receiver, and back through the continuous rail</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Through both rails directly to ground</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Through the ballast into the earth</label><br><br>
+
+        <p>3. How does a train indicate occupancy in an AC single rail track circuit?</p>
+        <label><input type="radio" name="q3" value="wrong"> The train crew switches the signal manually</label><br>
+        <label><input type="radio" name="q3" value="correct"> Wheels and axles provide a low-impedance shunt across the rails</label><br>
+        <label><input type="radio" name="q3" value="wrong"> The signal reverses polarity</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Describe the path of the AC current in a single rail track circuit when a train is not present in the block.</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Through the insulated rail, receiver, and back via the continuous rail</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Through both rails directly to ground</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) Through the ballast into the earth</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. How does the presence of a train cause a change in the AC single rail track circuit that indicates occupancy? What provides the alternative current path?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) Train crew switches the signal manually</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Wheels and axles provide a low-impedance shunt across the rails</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) The signal reverses polarity</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "b" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-7B.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-7.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

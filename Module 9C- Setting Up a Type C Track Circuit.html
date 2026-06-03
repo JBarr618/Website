@@ -1,134 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 9C: Setting Up a Type C Track Circuit</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-    .content-container { margin-bottom: 30px; }
-    .question-container { margin-bottom: 20px; }
-    .question { font-weight: bold; }
-    .answer-option { display: block; margin-bottom: 8px; }
-    .correct-answer { background-color: #d4edda; }
-    .wrong-answer { background-color: #f8d7da; }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover { background-color: #0056b3; }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 9C - Setting Up a Type C Track Circuit</title>
 </head>
-<body>
-  <h1>Module 9C: Setting Up a Type C Track Circuit</h1>
 
-  <div class="content-container">
-    <p>
-      Setting up a Type C track circuit is a complex process that requires careful installation and calibration of specialized equipment to ensure the reliable transmission and reception of the two distinct AC frequencies. The key steps generally involve:
+<body style="font-family: Arial; background-color: white; padding: 30px;">
+
+    <h1>🚦 Module 9C - Setting Up a Type C Track Circuit</h1>
+
+    <h2 style="color: darkblue;">
+        Setting Up a Type C Track Circuit
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Setting up a Type C track circuit requires careful installation, tuning, and calibration because the system uses
+        two separate AC frequencies for train detection and broken rail detection.
     </p>
-    <ol>
-      <li><strong>Defining the Track Block:</strong> The physical boundaries of the track block are defined using insulated rail joints on both rails. This ensures electrical isolation for the signaling currents.</li>
-      <li><strong>Dual-Frequency Transmitter Installation:</strong> A transmitter capable of simultaneously generating the two required AC frequencies is installed. Output levels and frequency stability must be precisely calibrated.</li>
-      <li><strong>Dual-Frequency Receiver Installation:</strong> A receiver separates and analyzes both AC frequencies using filters and detection circuits to monitor amplitude and/or phase changes.</li>
-      <li><strong>Wiring and Connections:</strong> Proper wiring with correct impedance ensures minimal signal distortion and loss across both frequencies.</li>
-      <li><strong>Tuning and Calibration:</strong> The receiver’s filters are tuned to the transmitted frequencies. Baseline signals and thresholds for occupancy and broken rail detection are established under clear track conditions.</li>
-      <li><strong>Testing and Verification:</strong> Testing confirms the system detects train shunts and simulated rail breaks. Immunity to AC traction interference is also evaluated.</li>
-    </ol>
-  </div>
 
-  <h2>Module 9C Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the primary difference in the transmitter used for a Type C track circuit compared to a single-frequency AC track circuit?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) It transmits two AC frequencies simultaneously</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) It transmits only at high voltage</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) It includes a battery backup system</label>
+    <p style="font-size: 22px;">
+        The track block is typically defined using insulated rail joints on both rails. These joints help electrically
+        isolate the block for the signaling currents.
+    </p>
+
+    <p style="font-size: 22px;">
+        A dual-frequency transmitter is installed to generate both required AC frequencies at the same time. The output
+        levels and frequency stability must be carefully adjusted.
+    </p>
+
+    <p style="font-size: 22px;">
+        A dual-frequency receiver is installed at the opposite end of the block. The receiver separates the two
+        frequencies using filters and detection circuits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Proper wiring and connections are important because poor connections or incorrect impedance can cause signal loss,
+        distortion, or unreliable operation.
+    </p>
+
+    <p style="font-size: 22px;">
+        The receiver filters and detection circuits must be tuned to the transmitted frequencies. Baseline values and
+        thresholds are established under clear track conditions.
+    </p>
+
+    <p style="font-size: 22px;">
+        Final testing verifies that the Type C track circuit detects train shunts, simulated rail breaks, and unwanted
+        AC traction interference correctly.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is different about the transmitter used in a Type C track circuit?</p>
+        <label><input type="radio" name="q1" value="correct"> It transmits two AC frequencies simultaneously</label><br>
+        <label><input type="radio" name="q1" value="wrong"> It transmits only at high voltage</label><br>
+        <label><input type="radio" name="q1" value="wrong"> It only includes a battery backup system</label><br><br>
+
+        <p>2. What does the dual-frequency receiver do?</p>
+        <label><input type="radio" name="q2" value="wrong"> It boosts both frequencies equally</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It ignores the broken rail frequency unless triggered</label><br>
+        <label><input type="radio" name="q2" value="correct"> It isolates and analyzes each frequency independently using filters and detection circuits</label><br><br>
+
+        <p>3. Why is tuning and calibration important?</p>
+        <label><input type="radio" name="q3" value="wrong"> To reduce installation cost only</label><br>
+        <label><input type="radio" name="q3" value="correct"> To ensure accurate detection of train shunts and rail breaks</label><br>
+        <label><input type="radio" name="q3" value="wrong"> To increase battery life of the receiver only</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Describe the key functions of the dual-frequency receiver in a Type C track circuit system. What does it need to do with the two transmitted frequencies?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) It boosts both frequencies equally</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) It ignores the broken rail frequency unless triggered</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) It isolates and analyzes each frequency independently using filters and detection circuits</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. Why is careful tuning and calibration of the receiver's filters and detection circuits essential for the proper operation of a Type C track circuit?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) To reduce installation cost</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) To ensure accurate detection of train shunts and rail breaks</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) To increase battery life of the receiver</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "a" },
-      { name: "q2", correctAnswer: "c" },
-      { name: "q3", correctAnswer: "b" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-9D.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-9B.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

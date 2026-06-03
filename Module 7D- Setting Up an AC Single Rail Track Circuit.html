@@ -1,128 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 7D: Setting Up an AC Single Rail Track Circuit</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-    .content-container { margin-bottom: 30px; }
-    .question-container { margin-bottom: 20px; }
-    .question { font-weight: bold; }
-    .answer-option { display: block; margin-bottom: 8px; }
-    .correct-answer { background-color: #d4edda; }
-    .wrong-answer { background-color: #f8d7da; }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover { background-color: #0056b3; }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7D - Setting Up an AC Single Rail Track Circuit</title>
 </head>
-<body>
-  <h1>Module 7D: Setting Up an AC Single Rail Track Circuit</h1>
 
-  <div class="content-container">
-    <p>Setting up an AC single rail track circuit involves a specific procedure that accounts for the continuous nature of one rail and the insulation of the other. The first crucial step is to identify and insulate only one of the running rails at the boundaries of the desired track block using insulated rail joints. The other rail remains continuous and electrically connected across the block. The length of the track circuit block is determined by signaling design principles.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <p>Next, the AC power source (typically a transformer) is connected between the insulated rail and the continuous rail at one end of the track block. Polarity is important, and connections must be secure to ensure reliable signal transmission. Similarly, the AC receiver (relay or electronic detection unit) is connected between the same insulated rail and the continuous rail at the opposite end of the track block. The operating frequency and voltage of the power source must be compatible with the receiver.</p>
+    <h1>🚦 Module 7D - Setting Up an AC Single Rail Track Circuit</h1>
 
-    <p>Unlike double rail circuits, impedance bonds are generally not required at the insulated joints in a basic AC single rail track circuit, as the continuous rail provides a direct path for traction return currents (if applicable). However, in some more complex installations or where there are specific interference concerns, small impedance matching devices might be used. Finally, thorough testing and calibration are essential to ensure the receiver correctly detects the presence of a shunt (simulating a train) between the insulated and continuous rails at various points within the block. Voltage and current levels at the receiver must be within specified limits for reliable operation.</p>
-  </div>
+    <h2 style="color: darkblue;">
+        Setting Up an AC Single Rail Track Circuit
+    </h2>
 
-  <h2>Module 7D Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the key difference in the initial step of setting up an AC single rail track circuit compared to an AC double rail track circuit? Which rail(s) are insulated?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Both rails are insulated in double rail; only one in single rail</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Neither rail is insulated</label>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Both rails are bonded</label>
+    <hr>
+
+    <p style="font-size: 22px;">
+        Setting up an AC single rail track circuit requires a specific procedure because one rail remains continuous
+        while the other rail is insulated to define the track block.
+    </p>
+
+    <p style="font-size: 22px;">
+        The first step is to identify and insulate only one running rail at the boundaries of the desired track block
+        using insulated rail joints. The other rail remains continuous and electrically connected through the block.
+    </p>
+
+    <p style="font-size: 22px;">
+        The AC power source, usually a transformer, is connected between the insulated rail and the continuous rail at
+        one end of the track block. Connections must be secure and compatible with the design voltage and frequency.
+    </p>
+
+    <p style="font-size: 22px;">
+        The AC receiver, relay, or electronic detection unit is connected between the same insulated rail and continuous
+        rail at the opposite end of the block. The receiver must match the operating frequency and voltage of the power
+        source.
+    </p>
+
+    <p style="font-size: 22px;">
+        In a basic AC single rail track circuit, impedance bonds are generally not required at the insulated joints
+        because the continuous rail provides the return path for current.
+    </p>
+
+    <p style="font-size: 22px;">
+        After installation, thorough testing and calibration are required. This includes applying a shunt between the
+        insulated rail and the continuous rail at different points in the block and verifying that the receiver properly
+        detects occupancy.
+    </p>
+
+    <p style="font-size: 22px;">
+        Voltage and current readings at the receiver should be checked against specified limits to confirm reliable
+        operation.
+    </p>
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is the key difference when setting up an AC single rail track circuit?</p>
+        <label><input type="radio" name="q1" value="correct"> Double rail circuits insulate both rails; single rail circuits insulate only one rail</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Neither rail is insulated</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Both rails are bonded with no insulated joints</label><br><br>
+
+        <p>2. How are the AC power source and AC receiver connected?</p>
+        <label><input type="radio" name="q2" value="correct"> Between the insulated rail and continuous rail at opposite ends</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Across both rails equally in a double rail setup</label><br>
+        <label><input type="radio" name="q2" value="wrong"> To the outermost running rail only</label><br><br>
+
+        <p>3. Are impedance bonds typically required in a basic AC single rail track circuit?</p>
+        <label><input type="radio" name="q3" value="correct"> No, because the continuous rail handles the return current path</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Yes, to isolate both rails</label><br>
+        <label><input type="radio" name="q3" value="wrong"> They are always required for traction feedback</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()" 
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. How are the AC power source and the AC receiver connected to the rails in a single rail track circuit configuration?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) Between the insulated and continuous rail at opposite ends</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) Across both rails equally</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) To the outermost running rail only</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. Are impedance bonds typically required at the insulated joints in a basic AC single rail track circuit setup? Why or why not?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) No, the continuous rail handles return current</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Yes, to isolate both rails</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) Always required for traction feedback</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "c" },
-      { name: "q2", correctAnswer: "a" },
-      { name: "q3", correctAnswer: "a" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module-7E.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="../../courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module-7C.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
