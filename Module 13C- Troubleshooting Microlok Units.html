@@ -1,203 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 13C: Troubleshooting Microlok Units</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    .intro-container {
-      overflow: auto;
-      padding: 20px 0;
-    }
-    .image-placeholder {
-      width: 100%;
-      height: 200px;
-      background-color: #ccc;
-      color: #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-style: italic;
-      margin: 20px 0;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 13C - Troubleshooting Microlok Units</title>
 </head>
-<body>
-  <h1>Module 13C: Troubleshooting Microlok Units</h1>
 
-  <div class="intro-container">
-    <p>Troubleshooting a Microlok unit requires a systematic approach, specialized tools, and a thorough understanding of both the hardware architecture and the programmed vital interlocking logic. When a fault occurs, it can manifest in various ways, from incorrect signal aspects and failed switch movements to complete system outages. The first step in troubleshooting often involves examining system status indicators and utilizing diagnostic software to identify any error codes or alarms reported by the Microlok unit itself.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <div class="image-placeholder">[Image: Microlok Diagnostic Software Screenshot]</div>
+    <h1>🚦 Module 13C - Troubleshooting Microlok Units</h1>
 
-    <p>Common issues encountered can stem from hardware failures, software glitches, communication problems, or issues with the interface to field equipment. Hardware problems might involve power supply failures, faulty input/output modules, or issues with the central processing unit. Communication faults can occur in links to remote control systems or field devices. Diagnostic tools are essential for identifying and isolating these failures.</p>
+    <h2 style="color: darkblue;">
+        Troubleshooting Microlok Units
+    </h2>
 
-    <div class="image-placeholder">[Image: Technician Checking Wiring at Microlok Cabinet]</div>
+    <hr>
 
-    <p>Effective troubleshooting involves analyzing diagnostic outputs, using multimeters and test software, and comparing field symptoms with system logs. Steps may include replacing hardware modules, updating logic software, verifying communications, or repairing field wiring. Proper training and documentation are critical to avoid mistakes that could affect safety-critical operations.</p>
+    <p style="font-size: 22px;">
+        Troubleshooting a Microlok unit requires a careful and systematic
+        approach because the unit controls vital railroad signal functions.
+    </p>
 
-    <div class="image-placeholder">[Image: Diagram of Troubleshooting Points in Microlok Architecture]</div>
-  </div>
+    <p style="font-size: 22px;">
+        A Microlok problem may involve hardware, software, communication,
+        wiring, field equipment, power, or programmed logic.
+    </p>
 
-  <h3>Module 13C Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is one of the first steps in troubleshooting a Microlok unit?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Replacing all I/O modules immediately</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Reviewing status indicators and diagnostic software</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Turning off power to the system</label>
-    </div>
+    <h3>1. Start With System Status</h3>
 
-    <div class="question-container">
-      <p class="question">2. What are common categories of issues that can cause Microlok unit failures?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Improper use of signal flags</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Communication, hardware, or software faults</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Incorrect train length</label>
-    </div>
+    <p style="font-size: 22px;">
+        One of the first steps in troubleshooting is to check the Microlok
+        status indicators, alarms, event logs, and diagnostic software.
+    </p>
 
-    <div class="question-container">
-      <p class="question">3. Why is it important to use Microlok diagnostic software during troubleshooting?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) It replaces the need for field inspections</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) It can permanently fix all problems</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) It provides error logs and real-time system status</label>
-    </div>
+    <p style="font-size: 22px;">
+        These tools help identify whether the problem is coming from the
+        processor, input/output modules, communication link, power supply, or
+        field equipment.
+    </p>
 
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
+    <h3>2. Hardware Problems</h3>
 
-    <button id="unlock-button">🔐 Unlock Next Module</button>
-    <button id="next-button">Next ➡️</button>
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-  </div>
+    <p style="font-size: 22px;">
+        Hardware problems may include failed power supplies, bad input modules,
+        bad output modules, loose cards, failed processors, blown fuses, or
+        damaged wiring.
+    </p>
 
-  <script>
-    const questions = [
-      { name: "q1", correct: "b" },
-      { name: "q2", correct: "b" },
-      { name: "q3", correct: "c" }
-    ];
+    <p style="font-size: 22px;">
+        Troubleshooting hardware may require checking voltage, verifying module
+        status lights, inspecting connections, and replacing failed components.
+    </p>
 
-    const submitButton = document.getElementById("submit-button");
-    const nextButton = document.getElementById("next-button");
-    const unlockButton = document.getElementById("unlock-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
+    <h3>3. Communication Problems</h3>
 
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+    <p style="font-size: 22px;">
+        Microlok units may communicate with control systems, remote equipment,
+        neighboring locations, or other signal equipment.
+    </p>
 
-      document.querySelectorAll(".question-container").forEach((container, index) => {
-        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const options = container.querySelectorAll(".answer-option");
+    <p style="font-size: 22px;">
+        Communication problems may be caused by failed cables, bad network
+        equipment, incorrect settings, failed ports, or loss of connection to
+        remote devices.
+    </p>
 
-        options.forEach(option => {
-          const input = option.querySelector("input");
-          if (input.value === questions[index].correct) {
-            option.classList.add("correct-answer");
-          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
-            option.classList.add("wrong-answer");
-          }
-        });
+    <h3>4. Software and Logic Problems</h3>
 
-        if (selected && selected.value === questions[index].correct) {
-          score++;
-        }
-      });
+    <p style="font-size: 22px;">
+        Software or logic problems may cause incorrect signal behavior,
+        improper route locking, failure to clear a signal, or unexpected system
+        alarms.
+    </p>
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-      submitButton.disabled = true;
+    <p style="font-size: 22px;">
+        Troubleshooting should include reviewing logic changes, checking
+        configuration files, comparing the program to the signal plans, and
+        reviewing event logs.
+    </p>
 
-      localStorage.setItem("module13CScore", score);
-      localStorage.setItem("module13CMax", questions.length);
-    });
+    <h3>5. Field Equipment Problems</h3>
 
-    unlockButton.addEventListener("click", () => {
-      const password = prompt("Enter your course access password:");
-      if (password === "railroad2025") {
-        nextButton.style.display = "inline-block";
-        unlockButton.style.display = "none";
-        alert("Access granted.");
-      } else {
-        alert("Incorrect password. Please try again.");
-      }
-    });
+    <p style="font-size: 22px;">
+        Sometimes the Microlok unit is working correctly, but the connected
+        field equipment is not.
+    </p>
 
-    nextButton.addEventListener("click", () => {
-      alert("This is the last module in the Microlok series.");
-    });
+    <p style="font-size: 22px;">
+        Field equipment problems may include track circuit failures, switch
+        correspondence issues, signal lamp problems, relay failures, cable
+        faults, or broken connections.
+    </p>
 
-    backButton.addEventListener("click", () => {
-      window.location.href = "Module 13B- Testing Microlok Units.html";
-    });
+    <h3>6. Using Diagnostic Software</h3>
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+    <p style="font-size: 22px;">
+        Microlok diagnostic software allows technicians to view real-time
+        system status, input states, output states, alarms, communication
+        status, and event history.
+    </p>
+
+    <p style="font-size: 22px;">
+        This information helps narrow the problem down and prevents unnecessary
+        guessing or replacing parts without evidence.
+    </p>
+
+    <h3>7. Safe Troubleshooting Practices</h3>
+
+    <p style="font-size: 22px;">
+        Because Microlok controls vital signal equipment, troubleshooting must
+        follow railroad rules, test procedures, and safety requirements.
+    </p>
+
+    <p style="font-size: 22px;">
+        Any repair, replacement, software change, or wiring correction must be
+        tested before the equipment is returned to normal service.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What is one of the first steps in troubleshooting a Microlok unit?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. Replacing all I/O modules immediately.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. Reviewing status indicators and diagnostic software.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Turning off power to the system without checking anything.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What are common categories of Microlok problems?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Improper use of signal flags.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Communication, hardware, or software faults.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Incorrect train length only.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. Why is Microlok diagnostic software important?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. It replaces the need for all field inspections.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. It can permanently fix all problems by itself.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. It provides error logs and real-time system status.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. B
+    </p>
+
+    <p style="font-size: 20px;">
+        2. B
+    </p>
+
+    <p style="font-size: 20px;">
+        3. C
+    </p>
+
+    <br>
+
+    <p>
+        <a href="Module 13B- Testing Microlok Units.html">⬅ Back to Module 13B</a>
+    </p>
+
+    <p>
+        <a href="../courses.html">🏠 Back to Courses</a>
+    </p>
+
 </body>
+
 </html>

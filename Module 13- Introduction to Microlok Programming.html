@@ -1,205 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 13: Introduction to Microlok Programming</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    .intro-container {
-      overflow: auto;
-      padding: 20px 0;
-    }
-    .image-placeholder {
-      width: 100%;
-      height: 200px;
-      background-color: #ccc;
-      color: #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-style: italic;
-      margin: 20px 0;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 13 - Introduction to Microlok Programming</title>
 </head>
-<body>
-  <h1>Module 13: Introduction to Microlok Programming</h1>
 
-  <div class="intro-container">
-    <p>The vital programming of Microlok units is typically done using proprietary software and a specific, high-level language developed by the manufacturer (originally GRS, now Wabtec). This language is designed with safety as the paramount concern, ensuring that the interlocking logic implemented is robust and prevents unsafe conditions.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <div class="image-placeholder">[Image: Microlok Software Environment]</div>
+    <h1>🚦 Module 13 - Introduction to Microlok Programming</h1>
 
-    <p>It is a high-level, safety-oriented language that uses familiar signaling concepts like route locking and track occupancy. Engineers use Wabtec’s development environment to write, simulate, and compile the logic into code that is safely deployed to Microlok units in the field. The environment includes built-in safety checks, simulation tools, and validation systems to ensure robust design and deployment.</p>
+    <h2 style="color: darkblue;">
+        Introduction to Microlok Programming
+    </h2>
 
-    <div class="image-placeholder">[Image: Diagram of Microlok Programming and Deployment Workflow]</div>
+    <hr>
 
-    <p>While the Microlok software and language are proprietary, the structure is designed to be intuitive for signaling engineers and tightly controlled to preserve safety. Other manufacturers like Siemens (IVPI) and Electrologixs also use similar proprietary systems tailored to their hardware.</p>
-  </div>
+    <p style="font-size: 22px;">
+        Microlok is a vital microprocessor-based railroad signal control system.
+        It is commonly used to control interlockings, signals, switches, track
+        circuits, routes, and other railroad signal functions.
+    </p>
 
-  <h3>Module 13 Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What company originally developed the Microlok programming system?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) Siemens</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) Wabtec (formerly GRS)</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) Electrologixs</label>
-    </div>
+    <p style="font-size: 22px;">
+        Microlok programming is used to create the logic that tells the system
+        how the signal equipment should operate safely under different field
+        conditions.
+    </p>
 
-    <div class="question-container">
-      <p class="question">2. What is a major advantage of using a high-level language for vital Microlok programming?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Easier to repair by the train crew</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Easier for signaling engineers to implement interlocking logic</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) It works without any hardware</label>
-    </div>
+    <h3>1. Vital Signal Logic</h3>
 
-    <div class="question-container">
-      <p class="question">3. Why are the details of Microlok programming proprietary?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) To reduce development cost</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) To prevent signal delays</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) To protect system safety and control who can program the logic</label>
-    </div>
+    <p style="font-size: 22px;">
+        Microlok programming is considered vital because it directly affects
+        safe train movement. The logic must prevent unsafe conditions such as
+        conflicting routes, improper signal clearing, or switch movement under
+        a train.
+    </p>
 
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
+    <h3>2. Proprietary Programming System</h3>
 
-    <button id="unlock-button">🔐 Unlock Next Module</button>
-    <button id="next-button">Next ➡️</button>
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-  </div>
+    <p style="font-size: 22px;">
+        Microlok programming is performed using proprietary software and a
+        special programming language developed for railroad signal applications.
+    </p>
 
-  <script>
-    const questions = [
-      { name: "q1", correct: "b" },
-      { name: "q2", correct: "b" },
-      { name: "q3", correct: "c" }
-    ];
+    <p style="font-size: 22px;">
+        The original Microlok system was developed by GRS, which later became
+        part of Wabtec. Because the system is safety-critical, access to the
+        programming tools and detailed logic is controlled.
+    </p>
 
-    const submitButton = document.getElementById("submit-button");
-    const nextButton = document.getElementById("next-button");
-    const unlockButton = document.getElementById("unlock-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
+    <h3>3. High-Level Signal Language</h3>
 
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+    <p style="font-size: 22px;">
+        The Microlok programming language is designed around railroad signal
+        concepts. It allows engineers to build logic using ideas such as track
+        occupancy, signal aspects, switch correspondence, route locking,
+        approach locking, time locking, and traffic direction.
+    </p>
 
-      document.querySelectorAll(".question-container").forEach((container, index) => {
-        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const options = container.querySelectorAll(".answer-option");
+    <h3>4. Programming Environment</h3>
 
-        options.forEach(option => {
-          const input = option.querySelector("input");
-          if (input.value === questions[index].correct) {
-            option.classList.add("correct-answer");
-          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
-            option.classList.add("wrong-answer");
-          }
-        });
+    <p style="font-size: 22px;">
+        Engineers use the Microlok development environment to write, check,
+        simulate, compile, and prepare the logic for installation into the
+        field unit.
+    </p>
 
-        if (selected && selected.value === questions[index].correct) {
-          score++;
-        }
-      });
+    <p style="font-size: 22px;">
+        Before the program is placed into service, it must be reviewed,
+        tested, verified, and approved according to railroad safety procedures.
+    </p>
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-      submitButton.disabled = true;
+    <h3>5. Simulation and Testing</h3>
 
-      localStorage.setItem("module13Score", score);
-      localStorage.setItem("module13Max", questions.length);
-    });
+    <p style="font-size: 22px;">
+        Microlok logic can be tested before being placed in service. Simulation
+        helps engineers confirm that routes lock correctly, signals clear only
+        when conditions are safe, and field inputs and outputs respond properly.
+    </p>
 
-    unlockButton.addEventListener("click", () => {
-      const password = prompt("Enter your course access password:");
-      if (password === "railroad2025") {
-        nextButton.style.display = "inline-block";
-        unlockButton.style.display = "none";
-        alert("Access granted.");
-      } else {
-        alert("Incorrect password. Please try again or return to the course home page.");
-      }
-    });
+    <h3>6. Field Deployment</h3>
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "Module-13A.html";
-    });
+    <p style="font-size: 22px;">
+        After testing and approval, the compiled program is installed into the
+        Microlok unit. Field testing is then performed to verify that the
+        programmed logic matches the plans and operates safely with the actual
+        equipment.
+    </p>
 
-    backButton.addEventListener("click", () => {
-        window.location.href = "../Module 12/Module 12I- Troubleshooting CBTC.html";
+    <h3>7. Similar Systems</h3>
 
-    });
+    <p style="font-size: 22px;">
+        Other signal manufacturers also use proprietary vital logic systems.
+        Examples include Siemens, Alstom, Wabtec, and other railroad signal
+        equipment manufacturers.
+    </p>
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What company originally developed the Microlok programming system?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. Siemens
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. Wabtec, formerly GRS
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Electrologixs
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What is a major advantage of using a high-level language for Microlok programming?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. It is easier for the train crew to repair.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. It helps signal engineers implement interlocking logic.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. It works without any hardware.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. Why are Microlok programming details proprietary?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. To reduce development cost.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. To prevent passenger delays.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. To protect system safety and control who can program the logic.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. B
+    </p>
+
+    <p style="font-size: 20px;">
+        2. B
+    </p>
+
+    <p style="font-size: 20px;">
+        3. C
+    </p>
+
+    <br>
+
+    <p>
+        <a href="../Module 12/Module 12I- Troubleshooting CBTC.html">⬅ Back to Module 12I</a>
+    </p>
+
+    <p>
+        <a href="Module-13A.html">Next ➡ Module 13A</a>
+    </p>
+
 </body>
+
 </html>

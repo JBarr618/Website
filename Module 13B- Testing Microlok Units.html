@@ -1,204 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 13B: Testing Microlok Units</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
-    .intro-container {
-      overflow: auto;
-      padding: 20px 0;
-    }
-    .image-placeholder {
-      width: 100%;
-      height: 200px;
-      background-color: #ccc;
-      color: #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-style: italic;
-      margin: 20px 0;
-    }
-    .question-container {
-      margin-bottom: 20px;
-    }
-    .question {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .answer-option {
-      display: block;
-      margin-bottom: 5px;
-      cursor: pointer;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    .answer-option:hover {
-      background-color: #e0e0e0;
-    }
-    .answer-option input[type="radio"] {
-      margin-right: 10px;
-    }
-    .correct-answer {
-      background-color: #d4edda;
-    }
-    .wrong-answer {
-      background-color: #f8d7da;
-    }
-    #results-container {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    #submit-button, #next-button, #back-button, #home-button, #unlock-button {
-      padding: 12px 25px;
-      font-size: 1.1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      margin-right: 10px;
-    }
-    #submit-button:hover, #next-button:hover, #back-button:hover, #home-button:hover, #unlock-button:hover {
-      background-color: #0056b3;
-    }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-    #next-button {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 13B - Testing Microlok Units</title>
 </head>
-<body>
-  <h1>Module 13B: Testing Microlok Units</h1>
 
-  <div class="intro-container">
-    <p>Testing Microlok units is a critical process throughout their lifecycle, from initial factory acceptance to ongoing maintenance in the field. The primary goal of testing is to ensure the vital safety functions operate correctly and reliably, preventing unsafe conditions in railway signaling. This involves verifying the hardware integrity, the programmed interlocking logic, and the proper interface with field equipment. Comprehensive testing ensures that the Microlok unit will perform its safety-critical role as intended.</p>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <div class="image-placeholder">[Image: Microlok Diagnostic Testing]</div>
+    <h1>🚦 Module 13B - Testing Microlok Units</h1>
 
-    <p>Factory testing includes functional checks of the processing unit, input/output modules, and communication interfaces. Simulations are used to test the interlocking logic under normal and fault conditions. Field testing involves verifying physical connections and logic functions with trackside equipment, ensuring safe operation of signals, switches, and routes. Diagnostic tools help monitor system behavior during these steps.</p>
+    <h2 style="color: darkblue;">
+        Testing Microlok Units
+    </h2>
 
-    <div class="image-placeholder">[Image: Commissioning a Microlok Unit]</div>
+    <hr>
 
-    <p>Ongoing maintenance testing ensures reliability over time. It includes routine checks, diagnostic reviews, and corrective actions as needed. Microlok units must consistently meet safety standards throughout their operational life, requiring trained personnel, detailed documentation, and specialized software to support continuous testing and validation.</p>
-  </div>
+    <p style="font-size: 22px;">
+        Testing Microlok units is a critical part of railroad signal safety.
+        The purpose of testing is to make sure the Microlok hardware, software,
+        wiring, field equipment, and vital logic operate correctly.
+    </p>
 
-  <h3>Module 13B Questions:</h3>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the main purpose of testing Microlok units?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a" /> A) To reduce maintenance costs</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b" /> B) To ensure reliable and safe operation</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c" /> C) To train new employees</label>
-    </div>
+    <p style="font-size: 22px;">
+        Because Microlok controls safety-critical signal functions, testing
+        must be performed carefully before the system is placed into service
+        and throughout the life of the equipment.
+    </p>
 
-    <div class="question-container">
-      <p class="question">2. What is typically verified during field testing?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a" /> A) Marketing materials</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b" /> B) Software documentation</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c" /> C) Wiring, field device interaction, and interlocking logic</label>
-    </div>
+    <h3>1. Factory Testing</h3>
 
-    <div class="question-container">
-      <p class="question">3. Why is ongoing maintenance testing important?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a" /> A) To find cheaper hardware options</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b" /> B) To ensure continued compliance and reliability</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c" /> C) To improve system appearance</label>
-    </div>
+    <p style="font-size: 22px;">
+        Factory testing is performed before the equipment is installed in the
+        field. This testing checks the processing unit, input modules, output
+        modules, communication ports, power supplies, and system configuration.
+    </p>
 
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
+    <p style="font-size: 22px;">
+        Factory testing helps verify that the Microlok equipment is operating
+        correctly before it is shipped or installed.
+    </p>
 
-    <button id="unlock-button">🔐 Unlock Next Module</button>
-    <button id="next-button">Next ➡️</button>
-    <button id="back-button">⬅️ Back</button>
-    <button id="home-button">🏠 Home</button>
-  </div>
+    <h3>2. Logic Testing</h3>
 
-  <script>
-    const questions = [
-      { name: "q1", correct: "b" },
-      { name: "q2", correct: "c" },
-      { name: "q3", correct: "b" }
-    ];
+    <p style="font-size: 22px;">
+        Logic testing verifies that the programmed interlocking logic works as
+        designed. This includes checking routes, signals, switches, track
+        circuits, locking, timers, and approach conditions.
+    </p>
 
-    const submitButton = document.getElementById("submit-button");
-    const nextButton = document.getElementById("next-button");
-    const unlockButton = document.getElementById("unlock-button");
-    const backButton = document.getElementById("back-button");
-    const homeButton = document.getElementById("home-button");
-    const resultsContainer = document.getElementById("results-container");
-    const finalScoreDisplay = document.getElementById("final-score");
-    const maxScoreDisplay = document.getElementById("max-score");
+    <p style="font-size: 22px;">
+        The logic must prevent unsafe conditions such as conflicting routes,
+        signal clearing into occupied track, or switch movement under a train.
+    </p>
 
-    submitButton.addEventListener("click", () => {
-      let score = 0;
-      maxScoreDisplay.textContent = questions.length;
+    <h3>3. Simulation Testing</h3>
 
-      document.querySelectorAll(".question-container").forEach((container, index) => {
-        const selected = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const options = container.querySelectorAll(".answer-option");
+    <p style="font-size: 22px;">
+        Simulation testing allows engineers to test Microlok logic before the
+        system controls real field equipment.
+    </p>
 
-        options.forEach(option => {
-          const input = option.querySelector("input");
-          if (input.value === questions[index].correct) {
-            option.classList.add("correct-answer");
-          } else if (selected && input.value === selected.value && input.value !== questions[index].correct) {
-            option.classList.add("wrong-answer");
-          }
-        });
+    <p style="font-size: 22px;">
+        Simulated inputs can be used to represent track occupancy, switch
+        positions, signal requests, route requests, and failure conditions.
+    </p>
 
-        if (selected && selected.value === questions[index].correct) {
-          score++;
-        }
-      });
+    <h3>4. Field Testing</h3>
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = "block";
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-      submitButton.disabled = true;
+    <p style="font-size: 22px;">
+        Field testing is performed after the Microlok equipment is installed.
+        This testing verifies the actual wiring, inputs, outputs, field devices,
+        and interlocking logic.
+    </p>
 
-      localStorage.setItem("module13BScore", score);
-      localStorage.setItem("module13BMax", questions.length);
-    });
+    <p style="font-size: 22px;">
+        Field testing confirms that signals, switches, track circuits, relays,
+        lamps, cables, and control circuits operate according to the signal
+        plans.
+    </p>
 
-    unlockButton.addEventListener("click", () => {
-      const password = prompt("Enter your course access password:");
-      if (password === "railroad2025") {
-        nextButton.style.display = "inline-block";
-        unlockButton.style.display = "none";
-        alert("Access granted.");
-      } else {
-        alert("Incorrect password. Please try again or return to the course home page.");
-      }
-    });
+    <h3>5. Functional Testing</h3>
 
-    nextButton.addEventListener("click", () => {
-      window.location.href = "Module-13C.html";
-    });
+    <p style="font-size: 22px;">
+        Functional testing confirms that the system performs the required
+        railroad signal functions. This includes route locking, signal clearing,
+        signal dropping, switch correspondence, approach locking, time locking,
+        and release functions.
+    </p>
 
-    backButton.addEventListener("click", () => {
-      window.location.href = "Module 13A- The Vital Programming of Microlok Units.html";
-    });
+    <h3>6. Diagnostic Testing</h3>
 
-    homeButton.addEventListener("click", () => {
-      window.location.href = "/index.html";
-    });
-  </script>
+    <p style="font-size: 22px;">
+        Microlok diagnostic tools help technicians view system status, input
+        conditions, output states, alarms, event logs, communication status, and
+        fault information.
+    </p>
+
+    <p style="font-size: 22px;">
+        Diagnostics are useful during commissioning, troubleshooting, and
+        routine maintenance.
+    </p>
+
+    <h3>7. Maintenance Testing</h3>
+
+    <p style="font-size: 22px;">
+        Testing does not stop after the Microlok unit is placed into service.
+        Ongoing maintenance testing helps confirm continued safety,
+        reliability, and proper operation.
+    </p>
+
+    <p style="font-size: 22px;">
+        Maintenance testing may include checking logs, verifying inputs and
+        outputs, testing field devices, confirming communication health, and
+        correcting any faults found during inspection.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What is the main purpose of testing Microlok units?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. To reduce maintenance costs only.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. To ensure reliable and safe operation.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. To train new employees only.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What is typically verified during field testing?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Marketing materials.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Software documentation only.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Wiring, field device interaction, and interlocking logic.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. Why is ongoing maintenance testing important?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. To find cheaper hardware options.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. To ensure continued compliance and reliability.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. To improve system appearance.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. B
+    </p>
+
+    <p style="font-size: 20px;">
+        2. C
+    </p>
+
+    <p style="font-size: 20px;">
+        3. B
+    </p>
+
+    <br>
+
+    <p>
+        <a href="Module 13A- The Vital Programming of Microlok Units.html">⬅ Back to Module 13A</a>
+    </p>
+
+    <p>
+        <a href="Module-13C.html">Next ➡ Module 13C</a>
+    </p>
+
 </body>
+
 </html>
