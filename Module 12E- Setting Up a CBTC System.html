@@ -1,152 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 12E: Setting Up a CBTC System</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    h3 {
-      margin-top: 25px;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "a",
-        q2: "c",
-        q3: "d",
-        q4: "b"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 4 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12E - Setting Up CBTC</title>
 </head>
-<body>
 
-  <h1>Module 12E: Setting Up a Computer Based Train Control System</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Setting up a Computer Based Train Control (CBTC) system is a complex, multi-stage process that involves significant infrastructure upgrades, sophisticated technology deployment, and rigorous testing. The key phases and considerations include:</p>
+    <h1>🚦 Module 12E - Setting Up CBTC</h1>
 
-  <h3>1. System Design and Planning</h3>
-  <p>Define operational requirements, safety goals, architecture (centralized/distributed), communication needs, automation level, and integration with existing systems.</p>
+    <h2 style="color: darkblue;">
+        Setting Up a Computer Based Train Control System
+    </h2>
 
-  <h3>2. Wayside Equipment Installation</h3>
-  <ul>
-    <li>Install communication infrastructure (radio base stations, leaky feeders)</li>
-    <li>Deploy balises or transponders for positioning</li>
-    <li>Configure trackside interface units for switches and signals</li>
-  </ul>
+    <hr>
 
-  <h3>3. Onboard Equipment Installation</h3>
-  <ul>
-    <li>Install odometers, balise readers, and other sensors</li>
-    <li>Add radio units for wireless communication</li>
-    <li>Set up onboard computers with ATP/ATO functions</li>
-    <li>Install driver-machine interfaces (DMI) if applicable</li>
-  </ul>
+    <p style="font-size: 22px;">
+        Setting up a Computer Based Train Control system is a major project.
+        It requires planning, design, installation, testing, training, and final
+        cutover before the system can be placed into passenger service.
+    </p>
 
-  <h3>4. Central Control System Implementation</h3>
-  <p>Set up the CBTC server, control software, monitoring displays, operator workstations, and backup systems for processing and train management.</p>
+    <p style="font-size: 22px;">
+        CBTC is not just one piece of equipment. It is a complete train control
+        system made up of onboard equipment, wayside equipment, communication
+        networks, central control equipment, software, and safety procedures.
+    </p>
 
-  <h3>5. Communication Network Setup</h3>
-  <p>Ensure robust wireless coverage across the network for reliable, low-latency, two-way data exchange between trains and the central control center.</p>
+    <h3>1. System Design and Planning</h3>
 
-  <h3>6. System Integration and Testing</h3>
-  <p>All components must be tested together, both statically and dynamically. Testing includes normal operation, degraded modes, and performance validation under real-world conditions.</p>
+    <p style="font-size: 22px;">
+        The first step is to define what the system must do. This includes
+        capacity goals, safety requirements, communication needs, automation
+        level, train performance, and how the CBTC system will interface with
+        existing railroad systems.
+    </p>
 
-  <h3>7. Staff Training</h3>
-  <p>Train operators, maintainers, and dispatchers on the new technology. Training must cover normal and emergency procedures as well as troubleshooting techniques.</p>
+    <p style="font-size: 22px;">
+        Engineers must also decide whether the CBTC system will use a
+        centralized design, distributed design, or a combination of both.
+    </p>
 
-  <h3>8. Phased Implementation and Cutover</h3>
-  <p>Gradually roll out CBTC on existing lines using overlay strategies. Ensure smooth transitions without disrupting regular service. Final cutover must be coordinated and safety-certified.</p>
+    <h3>2. Wayside Equipment Installation</h3>
 
-  <div class="question-container">
-    <div class="question">1. What are the initial key steps involved in setting up a CBTC system before any physical installation begins?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Define system goals, design architecture, and plan integration with current operations.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. Install all cabling and power systems before choosing a vendor.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Begin training drivers on touchscreen ticketing machines.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Install all signaling components before route plans are finalized.</label>
+    <p style="font-size: 22px;">
+        Wayside equipment is installed along the railroad. This may include
+        radio base stations, communication cables, leaky feeder cables, balises,
+        transponders, trackside interface units, and equipment cabinets.
+    </p>
 
-    <div class="question">2. Describe the main types of equipment that need to be installed both along the railway tracks (wayside) and on the trains themselves for a CBTC system.</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Ticket scanners, weight detectors, and onboard restrooms.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Flood sensors, wind meters, and digital clocks.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Wayside: radios, balises; Onboard: sensors, radios, ATP computers, and DMIs.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. Only onboard Wi-Fi routers and platform speakers.</label>
+    <p style="font-size: 22px;">
+        Wayside equipment allows the CBTC system to communicate with trains,
+        confirm train location, and interface with switches, signals,
+        interlockings, and other field equipment.
+    </p>
 
-    <div class="question">3. Why is the integration and testing phase particularly critical when setting up a CBTC system? What needs to be verified during this phase?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. To validate train advertising displays.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. To confirm cable colors match the circuit book.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. To check LED signal alignment with shadows at sunset.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. To ensure that all subsystems work together safely under dynamic conditions.</label>
+    <h3>3. Onboard Equipment Installation</h3>
 
-    <div class="question">4. What considerations are important when upgrading an existing railway line to CBTC to minimize service disruptions?</div>
-    <label class="answer-option"><input type="radio" name="q4" value="a"> A. Suspend all train service until CBTC is fully installed.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="b"> B. Use phased implementation and overlay techniques while maintaining service.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="c"> C. Run parallel train operations using GPS-only systems.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="d"> D. Rely entirely on the previous legacy system and add CBTC post-launch.</label>
+    <p style="font-size: 22px;">
+        Each train must be equipped with onboard CBTC equipment. This may
+        include onboard computers, ATP equipment, ATO equipment, radio units,
+        odometers, speed sensors, balise readers, antennas, and driver machine
+        interfaces.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <p style="font-size: 22px;">
+        The onboard equipment allows the train to determine its location,
+        communicate with the CBTC system, receive Movement Authority, monitor
+        speed, and apply brakes when required.
+    </p>
+
+    <h3>4. Central Control System</h3>
+
+    <p style="font-size: 22px;">
+        The central control system includes servers, control software, operator
+        workstations, monitoring displays, backup systems, and diagnostic tools.
+    </p>
+
+    <p style="font-size: 22px;">
+        This system processes train information, calculates safe movement
+        limits, supports traffic management, and helps operators monitor the
+        railroad.
+    </p>
+
+    <h3>5. Communication Network Setup</h3>
+
+    <p style="font-size: 22px;">
+        The communication network must provide reliable two-way communication
+        between trains, wayside equipment, and central control.
+    </p>
+
+    <p style="font-size: 22px;">
+        Radio coverage, data speed, latency, redundancy, interference, and
+        system security must be tested carefully before the CBTC system can be
+        trusted for train operation.
+    </p>
+
+    <h3>6. System Integration and Testing</h3>
+
+    <p style="font-size: 22px;">
+        After equipment is installed, all parts of the system must be tested
+        together. This includes onboard equipment, wayside equipment,
+        communication systems, interlockings, switches, signals, control center
+        equipment, and software.
+    </p>
+
+    <p style="font-size: 22px;">
+        Testing must verify safe operation during normal operation, degraded
+        modes, failures, emergency braking, communication loss, route changes,
+        and real train movement.
+    </p>
+
+    <h3>7. Staff Training</h3>
+
+    <p style="font-size: 22px;">
+        Operators, dispatchers, signal maintainers, technicians, engineers, and
+        supervisors must be trained on the new CBTC system.
+    </p>
+
+    <p style="font-size: 22px;">
+        Training must include normal operation, troubleshooting, emergency
+        procedures, degraded operation, and safe work practices.
+    </p>
+
+    <h3>8. Phased Implementation and Cutover</h3>
+
+    <p style="font-size: 22px;">
+        When CBTC is added to an existing railroad, the work is often performed
+        in phases. This helps maintain train service while the new system is
+        installed and tested.
+    </p>
+
+    <p style="font-size: 22px;">
+        Overlay methods may allow the old signal system and the new CBTC system
+        to exist together during testing. Final cutover must be carefully
+        planned, tested, approved, and safety-certified.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What are the first steps before physical CBTC installation begins?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. Define system goals, design architecture, and plan integration with current operations.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. Install all cabling before choosing a vendor.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Begin training drivers on ticketing machines.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> D. Install all signaling components before route plans are finalized.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What equipment is commonly installed for CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Ticket scanners, weight detectors, and onboard restrooms.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Flood sensors, wind meters, and digital clocks.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Wayside radios and balises; onboard sensors, radios, ATP computers, and DMIs.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> D. Only onboard Wi-Fi routers and platform speakers.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. Why is integration and testing critical?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. To validate train advertising displays.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. To confirm cable colors match the circuit book.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. To check signal alignment with shadows at sunset.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> D. To ensure all subsystems work together safely under real operating conditions.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>4. What helps reduce service disruption during CBTC installation?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> A. Suspend all train service until CBTC is fully installed.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> B. Use phased implementation and overlay techniques while maintaining service.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> C. Run parallel train operations using GPS-only systems.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> D. Rely entirely on the old system and add CBTC after launch.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. A
+    </p>
+
+    <p style="font-size: 20px;">
+        2. C
+    </p>
+
+    <p style="font-size: 20px;">
+        3. D
+    </p>
+
+    <p style="font-size: 20px;">
+        4. B
+    </p>
+
+    <br>
+
+    <p>
+        <a href="module12.html">⬅ Back to Module 12</a>
+    </p>
 
 </body>
+
 </html>

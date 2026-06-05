@@ -1,178 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 12I: Troubleshooting CBTC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "a",
-        q2: "c",
-        q3: "b",
-        q4: "d"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 4 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12I - Troubleshooting CBTC</title>
 </head>
-<body>
 
-  <h1>Module 12I: Troubleshooting Computer Based Train Control</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Troubleshooting a Computer Based Train Control (CBTC) system can be challenging due to its integrated nature and reliance on complex software, hardware, and communication networks. A systematic approach and specialized diagnostic tools are often required. Here are some common issues and troubleshooting strategies:</p>
+    <h1>🚦 Module 12I - Troubleshooting CBTC</h1>
 
-  <h3>1. Loss of Communication</h3>
-  <p><strong>Symptom:</strong> Trains lose contact with the central control system, leading to potential service disruptions or a fallback to a more restrictive operating mode.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Check the status of the radio communication network infrastructure (base stations, access points, leaky feeder).</li>
-    <li>Verify the onboard communication units on the affected trains.</li>
-    <li>Analyze signal strength and potential interference issues.</li>
-    <li>Examine network logs and diagnostic tools to identify communication errors or outages.</li>
-  </ul>
+    <h2 style="color: darkblue;">
+        Troubleshooting Computer Based Train Control
+    </h2>
 
-  <h3>2. Train Localization Errors</h3>
-  <p><strong>Symptom:</strong> The central system or onboard systems report inaccurate train positions, potentially leading to incorrect movement authorities or ATP interventions.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Check the functionality of onboard positioning sensors (odometer, balise reader).</li>
-    <li>Verify the integrity and calibration of balises along the track.</li>
-    <li>Analyze data logs from the positioning system to identify discrepancies or anomalies.</li>
-    <li>Calibrate or replace faulty positioning sensors.</li>
-  </ul>
+    <hr>
 
-  <h3>3. Automatic Train Protection (ATP) Issues</h3>
-  <p><strong>Symptom:</strong> Unwarranted emergency brake applications or failures to intervene when safety limits are exceeded.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Analyze ATP event logs to understand the circumstances of the intervention or failure.</li>
-    <li>Verify the accuracy of speed and position data being fed to the ATP system.</li>
-    <li>Check the configuration and calibration of the ATP software parameters.</li>
-    <li>Test the functionality of the braking system and its interface with the ATP.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        Troubleshooting a Computer Based Train Control system requires a
+        systematic approach because CBTC depends on software, onboard equipment,
+        wayside equipment, communication networks, central control systems, and
+        train interfaces all working together.
+    </p>
 
-  <h3>4. Automatic Train Operation (ATO) Malfunctions</h3>
-  <p><strong>Symptom:</strong> Issues with automated driving functions, such as jerky movements, incorrect stopping positions, or failures to follow speed profiles.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Examine ATO system logs for error codes or unusual behavior.</li>
-    <li>Verify the accuracy of track profile data used by the ATO.</li>
-    <li>Check the calibration of speed and acceleration control systems.</li>
-    <li>Analyze the commands being sent from the central system to the onboard ATO.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        When a CBTC problem occurs, maintainers must review alarms, system logs,
+        communication status, train data, equipment status, and recent events to
+        find the root cause.
+    </p>
 
-  <h3>5. Central Control System Problems</h3>
-  <p><strong>Symptom:</strong> Failures in the central server, database errors, or issues with the operator workstations.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Examine server logs and system health indicators.</li>
-    <li>Check network connectivity to all wayside and onboard units.</li>
-    <li>Perform database integrity checks and backups.</li>
-    <li>Restart or failover to redundant systems as necessary.</li>
-  </ul>
+    <h3>1. Loss of Communication</h3>
 
-  <h3>6. Software Glitches</h3>
-  <p><strong>Symptom:</strong> Intermittent or unpredictable system behavior, software crashes, or data corruption.</p>
-  <p><strong>Troubleshooting:</strong></p>
-  <ul>
-    <li>Analyze software logs and error reports.</li>
-    <li>Restart affected software components or systems.</li>
-    <li>Apply software patches or updates as recommended by the vendor.</li>
-    <li>Revert to previous stable versions if necessary.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        A common CBTC problem is loss of communication between the train and the
+        control system. When this happens, the train may enter a more
+        restrictive fallback mode or stop, depending on the system design.
+    </p>
 
-  <p>Troubleshooting CBTC often requires specialized diagnostic tools, access to system logs, and a thorough understanding of the system architecture and its various components. Collaboration between signaling technicians, IT specialists, and operations personnel is crucial for effective problem resolution.</p>
+    <p style="font-size: 22px;">
+        Troubleshooting should include checking radio base stations, access
+        points, antennas, leaky feeder cables, onboard radio units, network
+        switches, signal strength, interference, and communication logs.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. What are some of the immediate consequences of a loss of communication between trains and the central control system in a CBTC environment?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Trains may default to restrictive fallback modes or halt, causing service delays.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. Trains automatically revert to diesel operation.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Passengers receive loudspeaker evacuation alerts.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. All trackside signals are disabled until rebooted.</label>
+    <h3>2. Train Localization Errors</h3>
 
-    <div class="question">2. What are some potential causes of inaccurate train localization in a CBTC system, and how might these be investigated?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Faulty HVAC systems; check climate controls.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Overloaded passenger counts; investigate turnstile counters.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Malfunctioning balise readers or odometers; verify calibration and inspect positioning logs.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. Ticket scanner desync; reset payment systems.</label>
+    <p style="font-size: 22px;">
+        Train localization errors occur when the system does not accurately know
+        where the train is located.
+    </p>
 
-    <div class="question">3. If a CBTC system experiences issues with the Automatic Train Protection (ATP) function, what are some critical areas to examine during troubleshooting?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. Operator seating alignment and horn volume.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. Event logs, braking interfaces, speed/position data, and ATP software calibration.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. Station power meters and signal bulb age.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. Daily cleaning logs and interior door locks.</label>
+    <p style="font-size: 22px;">
+        Possible causes include faulty odometers, wheel slip or slide,
+        incorrect calibration, failed balise readers, damaged balises, antenna
+        problems, or incorrect track database information.
+    </p>
 
-    <div class="question">4. Why is a multidisciplinary approach often necessary when troubleshooting complex CBTC system issues?</div>
-    <label class="answer-option"><input type="radio" name="q4" value="a"> A. Because CBTC is mostly about marketing and passenger perception.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="b"> B. Because local government agencies require team collaboration for budget approvals.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="c"> C. Because CBTC problems only occur during large special events.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="d"> D. Because resolving issues often requires input from signaling, IT, operations, and hardware specialists working together.</label>
+    <p style="font-size: 22px;">
+        Troubleshooting should include checking positioning logs, balise reader
+        status, odometer readings, sensor calibration, and the condition of
+        wayside reference points.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <h3>3. ATP Problems</h3>
+
+    <p style="font-size: 22px;">
+        Automatic Train Protection problems may include unwanted brake
+        applications, speed enforcement problems, Movement Authority errors, or
+        failure to properly supervise the train.
+    </p>
+
+    <p style="font-size: 22px;">
+        Troubleshooting ATP problems should include reviewing ATP event logs,
+        train speed data, train position data, braking interface status,
+        software configuration, and Movement Authority information.
+    </p>
+
+    <h3>4. ATO Problems</h3>
+
+    <p style="font-size: 22px;">
+        Automatic Train Operation problems may include rough acceleration,
+        rough braking, incorrect stopping position, failure to follow the speed
+        profile, or failure to start automatically.
+    </p>
+
+    <p style="font-size: 22px;">
+        Troubleshooting should include checking ATO logs, track profile data,
+        stopping point data, onboard control commands, speed feedback, and
+        train propulsion and braking interfaces.
+    </p>
+
+    <h3>5. Central Control System Problems</h3>
+
+    <p style="font-size: 22px;">
+        Central control system problems may include server failures, database
+        errors, workstation problems, software faults, network failures, or loss
+        of communication with wayside and onboard equipment.
+    </p>
+
+    <p style="font-size: 22px;">
+        Troubleshooting should include checking server health, control center
+        alarms, network connectivity, system logs, database integrity, backup
+        systems, and failover equipment.
+    </p>
+
+    <h3>6. Software and Configuration Issues</h3>
+
+    <p style="font-size: 22px;">
+        CBTC systems depend heavily on software and configuration data. A
+        software problem or incorrect configuration can cause intermittent
+        behavior, false alarms, incorrect limits, or system instability.
+    </p>
+
+    <p style="font-size: 22px;">
+        Troubleshooting should include reviewing software logs, error reports,
+        recent software changes, configuration files, version control records,
+        and vendor recommendations.
+    </p>
+
+    <h3>7. Interface Problems</h3>
+
+    <p style="font-size: 22px;">
+        CBTC must interface with many other railroad systems. These may include
+        interlockings, switches, signals, platform screen doors, control center
+        systems, and trainborne systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        If an interface fails, the CBTC system may receive incorrect
+        information or fail to send proper commands. Troubleshooting should
+        verify inputs, outputs, relays, network messages, status indications,
+        and interface logs.
+    </p>
+
+    <h3>8. Multidisciplinary Troubleshooting</h3>
+
+    <p style="font-size: 22px;">
+        CBTC troubleshooting often requires multiple departments working
+        together. Signal maintainers, train control engineers, IT staff,
+        communications technicians, vehicle maintenance, operations, and vendor
+        support may all be needed.
+    </p>
+
+    <p style="font-size: 22px;">
+        This is because one CBTC problem may involve hardware, software,
+        networking, train equipment, field equipment, and operating procedures
+        at the same time.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What may happen if a CBTC train loses communication with the control system?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. The train may enter a restrictive fallback mode or stop, causing service delays.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. The train automatically changes to diesel operation.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Passengers automatically receive evacuation alerts.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> D. All trackside signals are permanently disabled.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What can cause train localization errors?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Faulty HVAC systems.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Overloaded passenger counters.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Faulty balise readers, odometers, calibration issues, or positioning data errors.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> D. Ticket scanner problems.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. What should be checked when troubleshooting ATP problems?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. Operator seat alignment and horn volume.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. Event logs, braking interfaces, speed and position data, and ATP software calibration.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. Station power meters and signal bulb age.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> D. Cleaning logs and interior door locks.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>4. Why is teamwork important when troubleshooting CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> A. CBTC is mostly about marketing.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> B. Budget approval requires team collaboration.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> C. CBTC problems only occur during special events.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> D. CBTC issues may require signaling, IT, operations, vehicle, communication, and hardware specialists.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. A
+    </p>
+
+    <p style="font-size: 20px;">
+        2. C
+    </p>
+
+    <p style="font-size: 20px;">
+        3. B
+    </p>
+
+    <p style="font-size: 20px;">
+        4. D
+    </p>
+
+    <br>
+
+    <p>
+        <a href="module12.html">⬅ Back to Module 12</a>
+    </p>
 
 </body>
 </html>

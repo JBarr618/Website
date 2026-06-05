@@ -1,146 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 12G: Types of CBTC - Further Detail</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    h3 {
-      margin-top: 25px;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "c",
-        q2: "a",
-        q3: "d"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12G - CBTC Further Detail</title>
 </head>
-<body>
 
-  <h1>Module 12G: Types of Computer Based Train Control Used (Further Detail)</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>To further clarify the types of Computer Based Train Control (CBTC) systems in operation and development, we can look at specific examples and nuances within the main categories:</p>
+    <h1>🚦 Module 12G - CBTC Further Detail</h1>
 
-  <h3>1. By Architecture – Real-World Examples and Nuances</h3>
-  <ul>
-    <li><strong>Centralized CBTC Dominance:</strong> Most current CBTC systems use a centralized architecture. Examples include:
-      <ul>
-        <li><em>Siemens Trainguard MT</em> – deployed in many metros globally</li>
-        <li><em>Thales SelTrac</em> – widely used in urban transit</li>
-        <li><em>Bombardier CITYFLO (now Alstom)</em> – installed in several cities worldwide</li>
-      </ul>
-    </li>
-    <li><strong>Hybrid Evolution:</strong> Newer CBTC systems are exploring hybrid models, combining centralized safety management with distributed train-based logic for resilience and scalability.</li>
-  </ul>
+    <h2 style="color: darkblue;">
+        Types of Computer Based Train Control Used
+    </h2>
 
-  <h3>2. By Grade of Automation (GoA) – Deployment Trends</h3>
-  <ul>
-    <li><strong>GoA 2 as Entry Point:</strong> Many new systems start with Semi-Automatic Operation (STO) to improve capacity while maintaining a human operator for doors and emergencies.</li>
-    <li><strong>GoA 3/4 Growth:</strong> There is growing adoption of Driverless (DTO) and Unattended Train Operation (UTO) on new metro lines in cities like:
-      <ul>
-        <li>Paris (Line 14)</li>
-        <li>Singapore (North East Line)</li>
-        <li>Dubai (Red and Green Lines)</li>
-      </ul>
-    </li>
-    <li><strong>Mainline Challenges:</strong> Full GoA 3/4 automation on mixed-traffic mainlines is more difficult due to longer braking distances, complex routing, and obstacle detection requirements. These often operate at GoA 2 or integrate with ETCS Level 3.</li>
-  </ul>
+    <hr>
 
-  <h3>3. By Communication Technology – Specific Systems</h3>
-  <ul>
-    <li><strong>Radio Spectrum:</strong> Systems use licensed bands, Wi-Fi, or proprietary RF systems depending on interference, bandwidth, and regulatory considerations.</li>
-    <li><strong>Millimeter Wave:</strong> Experimental systems are exploring ultra-high frequency mmWave to improve bandwidth for advanced CBTC services.</li>
-    <li><strong>Public Cellular Networks:</strong> Some CBTC systems are testing LTE or 5G for cost reduction. While promising, public networks raise concerns about latency, reliability, and cybersecurity in safety-critical environments.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        Computer Based Train Control systems can be designed in different ways
+        depending on the railroad, transit agency, operating environment, and
+        level of automation required.
+    </p>
 
-  <p>In short, CBTC systems are tailored to the infrastructure and operational needs of the railway. Technology choices balance cost, reliability, automation goals, and safety integrity levels.</p>
+    <p style="font-size: 22px;">
+        Some systems are built mainly around central control equipment, while
+        others use more onboard processing. CBTC may also support manual,
+        semi-automatic, driverless, or fully unattended train operation.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. Can you name a few major suppliers of CBTC technology and provide examples of where their systems are used?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Boeing, Nokia, and Apple — mostly for airport shuttles.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. General Electric and SpaceX, with satellites for rail data.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Siemens (Trainguard MT), Thales (SelTrac), Alstom/Bombardier (CITYFLO); used in metros worldwide.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Dell and Cisco, with integrated fiberoptic station control.</label>
+    <h3>1. Centralized CBTC Systems</h3>
 
-    <div class="question">2. Why is the implementation of very high levels of automation (GoA 3/4) more challenging on mainline railways compared to urban metros?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Mainlines have mixed traffic, longer braking distances, and greater obstacle detection needs.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Urban metros lack electricity, which mainlines provide.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Urban lines only run once daily, making them easier to automate.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. GoA 3/4 systems are banned on all non-elevated lines globally.</label>
+    <p style="font-size: 22px;">
+        Most CBTC systems in service use a centralized design. In this type of
+        system, central or wayside control equipment receives train information,
+        calculates safe Movement Authority, and sends commands back to the
+        trains.
+    </p>
 
-    <div class="question">3. What are some of the different radio frequency technologies used for communication in CBTC systems, and what are the potential advantages and disadvantages of using public cellular networks?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. Morse code over coax; public LTE offers no benefits.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. Bluetooth mesh networks; public networks are unsafe.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. Only inductive loops; cellular doesn’t support high-speed trains.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. Licensed/unlicensed radio, millimeter wave, LTE/5G; public networks can lower costs but raise concerns about reliability and security.</label>
+    <p style="font-size: 22px;">
+        Examples of major CBTC suppliers include Siemens, Thales, and Alstom.
+        Their systems are used in many metro and transit systems throughout the
+        world.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <h3>2. Distributed and Hybrid CBTC Systems</h3>
+
+    <p style="font-size: 22px;">
+        Distributed CBTC systems allow more processing to take place onboard
+        the train. This means the train may perform more calculations locally
+        instead of depending completely on one central processor.
+    </p>
+
+    <p style="font-size: 22px;">
+        Some modern systems use a hybrid design. A hybrid system may combine
+        centralized safety supervision with onboard train-based logic to improve
+        flexibility, reliability, and system resilience.
+    </p>
+
+    <h3>3. Grade of Automation in CBTC</h3>
+
+    <p style="font-size: 22px;">
+        CBTC can support different Grades of Automation. The grade describes
+        how much of the train operation is performed automatically.
+    </p>
+
+    <h3>GoA 2 - Semi-Automatic Operation</h3>
+
+    <p style="font-size: 22px;">
+        Many rail systems begin with GoA 2. In GoA 2, the train may start,
+        stop, and control speed automatically, but an operator is still onboard
+        for door operation, emergencies, and degraded operation.
+    </p>
+
+    <h3>GoA 3 - Driverless Train Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 3, the train operates without a driver in the cab. The system
+        controls train movement and doors, but staff may still be onboard to
+        assist passengers or respond to emergencies.
+    </p>
+
+    <h3>GoA 4 - Unattended Train Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 4, the train is fully automated with no onboard staff required
+        for normal operation. This is common on some modern metro systems.
+    </p>
+
+    <h3>4. Mainline Automation Challenges</h3>
+
+    <p style="font-size: 22px;">
+        High automation is usually easier on metro systems than on mainline
+        railroads. Metro systems often have controlled environments, shorter
+        routes, predictable stopping patterns, and separated tracks.
+    </p>
+
+    <p style="font-size: 22px;">
+        Mainline railroads are more difficult to fully automate because they
+        may have mixed traffic, longer braking distances, more complex routing,
+        highway grade crossings, work zones, and greater obstacle detection
+        concerns.
+    </p>
+
+    <h3>5. Radio Communication Technology</h3>
+
+    <p style="font-size: 22px;">
+        CBTC depends on reliable radio communication. Systems may use licensed
+        radio, unlicensed radio, Wi-Fi-based systems, LTE, 5G, or proprietary
+        industrial radio networks.
+    </p>
+
+    <p style="font-size: 22px;">
+        Reliable communication is important because trains and control systems
+        must continuously exchange train location, speed, Movement Authority,
+        system status, and control information.
+    </p>
+
+    <h3>6. Public Cellular Networks</h3>
+
+    <p style="font-size: 22px;">
+        Some newer systems may consider public cellular networks such as LTE or
+        5G. These systems may reduce the amount of dedicated communication
+        infrastructure needed.
+    </p>
+
+    <p style="font-size: 22px;">
+        However, public cellular networks must be carefully evaluated for
+        coverage, reliability, latency, cybersecurity, priority access, and
+        safety-critical performance.
+    </p>
+
+    <h3>7. Choosing the Right CBTC Type</h3>
+
+    <p style="font-size: 22px;">
+        The type of CBTC selected depends on the railway’s needs. Important
+        factors include service frequency, safety requirements, ridership,
+        budget, existing signal systems, automation goals, communication
+        coverage, and future expansion plans.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. Which companies are examples of major CBTC suppliers?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. Boeing, Nokia, and Apple.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. General Electric and SpaceX.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Siemens, Thales, and Alstom.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> D. Dell and Cisco only.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. Why is GoA 3 or GoA 4 harder on mainline railways than urban metros?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Mainlines have mixed traffic, longer braking distances, and greater obstacle detection needs.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Urban metros do not use electricity.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Urban lines only run once daily.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> D. GoA 3 and GoA 4 are banned on all mainlines.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. What is a concern with using public cellular networks for CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. Public LTE offers no possible benefit.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. Bluetooth is the only safe method.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. Cellular cannot support any train operation.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> D. Public networks may reduce cost but raise reliability, latency, and cybersecurity concerns.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. C
+    </p>
+
+    <p style="font-size: 20px;">
+        2. A
+    </p>
+
+    <p style="font-size: 20px;">
+        3. D
+    </p>
+
+    <br>
+
+    <p>
+        <a href="module12.html">⬅ Back to Module 12</a>
+    </p>
 
 </body>
+
 </html>

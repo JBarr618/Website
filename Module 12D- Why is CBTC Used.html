@@ -1,147 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 12D: Why is CBTC Used? (Continued)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    h3 {
-      margin-top: 25px;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "a",
-        q2: "c",
-        q3: "d",
-        q4: "b"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 4 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12D - Why CBTC Is Used</title>
 </head>
-<body>
 
-  <h1>Module 12D: Why is Computer Based Train Control Used? (Continued)</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Expanding on previous modules, the adoption of Computer Based Train Control (CBTC) is driven by goals of modernizing rail systems and improving operational efficiency. Below are key strategic benefits:</p>
+    <h1>🚦 Module 12D - Why CBTC Is Used</h1>
 
-  <h3>1. Addressing Increasing Ridership</h3>
-  <p>In high-density urban areas, CBTC enables trains to run closer together safely, increasing capacity without requiring additional tracks.</p>
+    <h2 style="color: darkblue;">
+        Why Computer Based Train Control Is Used
+    </h2>
 
-  <h3>2. Enabling Advanced Operational Features</h3>
-  <ul>
-    <li>Automatic Train Regulation (ATR) can adjust train speeds to maintain headways and schedules.</li>
-    <li>Real-time optimization helps reduce delays and increase efficiency.</li>
-    <li>Integration with intelligent transportation systems (ITS) is made easier.</li>
-  </ul>
+    <hr>
 
-  <h3>3. Improving Reliability and Maintainability</h3>
-  <p>CBTC reduces the need for wayside signals and trackside electronics, which lowers maintenance costs and simplifies diagnostics using centralized health monitoring systems.</p>
+    <p style="font-size: 22px;">
+        Computer Based Train Control is used because modern rail systems need
+        safer, faster, more reliable, and more efficient train operation.
+    </p>
 
-  <h3>4. Supporting Energy Efficiency</h3>
-  <p>By using smoother speed profiles and automated braking/acceleration curves, CBTC systems reduce energy usage, which is both environmentally and economically beneficial.</p>
+    <p style="font-size: 22px;">
+        CBTC helps railroads and transit agencies move more trains through the
+        same track area without building additional tracks.
+    </p>
 
-  <h3>5. Future-Proofing Infrastructure</h3>
-  <p>CBTC systems use digital infrastructure and software-driven control, making them compatible with emerging technologies and enabling future upgrades with minimal disruption.</p>
+    <h3>1. Increasing Train Capacity</h3>
 
-  <h3>6. Enhancing Passenger Experience</h3>
-  <ul>
-    <li>Faster, more frequent service</li>
-    <li>Fewer delays and smoother rides</li>
-    <li>Better real-time information onboard and in stations</li>
-  </ul>
+    <p style="font-size: 22px;">
+        One major reason CBTC is used is to increase system capacity. Because
+        CBTC knows train location more accurately than older fixed block
+        systems, trains can safely operate closer together.
+    </p>
 
-  <p>All these factors make CBTC a vital investment for modern rail networks looking to keep pace with demand and innovation.</p>
+    <p style="font-size: 22px;">
+        This helps reduce headways, which is the time or distance between
+        trains. Shorter headways allow more trains to operate during busy
+        service periods.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. How does CBTC help railway operators address the challenges of increasing ridership in urban areas?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. It allows more trains to run closer together by reducing fixed block spacing.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. It increases train speed by adding more track curves.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. It eliminates passenger loading delays using AI cameras.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. It provides weather forecasts for operators.</label>
+    <h3>2. Addressing Increasing Ridership</h3>
 
-    <div class="question">2. What are some advanced operational features that CBTC enables beyond basic train control?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Track graffiti detection and climate control automation.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Manual dispatcher override for all switches.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Automatic Train Regulation (ATR), schedule optimization, and integration with ITS.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. Elevator and escalator status reporting.</label>
+    <p style="font-size: 22px;">
+        In crowded urban areas, ridership can increase faster than new tracks
+        can be built. CBTC helps handle more passengers by allowing more
+        frequent train service on the existing railroad.
+    </p>
 
-    <div class="question">3. In what ways can CBTC contribute to improved reliability and reduced maintenance costs for a railway system?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. By removing all metal rail and replacing it with magnetic guides.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. By adding manual switches and extra relay rooms.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. By increasing the number of block signals per mile.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. By reducing trackside equipment and enabling centralized diagnostics.</label>
+    <h3>3. Improving Schedule Performance</h3>
 
-    <div class="question">4. What is the ultimate benefit of implementing CBTC for the passengers using the railway system?</div>
-    <label class="answer-option"><input type="radio" name="q4" value="a"> A. To ensure every seat includes a built-in touchscreen.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="b"> B. To provide faster, smoother, more frequent service with fewer delays and better information.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="c"> C. To eliminate all customer service agents at stations.</label>
-    <label class="answer-option"><input type="radio" name="q4" value="d"> D. To allow train crews to use digital tickets.</label>
+    <p style="font-size: 22px;">
+        CBTC can support Automatic Train Regulation, also called ATR. ATR helps
+        adjust train movement to maintain proper spacing and reduce delays.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <p style="font-size: 22px;">
+        This allows the system to respond more quickly when trains are delayed,
+        running close together, or falling behind schedule.
+    </p>
+
+    <h3>4. Improving Reliability and Maintenance</h3>
+
+    <p style="font-size: 22px;">
+        CBTC can reduce the need for some wayside signal equipment. Fewer
+        trackside devices can mean fewer parts to maintain and troubleshoot.
+    </p>
+
+    <p style="font-size: 22px;">
+        Modern CBTC systems also provide diagnostics and health monitoring.
+        This helps maintenance forces identify problems faster and repair them
+        more efficiently.
+    </p>
+
+    <h3>5. Supporting Energy Efficiency</h3>
+
+    <p style="font-size: 22px;">
+        CBTC can create smoother acceleration and braking profiles. This can
+        reduce wasted energy and make train movement more efficient.
+    </p>
+
+    <h3>6. Supporting Future Upgrades</h3>
+
+    <p style="font-size: 22px;">
+        CBTC uses digital control, software, and communication networks. This
+        makes the system easier to upgrade as technology changes.
+    </p>
+
+    <h3>7. Improving Passenger Experience</h3>
+
+    <p style="font-size: 22px;">
+        For passengers, CBTC can provide faster service, shorter wait times,
+        smoother rides, fewer delays, and better real-time information.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. How does CBTC help address increasing ridership?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. It allows more trains to run closer together by reducing fixed block spacing.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. It increases train speed by adding more track curves.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. It eliminates passenger loading delays using AI cameras.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> D. It provides weather forecasts for operators.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What advanced operational features can CBTC support?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. Track graffiti detection and climate control automation.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. Manual dispatcher override for all switches.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. Automatic Train Regulation, schedule optimization, and system integration.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> D. Elevator and escalator status reporting.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. How can CBTC reduce maintenance costs?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. By removing all metal rail and replacing it with magnetic guides.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. By adding manual switches and extra relay rooms.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. By increasing the number of block signals per mile.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> D. By reducing trackside equipment and enabling centralized diagnostics.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>4. What is a passenger benefit of CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> A. Every seat gets a built-in touchscreen.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> B. Faster, smoother, more frequent service with fewer delays and better information.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> C. All customer service agents are removed from stations.
+        </p>
+
+        <p>
+            <input type="radio" name="q4"> D. Train crews use digital tickets.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. A
+    </p>
+
+    <p style="font-size: 20px;">
+        2. C
+    </p>
+
+    <p style="font-size: 20px;">
+        3. D
+    </p>
+
+    <p style="font-size: 20px;">
+        4. B
+    </p>
+
+    <br>
+
+    <p>
+        <a href="module12.html">⬅ Back to Module 12</a>
+    </p>
 
 </body>
+
 </html>

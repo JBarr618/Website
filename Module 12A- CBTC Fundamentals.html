@@ -1,131 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 12A: CBTC Fundamentals</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "b",
-        q2: "c",
-        q3: "a"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12A - CBTC Fundamentals</title>
 </head>
-<body>
 
-  <h1>Module 12A: Computer Based Train Control Fundamentals</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>To understand the capabilities and advantages of Computer Based Train Control (CBTC), it's essential to grasp some of its fundamental principles and components:</p>
+    <h1>🚦 Module 12A - CBTC Fundamentals</h1>
 
-  <ul>
-    <li><strong>Precise Train Location Determination:</strong> CBTC systems rely on accurate and continuous knowledge of each train's position. This is achieved through various technologies, including:
-      <ul>
-        <li><em>Odometer/Speed Sensor:</em> Measures the distance traveled based on wheel rotation.</li>
-        <li><em>Balise/Beacon Readers:</em> Detect fixed transponders (balises or beacons) along the track to provide absolute location references and calibration points for the odometer.</li>
-        <li><em>Radar/Radio Frequency Identification (RFID):</em> Can be used for more precise positioning or supplementary location information.</li>
-      </ul>
-    </li>
+    <h2 style="color: darkblue;">
+        Computer Based Train Control Fundamentals
+    </h2>
 
-    <li><strong>Continuous Communication:</strong> A robust and reliable two-way digital communication link between the trains and the central control center is a cornerstone of CBTC. This communication system allows for the constant exchange of critical data, including train location, speed, direction, and operational commands. Common communication technologies include radio (e.g., Wi-Fi, cellular, proprietary radio systems).</li>
+    <hr>
 
-    <li><strong>Centralized Control and Processing:</strong> A central control center processes the data received from all trains on the network. It uses sophisticated algorithms to calculate safe braking distances, determine movement authorities (permissions for a train to proceed), and optimize train movements to maximize capacity and efficiency.</li>
+    <p style="font-size: 22px;">
+        To understand Computer Based Train Control, it is important to understand
+        the major parts that allow the system to safely control train movement.
+    </p>
 
-    <li><strong>Onboard Train Control System:</strong> Each train is equipped with an onboard computer system that receives movement authorities and speed profiles from the central control center. This system includes an Automatic Train Protection (ATP) function that continuously monitors the train's speed and position and automatically applies the brakes if the train exceeds safe limits or violates a movement authority.</li>
+    <p style="font-size: 22px;">
+        One major part of CBTC is precise train location. The system must know
+        where each train is, how fast it is moving, and what direction it is
+        traveling.
+    </p>
 
-    <li><strong>Movement Authority (MA):</strong> The central control system dynamically calculates and transmits a Movement Authority to each train. The MA defines how far a train is permitted to travel safely. This distance is constantly updated based on the location and speed of leading trains, track conditions, and other relevant factors.</li>
+    <p style="font-size: 22px;">
+        Train location may be determined using odometers, speed sensors, balises,
+        beacons, transponders, radar, radio systems, or other onboard and
+        wayside equipment.
+    </p>
 
-    <li><strong>Speed Profiling:</strong> Along with the MA, the central system often provides a speed profile to the train, indicating the target speed for different sections of the authorized movement. The onboard ATP system ensures the train adheres to this profile.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        Odometers and speed sensors measure train movement by tracking wheel
+        rotation and distance traveled. This helps the onboard system estimate
+        the train's position along the track.
+    </p>
 
-  <p>These fundamental elements work together to enable the advanced functionalities and benefits of CBTC systems.</p>
+    <p style="font-size: 22px;">
+        Balises or beacons provide fixed reference points along the track. When
+        a train passes over or near one, the onboard system can confirm or
+        correct its location.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. Name at least two technologies used in CBTC systems to determine the precise location of a train.</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Satellite dish and brake pressure sensors</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. Odometer and balise/beacon readers</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Wind sensors and camera mounts</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Platform doors and timetable clocks</label>
+    <p style="font-size: 22px;">
+        Another major part of CBTC is continuous communication. Trains must
+        communicate with the central control system so movement authority and
+        safety information can be exchanged.
+    </p>
 
-    <div class="question">2. What is the role of the continuous communication link between trains and the central control center in a CBTC system? What type of data is exchanged?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. It transmits food service requests from train to station staff</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. It plays onboard music and public announcements</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. It sends train location, speed, direction, and receives movement authority and speed profiles</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. It activates windshield wipers and headlights remotely</label>
+    <p style="font-size: 22px;">
+        The train may send location, speed, direction, train status, and other
+        operating information. The control system may send movement authority,
+        speed profiles, and operating commands back to the train.
+    </p>
 
-    <div class="question">3. Explain the concept of "Movement Authority" in CBTC and how it ensures safe train operation.</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. MA defines how far a train may safely travel, and is updated in real time based on speed, distance, and traffic conditions</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. MA is a command to change radio channels</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. MA controls station lighting and turnstiles</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. MA reports maintenance requests to the onboard HVAC system</label>
+    <p style="font-size: 22px;">
+        Centralized control and processing allow the CBTC system to evaluate
+        train locations, braking distances, route conditions, and the position of
+        other trains on the line.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <p style="font-size: 22px;">
+        Each CBTC-equipped train has onboard control equipment. This equipment
+        receives movement authority and speed commands and works with Automatic
+        Train Protection to enforce safe limits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Movement Authority, or MA, defines how far a train is permitted to move
+        safely. In CBTC, this authority can be updated continuously based on
+        train speed, position, traffic, and track conditions.
+    </p>
+
+    <p style="font-size: 22px;">
+        Speed profiling tells the train the target speeds for different parts of
+        its authorized movement. The onboard system monitors the train to make
+        sure it remains within safe limits.
+    </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/cbtc-train-location.png"
+    alt="CBTC train location using odometry and balise reference points"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/cbtc-communication-link.png"
+    alt="Continuous communication between train and central CBTC control"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/cbtc-movement-authority.png"
+    alt="Movement Authority showing how far a train may safely travel"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What are examples of technologies used by CBTC to determine train location?</p>
+        <label><input type="radio" name="q1" value="wrong"> Satellite dish and brake pressure sensors only</label><br>
+        <label><input type="radio" name="q1" value="correct"> Odometer and balise or beacon readers</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Wind sensors and camera mounts only</label><br><br>
+
+        <p>2. What is exchanged between trains and the central control system?</p>
+        <label><input type="radio" name="q2" value="wrong"> Food service requests and music playlists</label><br>
+        <label><input type="radio" name="q2" value="correct"> Train location, speed, direction, movement authority, and speed profiles</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Windshield wiper commands only</label><br><br>
+
+        <p>3. What is Movement Authority in CBTC?</p>
+        <label><input type="radio" name="q3" value="correct"> It defines how far a train may safely travel and is updated based on operating conditions</label><br>
+        <label><input type="radio" name="q3" value="wrong"> It is a command to change radio channels only</label><br>
+        <label><input type="radio" name="q3" value="wrong"> It controls station lighting and turnstiles</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
+    </div>
+
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if(password === "signal2026") {
+            window.location.href = "Module 12B.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 12.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
+
 </html>

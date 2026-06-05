@@ -1,102 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 11D: Why are Relays Used?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "b",
-        q2: "c",
-        q3: "a"
-      };
-
-      let score = 0;
-      for (let q in correctAnswers) {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === correctAnswers[q]) {
-          score++;
-        }
-      }
-
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11D - Why are Relays Used?</title>
 </head>
-<body>
 
-  <h1>Module 11D: Why are Relays Used?</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Relays are essential components in electrical and electronic systems, and particularly critical in railway signaling, due to a multitude of compelling reasons:</p>
+    <h1>🚦 Module 11D - Why are Relays Used?</h1>
 
-  <ol>
-    <li><strong>Remote Control Capabilities:</strong> Relays allow low-power signals to operate high-power devices at distant locations — ideal for controlling signals and switches remotely.</li>
-    <li><strong>Electrical Isolation and Safety:</strong> Relays isolate the control circuit from the controlled circuit, protecting people and equipment from electrical hazards across different voltage levels.</li>
-    <li><strong>Signal Amplification:</strong> A small coil current can switch a much larger load current via the contacts, allowing sensors or controllers to operate heavy-duty devices.</li>
-    <li><strong>Implementation of Logic Functions:</strong> Combinations of relays can create electrical logic for control systems (AND, OR, NOT), which was historically vital for interlocking in railway signaling.</li>
-    <li><strong>Fail-Safe Operation:</strong> Relays are designed to revert to a safe state (e.g., displaying "stop") during failures such as power loss or component malfunction.</li>
-    <li><strong>Interfacing Different Systems:</strong> Relays bridge electrical systems that use different voltages or currents, acting as adapters or buffers between incompatible devices.</li>
-  </ol>
+    <h2 style="color: darkblue;">
+        Purpose of Relays in Signal Systems
+    </h2>
 
-  <p>Because of these capabilities, relays remain foundational in ensuring the safety, reliability, and operational control of modern railway signaling systems.</p>
+    <hr>
 
-  <div class="question-container">
-    <div class="question">1. Explain how relays enable the remote control of railway signaling equipment.</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> They use GPS signals to directly trigger railway equipment.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> A low-power signal energizes a relay at a remote location, which switches a high-power device.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> They convert digital commands into wireless AC pulses.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> Only manual relays at the control panel can operate distant devices.</label>
+    <p style="font-size: 22px;">
+        Relays are used in railway signaling because they allow electrical
+        circuits to control equipment safely, reliably, and from remote
+        locations.
+    </p>
 
-    <div class="question">2. Why is the electrical isolation provided by relays considered a significant safety feature?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> It allows power surges to pass safely through control wiring.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> It lets relays bypass all fuses in the system.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> It prevents high-voltage circuits from directly connecting to low-voltage control systems, enhancing safety.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> It ensures that all systems share the same current rating.</label>
+    <p style="font-size: 22px;">
+        One major reason relays are used is remote control. A low-power signal
+        can energize a relay coil at a distant location, and the relay contacts
+        can then switch power to signals, switches, or other field equipment.
+    </p>
 
-    <div class="question">3. Describe the concept of "fail-safe operation" in the context of railway signaling relays and provide an example of its importance.</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A relay defaults to a safe position, like "stop," if it loses power or fails.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> The relay locks in the last known position until manually reset.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> Relays run diagnostics and display a blue warning light during failures.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> Relays switch to backup battery mode when circuits fail.</label>
+    <p style="font-size: 22px;">
+        Relays also provide electrical isolation. The coil circuit and contact
+        circuit are separated, which helps protect low-voltage control circuits
+        from higher-voltage or higher-current equipment circuits.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <p style="font-size: 22px;">
+        This isolation is important for safety because it helps prevent unwanted
+        electrical connection between different systems. It also helps protect
+        equipment and personnel during normal operation and fault conditions.
+    </p>
+
+    <p style="font-size: 22px;">
+        Relays can also allow a small current to control a larger current. This
+        means a small control circuit can operate signal lamps, switch machines,
+        indication circuits, or other equipment that requires more power.
+    </p>
+
+    <p style="font-size: 22px;">
+        In railway signaling, relays can be combined to create logic functions.
+        Relay contacts can be arranged so that certain conditions must be proven
+        before a signal can clear or a route can be established.
+    </p>
+
+    <p style="font-size: 22px;">
+        Relay logic is used in interlocking circuits to prevent conflicting train
+        movements. The relays prove track occupancy, switch position, signal
+        status, route locking, and other safety conditions.
+    </p>
+
+    <p style="font-size: 22px;">
+        Fail-safe operation is another major reason relays are used. A signal
+        relay circuit is often designed so that loss of power, broken wiring, or
+        relay failure causes the system to move toward a safer condition.
+    </p>
+
+    <p style="font-size: 22px;">
+        For example, if a vital relay drops because power is lost, the signal
+        system may display Stop instead of allowing train movement. This is a
+        basic safety principle in railroad signaling.
+    </p>
+
+    <p style="font-size: 22px;">
+        Relays remain important because they are predictable, visible, testable,
+        and trusted components in many railroad signal systems.
+    </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/relay-remote-control.png"
+    alt="Relay controlling railway signal equipment from a remote location"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/relay-electrical-isolation.png"
+    alt="Relay providing isolation between control and power circuits"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/relay-fail-safe-stop.png"
+    alt="Fail safe relay circuit causing signal to display stop during power loss"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. How do relays enable remote control of railway signaling equipment?</p>
+        <label><input type="radio" name="q1" value="wrong"> They use GPS signals to directly trigger railway equipment</label><br>
+        <label><input type="radio" name="q1" value="correct"> A low-power signal energizes a relay, which switches a higher-power device</label><br>
+        <label><input type="radio" name="q1" value="wrong"> Only manual relays at the control panel can operate distant devices</label><br><br>
+
+        <p>2. Why is electrical isolation provided by relays important?</p>
+        <label><input type="radio" name="q2" value="wrong"> It allows power surges to pass through control wiring</label><br>
+        <label><input type="radio" name="q2" value="wrong"> It lets relays bypass all fuses in the system</label><br>
+        <label><input type="radio" name="q2" value="correct"> It helps prevent high-voltage circuits from directly connecting to low-voltage control circuits</label><br><br>
+
+        <p>3. What does fail-safe operation mean in railway signaling relays?</p>
+        <label><input type="radio" name="q3" value="correct"> The relay circuit moves toward a safer condition, such as Stop, during power loss or failure</label><br>
+        <label><input type="radio" name="q3" value="wrong"> The relay locks in the last known position until manually reset</label><br>
+        <label><input type="radio" name="q3" value="wrong"> The relay automatically sends a Bluetooth warning</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
+    </div>
+
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if(password === "signal2026") {
+            window.location.href = "Module 11E.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 11C.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
+
 </html>

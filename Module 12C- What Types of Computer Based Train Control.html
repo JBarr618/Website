@@ -1,136 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 12C: What Types of CBTC?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    h3 {
-      margin-top: 25px;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .correct {
-      background-color: #c8e6c9;
-    }
-    .incorrect {
-      background-color: #ffcdd2;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "a",
-        q2: "d",
-        q3: "c"
-      };
-
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12C - Types of CBTC</title>
 </head>
-<body>
 
-  <h1>Module 12C: What Types of Computer Based Train Control?</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Computer Based Train Control (CBTC) systems can be categorized in several ways, reflecting their architectural design, the level of automation they enable, and the communication technologies they employ. Understanding these different classifications helps to appreciate the versatility and adaptability of CBTC in various railway environments.</p>
+    <h1>🚦 Module 12C - Types of CBTC</h1>
 
-  <h3>1. Based on Architecture</h3>
-  <ul>
-    <li><strong>Centralized CBTC:</strong> In this common architecture, a central control center serves as the primary processing hub. It receives train location and status information from all trains, calculates safe movement authorities and speed profiles, and transmits these commands back to the trains. This model relies heavily on a robust communication link between the trains and the central system.</li>
-    <li><strong>Distributed CBTC (or Train-Centric CBTC):</strong> This emerging architecture shifts more of the processing power and decision-making capability to the trains themselves. Trains can potentially communicate directly with each other to maintain safe separation and coordinate movements, reducing the reliance on a central entity for some critical functions. This approach can offer benefits in terms of scalability and resilience.</li>
-  </ul>
+    <h2 style="color: darkblue;">
+        What Types of Computer Based Train Control?
+    </h2>
 
-  <h3>2. Based on Grade of Automation (GoA)</h3>
-  <p>CBTC is a key technology that enables different levels of automation in train operation, as defined by international standards (IEC 62290):</p>
-  <ul>
-    <li><strong>GoA 1 (Manual Operation):</strong> The driver is responsible for all aspects of train operation, including starting, stopping, speed control, and door operation, while adhering to signals. CBTC in this context primarily provides enhanced train protection and real-time information to the driver.</li>
-    <li><strong>GoA 2 (Semi-Automatic Operation - STO):</strong> The CBTC system (specifically the Automatic Train Operation - ATO subsystem) automates starting and stopping accurately at stations. However, a driver typically retains responsibility for door operation, handling emergencies, and potentially manual driving in degraded modes.</li>
-    <li><strong>GoA 3 (Driverless Train Operation - DTO):</strong> The CBTC system controls starting, stopping, and door operation automatically. There is no driver on board, but train attendants may be present to handle passenger information, emergencies, and manual operation if required.</li>
-    <li><strong>GoA 4 (Unattended Train Operation - UTO):</strong> The CBTC system fully automates all operational aspects, including starting, stopping, door operation, and handling planned contingencies, without any on-train staff. Platform screen doors are often a prerequisite for safety in UTO systems.</li>
-  </ul>
+    <hr>
 
-  <h3>3. Based on Communication Technology</h3>
-  <p>The reliable and continuous exchange of data is fundamental to CBTC. Various wireless communication technologies are employed:</p>
-  <ul>
-    <li><strong>Radio-Based Systems:</strong> These are the most common, utilizing different frequency bands (e.g., Wi-Fi, cellular, proprietary industrial radio) and communication protocols. Coverage is typically provided through strategically placed radio base stations or leaky feeder cables along the track.</li>
-    <li><strong>Inductive Loops and Balises:</strong> While not typically used for continuous high-bandwidth communication in full CBTC, inductive loops and balises can play a role in precise train positioning and transmitting discrete data points.</li>
-  </ul>
+    <p style="font-size: 22px;">
+        Computer Based Train Control systems can be grouped into different
+        types based on system architecture, level of automation, and the
+        communication technology used.
+    </p>
 
-  <p><strong>Note:</strong> These categories are not mutually exclusive, and a specific CBTC implementation might combine elements from different types. For example, a system could have a centralized architecture that supports Grade of Automation 4 using a radio-based communication network. The specific requirements of the railway (e.g., urban metro, mainline, freight) often dictate the most suitable type of CBTC system.</p>
+    <p style="font-size: 22px;">
+        These categories help explain how CBTC systems are designed and how they
+        support safe, efficient, and automated train operation.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. What is the primary difference in how processing and control are handled in centralized versus distributed CBTC architectures?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. Centralized systems process control centrally; distributed systems allow trains to handle more onboard processing and decisions.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. Distributed CBTC systems require all trains to be stationary for safety.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. Centralized systems only work with freight operations.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. Distributed CBTC uses no communication with control centers.</label>
+    <h3>1. Centralized CBTC</h3>
 
-    <div class="question">2. Describe the key operational differences between Grade of Automation 2 (STO) and Grade of Automation 4 (UTO) in a CBTC system.</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. STO requires no driver; UTO always has two conductors onboard.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. STO operates on diesel; UTO uses magnetic levitation.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. UTO trains still have attendants to assist in emergencies.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. STO uses a driver for doors and emergencies; UTO is fully automated with no onboard staff.</label>
+    <p style="font-size: 22px;">
+        In a centralized CBTC system, the main control equipment is located in a
+        central control center or wayside control location.
+    </p>
 
-    <div class="question">3. What are the most common wireless communication technologies used in modern CBTC systems, and why is reliable communication so critical for their operation?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. Infrared beacons and telephone poles to transmit Morse code.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. Submarine fiber cables running parallel to the tracks.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. Wi-Fi, LTE, or industrial radio systems — reliable communication ensures real-time updates of movement authority and train monitoring.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. Satellite TV signals used for train positioning indoors.</label>
+    <p style="font-size: 22px;">
+        The central system receives train location and status information,
+        calculates Movement Authority, creates speed profiles, and sends this
+        information back to the train.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <h3>2. Distributed CBTC</h3>
+
+    <p style="font-size: 22px;">
+        In a distributed CBTC system, more processing and decision-making may be
+        performed by onboard train equipment.
+    </p>
+
+    <p style="font-size: 22px;">
+        Trains may share information with wayside equipment or other trains to
+        help maintain safe separation. This can reduce some dependence on one
+        central control point.
+    </p>
+
+    <h3>3. Grade of Automation</h3>
+
+    <p style="font-size: 22px;">
+        CBTC systems can also be classified by Grade of Automation, often called
+        GoA. The Grade of Automation describes how much of the train operation
+        is performed automatically.
+    </p>
+
+    <h3>GoA 1 - Manual Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 1, the train operator controls starting, stopping, speed, and
+        door operation. CBTC may still provide train protection and operating
+        information.
+    </p>
+
+    <h3>GoA 2 - Semi-Automatic Train Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 2, the CBTC system may automatically control train starting,
+        stopping, and speed. A train operator is still present and is usually
+        responsible for door control, emergencies, and degraded operation.
+    </p>
+
+    <h3>GoA 3 - Driverless Train Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 3, the train operates without a driver in the cab. The system
+        controls movement and doors, but staff may still be onboard to assist
+        passengers or handle emergencies.
+    </p>
+
+    <h3>GoA 4 - Unattended Train Operation</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 4, the system is fully automated. There is no driver or onboard
+        operating staff required for normal train movement.
+    </p>
+
+    <h3>4. Communication-Based Types</h3>
+
+    <p style="font-size: 22px;">
+        Most modern CBTC systems use radio communication. These systems may use
+        Wi-Fi, LTE, private radio networks, or other industrial wireless
+        communication systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        Reliable communication is critical because train location, speed,
+        Movement Authority, and control commands must be exchanged continuously
+        between the train and the CBTC system.
+    </p>
+
+    <h3>5. Balises and Reference Points</h3>
+
+    <p style="font-size: 22px;">
+        Some CBTC systems also use balises, transponders, or fixed reference
+        points to help trains confirm their exact location along the track.
+    </p>
+
+    <p style="font-size: 22px;">
+        These devices do not usually provide continuous high-speed
+        communication, but they help improve train positioning accuracy.
+    </p>
+
+    <hr>
+
+    <h2>Review Questions</h2>
+
+    <form>
+
+        <p style="font-size: 20px;">
+            <strong>1. What is the main difference between centralized and distributed CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> A. Centralized systems process control centrally; distributed systems allow more onboard processing.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> B. Distributed CBTC requires all trains to stay stopped.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> C. Centralized CBTC only works for freight trains.
+        </p>
+
+        <p>
+            <input type="radio" name="q1"> D. Distributed CBTC uses no communication.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>2. What is the difference between GoA 2 and GoA 4?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> A. GoA 2 has no driver; GoA 4 always has two conductors.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> B. GoA 2 uses diesel; GoA 4 uses magnetic levitation.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> C. GoA 4 always requires an attendant onboard.
+        </p>
+
+        <p>
+            <input type="radio" name="q2"> D. GoA 2 has an operator for doors and emergencies; GoA 4 is fully automated.
+        </p>
+
+        <p style="font-size: 20px;">
+            <strong>3. Why is reliable wireless communication important in CBTC?</strong>
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> A. It sends Morse code through infrared lights.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> B. It powers the train motors directly.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> C. It allows real-time train monitoring, Movement Authority updates, and control communication.
+        </p>
+
+        <p>
+            <input type="radio" name="q3"> D. It replaces all track and signal equipment.
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Answer Key</h2>
+
+    <p style="font-size: 20px;">
+        1. A
+    </p>
+
+    <p style="font-size: 20px;">
+        2. D
+    </p>
+
+    <p style="font-size: 20px;">
+        3. C
+    </p>
+
+    <br>
+
+    <p>
+        <a href="module12.html">⬅ Back to Module 12</a>
+    </p>
 
 </body>
+
 </html>

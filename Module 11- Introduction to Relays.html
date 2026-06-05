@@ -1,104 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 11: Introduction to Relays</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      color: #003366;
-    }
-    .question-container {
-      margin-top: 30px;
-    }
-    .question {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .answer-option {
-      display: block;
-      margin: 5px 0;
-    }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "a",
-        q2: "d",
-        q3: "b"
-      };
-
-      let score = 0;
-      for (let q in correctAnswers) {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === correctAnswers[q]) {
-          score++;
-        }
-      }
-
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 11 - Introduction to Relays</title>
 </head>
-<body>
 
-  <h1>Module 11: Introduction to Relays</h1>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-  <p>Relays are electromechanical switches that play a fundamental role in railway signaling systems. They act as electrically controlled switches, using a small electrical current to control a larger current, or to switch multiple circuits on or off. In essence, a relay allows a low-power circuit to control a high-power circuit, providing electrical isolation between the control and controlled circuits.</p>
+    <h1>🚦 Module 11 - Introduction to Relays</h1>
 
-  <p>A basic relay consists of an electromagnet, an armature (a movable iron piece), a spring, and a set of contacts. When an electrical current flows through the coil of the electromagnet, it creates a magnetic field. This magnetic field attracts the armature, causing it to move. The movement of the armature either opens or closes the contacts, thus switching the controlled circuit(s). When the current to the coil is interrupted, the magnetic field collapses, and the spring returns the armature to its original position, switching the contacts back to their initial state.</p>
+    <h2 style="color: darkblue;">
+        Understanding Railroad Signal Relays
+    </h2>
 
-  <p>In railway signaling, relays are used for a wide variety of functions, including:</p>
-  <ul>
-    <li><strong>Signal Control:</strong> Switching power to signal lamps to display different aspects.</li>
-    <li><strong>Interlocking Logic:</strong> Implementing the complex logic that prevents conflicting train movements.</li>
-    <li><strong>Track Circuit Indication:</strong> Detecting the presence or absence of a train based on the state of a track relay.</li>
-    <li><strong>Remote Control:</strong> Allowing control of field devices (like switches and signals) from a central location.</li>
-    <li><strong>Safety Circuits:</strong> Forming vital safety chains where the correct state of multiple relays indicates a safe condition.</li>
-  </ul>
+    <hr>
 
-  <p>The reliability and fail-safe characteristics of relays are paramount in signaling applications. They are often designed so that a power failure or a fault in the relay itself will result in a "safe" condition (e.g., a signal displaying a stop aspect).</p>
+    <p style="font-size: 22px;">
+        Relays are electromechanical switches that play a major role in railway
+        signaling systems. They allow one electrical circuit to control another
+        electrical circuit.
+    </p>
 
-  <div class="question-container">
-    <div class="question">1. What is the fundamental function of a relay in an electrical circuit?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> To control a high-power circuit using a low-power signal.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> To store electrical charge for short bursts of power.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> To measure electrical resistance in signaling wires.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> To regulate voltage levels in a power supply.</label>
+    <p style="font-size: 22px;">
+        A relay can use a small electrical current to control a larger current
+        or to switch multiple circuits on and off. This allows a low-power
+        control circuit to operate higher-power field equipment safely.
+    </p>
 
-    <div class="question">2. Describe the basic components of an electromechanical relay and how they interact to perform a switching action.</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A diode and a resistor create switching pulses.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> A transistor controls a capacitor to charge the relay.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> A fuse opens the circuit when voltage is applied.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> An electromagnet attracts an armature, moving contacts to open or close circuits.</label>
+    <p style="font-size: 22px;">
+        A basic electromechanical relay contains a coil, an electromagnet, an
+        armature, a spring, and electrical contacts. These parts work together
+        to open or close circuits.
+    </p>
 
-    <div class="question">3. Give at least three examples of how relays are used in railway signaling systems.</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> To lubricate switch points, power solar panels, and provide Wi-Fi.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> For signal control, track circuit indication, and interlocking logic.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> To track employee location, adjust train speed, and run ticket printers.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> In air conditioning, toilet lighting, and music systems on passenger cars.</label>
+    <p style="font-size: 22px;">
+        When current flows through the relay coil, the coil creates a magnetic
+        field. This magnetic field attracts the armature and causes it to move.
+    </p>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <p style="font-size: 22px;">
+        As the armature moves, it changes the position of the relay contacts.
+        The contacts may open a circuit, close a circuit, or transfer a circuit
+        from one path to another.
+    </p>
+
+    <p style="font-size: 22px;">
+        When current is removed from the coil, the magnetic field collapses.
+        The spring returns the armature to its normal position and the contacts
+        return to their normal state.
+    </p>
+
+    <p style="font-size: 22px;">
+        In railway signaling, relays are used for signal control, track circuit
+        indication, switch control, interlocking logic, route locking, approach
+        locking, and other safety-related functions.
+    </p>
+
+    <p style="font-size: 22px;">
+        Relays are also used in vital safety circuits. These circuits are
+        designed so that signals, switches, and train movements only operate
+        when the proper safe conditions are proven.
+    </p>
+
+    <p style="font-size: 22px;">
+        Fail-safe operation is extremely important. In many railroad signal
+        circuits, a loss of power or relay failure is designed to result in a
+        safer condition, such as a signal displaying Stop.
+    </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/relay-components.png"
+    alt="Diagram showing relay coil, armature, spring, and contacts"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/signal-relay-rack.png"
+    alt="Railroad signal relay rack with vital relays"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/relay-contact-operation.png"
+    alt="Relay contacts opening and closing a circuit"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is the basic function of a relay?</p>
+        <label><input type="radio" name="q1" value="correct"> To control one electrical circuit using another electrical circuit</label><br>
+        <label><input type="radio" name="q1" value="wrong"> To store electrical charge for short bursts of power</label><br>
+        <label><input type="radio" name="q1" value="wrong"> To measure wire resistance only</label><br><br>
+
+        <p>2. What happens when current flows through an electromechanical relay coil?</p>
+        <label><input type="radio" name="q2" value="wrong"> A fuse opens the circuit automatically</label><br>
+        <label><input type="radio" name="q2" value="wrong"> A capacitor charges the relay contacts</label><br>
+        <label><input type="radio" name="q2" value="correct"> The coil creates a magnetic field that moves the armature and changes the contacts</label><br><br>
+
+        <p>3. How are relays used in railway signaling systems?</p>
+        <label><input type="radio" name="q3" value="wrong"> To lubricate switch points and provide Wi-Fi</label><br>
+        <label><input type="radio" name="q3" value="correct"> For signal control, track circuit indication, and interlocking logic</label><br>
+        <label><input type="radio" name="q3" value="wrong"> For passenger car music systems only</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
+    </div>
+
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if(password === "signal2026") {
+            window.location.href = "Module 11A.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 10E.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
+
 </html>

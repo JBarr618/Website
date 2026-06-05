@@ -1,85 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 12: Introduction to CBTC</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-    h1 { color: #003366; }
-    .question-container { margin-top: 30px; }
-    .question { font-weight: bold; margin-top: 20px; }
-    .answer-option { display: block; margin: 5px 0; }
-    .correct { background-color: #c8e6c9; }
-    .incorrect { background-color: #ffcdd2; }
-    .submit-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-button:hover { background-color: #0056b3; }
-  </style>
-  <script>
-    function checkAnswers() {
-      const correctAnswers = {
-        q1: "b",
-        q2: "a",
-        q3: "c"
-      };
-      for (let q in correctAnswers) {
-        const options = document.getElementsByName(q);
-        options.forEach(option => {
-          const label = option.parentElement;
-          label.classList.remove("correct", "incorrect");
-          if (option.checked) {
-            if (option.value === correctAnswers[q]) {
-              label.classList.add("correct");
-            } else {
-              label.classList.add("incorrect");
-            }
-          }
-        });
-      }
-      const score = Object.keys(correctAnswers).filter(q => {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        return selected && selected.value === correctAnswers[q];
-      }).length;
-      alert("You got " + score + " out of 3 questions correct.");
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12 - Introduction to CBTC</title>
 </head>
-<body>
-  <h1>Module 12: Introduction to Computer Based Train Control (CBTC)</h1>
-  <p>Computer Based Train Control (CBTC) represents a significant advancement in railway signaling technology. Unlike traditional signaling systems that rely on fixed blocks and wayside equipment, CBTC is a modern, high-capacity train control system that utilizes continuous, two-way digital communication between trains and a central control center. This allows for more precise train location determination, dynamic adjustments to train speed and separation, and ultimately, increased capacity and efficiency on railway lines.</p>
-  <p>The core principle of CBTC is to know the exact location and speed of every train on the network in real-time. This information is typically obtained through onboard train positioning systems (e.g., transponders, radar, odometry) and transmitted wirelessly to the central control system. The central system then calculates the safe operating speed and braking curves for each train based on its location, speed, direction, track profile, and the movement of other trains. This data is transmitted back to the trains, where it is used by the automatic train protection (ATP) system to ensure safe operation.</p>
-  <p>CBTC systems often eliminate the need for traditional wayside signals, as all necessary movement authorities and speed commands are communicated directly to the train cab. This can reduce infrastructure costs and improve reliability by reducing the number of trackside components. Furthermore, CBTC enables more flexible operational strategies, such as moving block operation, where the safe separation between trains is dynamically calculated based on their real-time positions and speeds, rather than being limited by fixed block lengths. This can significantly increase the throughput of a railway line.</p>
 
-  <div class="question-container">
-    <div class="question">1. What is the key difference in how train location and separation are managed in Computer Based Train Control (CBTC) compared to traditional signaling systems?</div>
-    <label class="answer-option"><input type="radio" name="q1" value="a"> A. CBTC uses trackside lights while traditional systems use Wi-Fi.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="b"> B. CBTC uses real-time train location and speed data to calculate separation, while traditional systems rely on fixed blocks.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="c"> C. CBTC depends on manual operators for train separation.</label>
-    <label class="answer-option"><input type="radio" name="q1" value="d"> D. CBTC only works on freight lines.</label>
+<body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <div class="question">2. Describe the role of continuous, two-way digital communication in the operation of a CBTC system. What information is typically exchanged?</div>
-    <label class="answer-option"><input type="radio" name="q2" value="a"> A. Trains send location, speed, and direction; receive movement authorities and speed profiles from central control.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="b"> B. Trains report passenger counts to onboard vending machines.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="c"> C. Two-way communication is not used in CBTC.</label>
-    <label class="answer-option"><input type="radio" name="q2" value="d"> D. It sends train music playlists from the station.</label>
+    <h1>🚦 Module 12 - Introduction to Computer Based Train Control</h1>
 
-    <div class="question">3. What is "moving block operation," and how does CBTC enable this more efficient train separation strategy?</div>
-    <label class="answer-option"><input type="radio" name="q3" value="a"> A. It allows trains to switch tracks randomly.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="b"> B. It relies on fixed blocks spaced far apart on the track.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="c"> C. It calculates safe train separation in real-time using current train positions and speeds, rather than fixed distances.</label>
-    <label class="answer-option"><input type="radio" name="q3" value="d"> D. It sends signals via satellites only.</label>
+    <h2 style="color: darkblue;">
+        Understanding CBTC
+    </h2>
 
-    <button class="submit-button" onclick="checkAnswers()">Submit Answers</button>
-  </div>
+    <hr>
+
+    <p style="font-size: 22px;">
+        Computer Based Train Control, also known as CBTC, is a modern train
+        control system that uses computers, communication equipment, onboard
+        train systems, and central control equipment to manage train movement.
+    </p>
+
+    <p style="font-size: 22px;">
+        CBTC is different from traditional fixed-block signaling because it uses
+        real-time train location, speed, direction, and system data to help
+        calculate safe train movement.
+    </p>
+
+    <p style="font-size: 22px;">
+        In a traditional fixed-block system, the track is divided into sections
+        called blocks. A train is protected by keeping other trains out of
+        occupied blocks and sometimes out of blocks ahead.
+    </p>
+
+    <p style="font-size: 22px;">
+        In a CBTC system, the location and speed of each train can be monitored
+        more continuously. This allows the system to calculate safe separation
+        more precisely than older fixed-block systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        A key part of CBTC is continuous two-way digital communication between
+        trains and the control system. Trains send information such as location,
+        speed, direction, and operating status.
+    </p>
+
+    <p style="font-size: 22px;">
+        The control system uses this information to calculate movement authority,
+        safe braking limits, and speed commands. This information is then sent
+        back to the train.
+    </p>
+
+    <p style="font-size: 22px;">
+        CBTC systems commonly work with onboard Automatic Train Protection, or
+        ATP. ATP helps make sure the train does not exceed its movement
+        authority or safe speed limits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Some CBTC systems reduce the need for traditional wayside signals
+        because movement authority and speed information can be displayed or
+        enforced through onboard equipment.
+    </p>
+
+    <p style="font-size: 22px;">
+        CBTC can support moving block operation. In moving block operation, safe
+        train separation is calculated dynamically based on real-time train
+        position and speed instead of only fixed track block limits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Because of this, CBTC can improve train spacing, increase line capacity,
+        reduce delays, and support more efficient railway operations.
+    </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/cbtc-overview.png"
+    alt="Overview of CBTC communication between trains and central control"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/cbtc-moving-block.png"
+    alt="Moving block train separation using real time train location"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/cbtc-onboard-equipment.png"
+    alt="CBTC onboard train equipment and cab display"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is a key difference between CBTC and traditional fixed-block signaling?</p>
+        <label><input type="radio" name="q1" value="wrong"> CBTC only uses trackside lights, while traditional systems use Wi-Fi</label><br>
+        <label><input type="radio" name="q1" value="correct"> CBTC uses real-time train location and speed data to calculate safe separation</label><br>
+        <label><input type="radio" name="q1" value="wrong"> CBTC depends only on manual operators for train separation</label><br><br>
+
+        <p>2. What information is exchanged in a CBTC system?</p>
+        <label><input type="radio" name="q2" value="correct"> Trains send location, speed, and direction, and receive movement authority and speed commands</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Trains report passenger counts to vending machines</label><br>
+        <label><input type="radio" name="q2" value="wrong"> Two-way communication is not used in CBTC</label><br><br>
+
+        <p>3. What is moving block operation?</p>
+        <label><input type="radio" name="q3" value="wrong"> Trains switch tracks randomly</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Trains rely only on fixed blocks spaced far apart</label><br>
+        <label><input type="radio" name="q3" value="correct"> Safe train separation is calculated in real time using train position and speed</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
+    </div>
+
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if(password === "signal2026") {
+            window.location.href = "Module 12A.html";
+        } else {
+            alert("Incorrect Password");
+        }
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 11H.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>

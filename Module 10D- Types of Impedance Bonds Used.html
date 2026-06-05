@@ -1,137 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Module 10D: Types of Impedance Bonds Used</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-    .content-container { margin-bottom: 30px; }
-    .question-container { margin-bottom: 20px; }
-    .question { font-weight: bold; }
-    .answer-option { display: block; margin-bottom: 8px; }
-    .correct-answer { background-color: #d4edda; }
-    .wrong-answer { background-color: #f8d7da; }
-    #submit-button {
-      padding: 18px 36px;
-      font-size: 1.4em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #submit-button:hover { background-color: #0056b3; }
-    #submit-button:disabled {
-      background-color: #6c757d;
-      cursor: not-allowed;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 10D - Types of Impedance Bonds Used</title>
 </head>
-<body>
-  <h1>Module 10D: Types of Impedance Bonds Used</h1>
 
-  <div class="content-container">
-    <p>
-      Various types of impedance bonds are designed to meet the specific requirements of different railway electrification and signaling systems. The main distinctions lie in their construction, current carrying capacity, and suitability for different frequencies and track circuit types. Here are some common types:
+<body style="font-family: Arial; background-color: white; padding: 30px;">
+
+    <h1>🚦 Module 10D - Types of Impedance Bonds Used</h1>
+
+    <h2 style="color: darkblue;">
+        Common Types of Impedance Bonds
+    </h2>
+
+    <hr>
+
+    <p style="font-size: 22px;">
+        Different types of impedance bonds are used depending on the railway
+        electrification system, traction current requirements, track circuit
+        frequency, and signal system design.
     </p>
-    <ul>
-      <li><strong>Single Impedance Bonds:</strong> Basic type with a single winding, used to pass traction current while blocking signaling frequencies.</li>
-      <li><strong>Center-Tapped Impedance Bonds:</strong> Include a center tap for balanced traction return and are often used in double-rail circuits.</li>
-      <li><strong>Double Impedance Bonds:</strong> Two single bonds in series to handle higher current or impedance needs.</li>
-      <li><strong>Tuned Impedance Bonds:</strong> Include capacitive components tuned for specific signaling frequencies to enhance isolation.</li>
-      <li><strong>Wee-Zee Bonds:</strong> Used in DC traction with AC track circuits to shunt DC return and block AC signals.</li>
-      <li><strong>Specialty Bonds:</strong> Designed for specific systems like AFTC or impulse track circuits with tailored frequency characteristics.</li>
-    </ul>
-    <p>
-      The right type of bond depends on traction current type, signaling frequency, and system requirements.
+
+    <p style="font-size: 22px;">
+        The main differences between impedance bonds include their construction,
+        current carrying capacity, winding arrangement, frequency response, and
+        how they connect to the rails.
     </p>
-  </div>
 
-  <h2>Module 10D Questions</h2>
-  <div id="quiz-container">
-    <div class="question-container">
-      <p class="question">1. What is the key difference in construction and application between a single and a center-tapped impedance bond?</p>
-      <label class="answer-option"><input type="radio" name="q1" value="a"> A) Center-tapped bonds are for use only in DC systems</label>
-      <label class="answer-option"><input type="radio" name="q1" value="b"> B) Single bonds use a capacitor; center-tapped bonds do not</label>
-      <label class="answer-option"><input type="radio" name="q1" value="c"> C) Center-tapped bonds have a central connection to balance traction return current between both rails</label>
+    <p style="font-size: 22px;">
+        A single impedance bond is one of the basic types. It uses a winding to
+        allow traction return current to pass while helping block or limit the
+        signaling current used by the track circuit.
+    </p>
+
+    <p style="font-size: 22px;">
+        A center-tapped impedance bond has a center connection point. This center
+        tap can help balance traction return current between the two running
+        rails and is commonly used in double-rail track circuit arrangements.
+    </p>
+
+    <p style="font-size: 22px;">
+        Double impedance bonds may be used where additional current carrying
+        capacity or increased impedance is required. These arrangements are
+        selected based on the electrical design of the railroad system.
+    </p>
+
+    <p style="font-size: 22px;">
+        Tuned impedance bonds are designed for specific signaling frequencies.
+        They may include additional electrical components that improve isolation
+        between adjacent track circuits.
+    </p>
+
+    <p style="font-size: 22px;">
+        Wee-Zee bonds are commonly associated with DC traction systems using AC
+        track circuits. Their purpose is to allow DC traction return current to
+        pass while blocking or limiting AC signaling current.
+    </p>
+
+    <p style="font-size: 22px;">
+        Specialty impedance bonds may also be used for systems such as audio
+        frequency track circuits, impulse track circuits, or other specialized
+        train detection systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        The correct impedance bond must be selected for the system it serves.
+        Using the wrong type can cause poor track circuit operation, traction
+        return problems, or unsafe signaling conditions.
+    </p>
+
+    <!-- Image placeholders for later -->
+    <!--
+    <img src="images/types-of-impedance-bonds.png"
+    alt="Different types of impedance bonds used in railway signaling"
+    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+
+    <img src="images/center-tapped-impedance-bond.png"
+    alt="Center tapped impedance bond showing balanced traction return current"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/tuned-impedance-bond.png"
+    alt="Tuned impedance bond used for specific AC track circuit frequencies"
+    style="width:350px; border-radius:10px;">
+
+    <img src="images/wee-zee-bond.png"
+    alt="Wee-Zee bond used in DC traction territory with AC track circuits"
+    style="width:350px; border-radius:10px;">
+    -->
+
+    <hr>
+
+    <h2>Module Quiz</h2>
+
+    <form id="quizForm">
+
+        <p>1. What is a key feature of a center-tapped impedance bond?</p>
+        <label><input type="radio" name="q1" value="wrong"> It is used only in DC systems and has no rail connections</label><br>
+        <label><input type="radio" name="q1" value="wrong"> It uses only a capacitor and does not use inductance</label><br>
+        <label><input type="radio" name="q1" value="correct"> It has a center connection that can help balance traction return current between both rails</label><br><br>
+
+        <p>2. Why are tuned impedance bonds used?</p>
+        <label><input type="radio" name="q2" value="wrong"> To allow all signaling frequencies to pass freely into adjacent circuits</label><br>
+        <label><input type="radio" name="q2" value="correct"> To block or control specific frequencies and improve isolation between track circuits</label><br>
+        <label><input type="radio" name="q2" value="wrong"> To redirect energy toward auxiliary relays only</label><br><br>
+
+        <p>3. Where are Wee-Zee bonds typically used?</p>
+        <label><input type="radio" name="q3" value="correct"> DC traction systems with AC track circuits</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Non-electrified sidings only</label><br>
+        <label><input type="radio" name="q3" value="wrong"> Inside mechanical interlocking machines only</label><br><br>
+
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="checkPassword()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="continueButton" style="display:none;">
+        <a href="purchase.html">
+            <button>Continue to Full Course</button>
+        </a>
     </div>
 
-    <div class="question-container">
-      <p class="question">2. Why might tuned impedance bonds be necessary in railway signaling systems using specific AC track circuit frequencies?</p>
-      <label class="answer-option"><input type="radio" name="q2" value="a"> A) To allow signaling frequencies to pass through more easily</label>
-      <label class="answer-option"><input type="radio" name="q2" value="b"> B) To block or enhance specific frequencies and improve isolation between adjacent circuits</label>
-      <label class="answer-option"><input type="radio" name="q2" value="c"> C) To redirect energy toward auxiliary relays</label>
-    </div>
+    <script>
+    function checkPassword() {
+        let password = prompt("Enter Password:");
 
-    <div class="question-container">
-      <p class="question">3. In what type of electrified railway system are Wee-Zee bonds typically used, and what is their primary function?</p>
-      <label class="answer-option"><input type="radio" name="q3" value="a"> A) DC traction systems with AC track circuits; they allow DC return while blocking AC signaling</label>
-      <label class="answer-option"><input type="radio" name="q3" value="b"> B) Non-electrified sidings for relay switching</label>
-      <label class="answer-option"><input type="radio" name="q3" value="c"> C) AC systems using electro-mechanical interlockings</label>
-    </div>
-
-    <button id="submit-button">Submit Answers</button>
-    <div id="results-container" style="display: none;">
-      Your Score: <span id="final-score">0</span> out of <span id="max-score">3</span>
-    </div>
-  </div>
-
-  <script>
-    const questions = [
-      { name: "q1", correctAnswer: "c" },
-      { name: "q2", correctAnswer: "b" },
-      { name: "q3", correctAnswer: "a" }
-    ];
-
-    const submitButton = document.getElementById('submit-button');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreDisplay = document.getElementById('final-score');
-    const maxScoreDisplay = document.getElementById('max-score');
-
-    submitButton.addEventListener('click', () => {
-      let score = 0;
-      const questionContainers = document.querySelectorAll('.question-container');
-      maxScoreDisplay.textContent = questions.length;
-
-      questionContainers.forEach((qContainer, index) => {
-        const selectedAnswer = document.querySelector(`input[name="${questions[index].name}"]:checked`);
-        const answerElements = qContainer.querySelectorAll('.answer-option');
-
-        if (selectedAnswer) {
-          if (selectedAnswer.value === questions[index].correctAnswer) {
-            score++;
-            answerElements.forEach(label => {
-              if (label.querySelector('input').value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          } else {
-            answerElements.forEach(label => {
-              const input = label.querySelector('input');
-              if (input.value === selectedAnswer.value) {
-                label.classList.add('wrong-answer');
-              } else if (input.value === questions[index].correctAnswer) {
-                label.classList.add('correct-answer');
-              }
-            });
-          }
+        if(password === "signal2026") {
+            window.location.href = "Module 11.html";
         } else {
-          answerElements.forEach(label => {
-            const input = label.querySelector('input');
-            if (input.value === questions[index].correctAnswer) {
-              label.classList.add('correct-answer');
-            }
-          });
+            alert("Incorrect Password");
         }
-      });
+    }
 
-      finalScoreDisplay.textContent = score;
-      resultsContainer.style.display = 'block';
-      document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
-      submitButton.disabled = true;
-    });
-  </script>
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+
+        document.getElementById("continueButton").style.display = "block";
+    }
+    </script>
+
+    <hr>
+
+    <div style="margin-top:30px;">
+
+        <a href="courses.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        margin-right:10px;">
+        Home
+        </button>
+        </a>
+
+        <a href="Module 10C.html">
+        <button style="background-color:#444;
+        color:white;
+        padding:12px 25px;
+        font-size:16px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        Back
+        </button>
+        </a>
+
+    </div>
+
+    <hr>
+
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
