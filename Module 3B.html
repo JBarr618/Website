@@ -30,8 +30,8 @@
     </p>
 
     <img src="../../pictures/Module 3/two trains on same track.webp"
-    alt="Two trains on the same track heading toward each other."
-    style="width:350px; float:right; margin-left:20px; border-radius:10px;">
+         alt="Two trains on the same track heading toward each other."
+         style="width:350px; float:right; margin-left:20px; border-radius:10px;">
 
     <p style="font-size: 22px;">
         Beyond basic train detection, DC track circuits provide an important fail-safe characteristic.
@@ -46,8 +46,8 @@
     </p>
 
     <img src="../../pictures/Module 3/Red signal with train in advance of signal.webp"
-    alt="Train passing a signal that changed from green to red."
-    style="width:350px; border-radius:10px;">
+         alt="Train passing a signal that changed from green to red."
+         style="width:350px; border-radius:10px;">
 
     <p style="font-size: 22px;">
         While a basic DC track circuit is primarily used for train detection, track circuits can also be
@@ -81,30 +81,14 @@
         <label><input type="radio" name="q3" value="wrong"> Movement authority for switch machines only</label><br>
         <label><input type="radio" name="q3" value="wrong"> Morse code messages to dispatch centers</label><br><br>
 
-        <button type="button" onclick="gradeQuiz()" 
-        style="background-color:#0056b3;
-        color:white;
-        padding:15px 30px;
-        font-size:18px;
-        border:none;
-        border-radius:10px;
-        cursor:pointer;
-        margin-top:20px;">
-        Submit Answers
+        <button type="button" onclick="gradeQuiz()"
+            style="background-color:#0056b3; color:white; padding:15px 30px; font-size:18px; border:none; border-radius:10px; cursor:pointer; margin-top:20px;">
+            Submit Answers
         </button>
 
-        <button type="button"
-        onclick="checkPassword()"
-        style="background-color:#0056b3;
-        color:white;
-        padding:15px 30px;
-        font-size:18px;
-        border:none;
-        border-radius:10px;
-        cursor:pointer;
-        margin-top:20px;
-        margin-left:10px;">
-        Next Module
+        <button type="button" onclick="checkPassword()"
+            style="background-color:#0056b3; color:white; padding:15px 30px; font-size:18px; border:none; border-radius:10px; cursor:pointer; margin-top:20px; margin-left:10px;">
+            Next Module
         </button>
 
     </form>
@@ -118,69 +102,53 @@
     </div>
 
     <script>
-    function checkPassword() {
-        let password = prompt("Enter Password:");
+        function checkPassword() {
+            let password = prompt("Enter Password:");
 
-        if(password === "signal2026") {
-            window.location.href = "Module-3C.html";
-        } else {
-            alert("Incorrect Password");
+            if (password === "signal2026") {
+                window.location.href = "Module-3C.html";
+            } else {
+                alert("Incorrect Password");
+            }
         }
-    }
 
-    function gradeQuiz() {
+        function gradeQuiz() {
+            const answers = document.querySelectorAll('input[type="radio"]');
 
-        const answers = document.querySelectorAll('input[type="radio"]');
+            answers.forEach(answer => {
+                answer.disabled = true;
 
-        answers.forEach(answer => {
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
 
-            answer.disabled = true;
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
 
-            if(answer.checked && answer.value === "correct") {
-                answer.parentElement.style.color = "green";
-            }
+                if (answer.value === "correct") {
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+            });
 
-            if(answer.checked && answer.value === "wrong") {
-                answer.parentElement.style.color = "red";
-            }
-
-            if(answer.value === "correct") {
-                answer.parentElement.style.fontWeight = "bold";
-            }
-
-        });
-
-        document.getElementById("continueButton").style.display = "block";
-    }
+            document.getElementById("continueButton").style.display = "block";
+        }
     </script>
 
     <hr>
 
     <div style="margin-top:30px;">
 
-        <a href="../../courses.html">
-        <button style="background-color:#444;
-        color:white;
-        padding:12px 25px;
-        font-size:16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        margin-right:10px;">
-        Home
-        </button>
+        <a href="index.html">
+            <button style="background-color:#444; color:white; padding:12px 25px; font-size:16px; border:none; border-radius:8px; cursor:pointer; margin-right:10px;">
+                Home
+            </button>
         </a>
 
-        <a href="Module-3A.html">
-        <button style="background-color:#444;
-        color:white;
-        padding:12px 25px;
-        font-size:16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;">
-        Back
-        </button>
+        <a href="Module 3A.html">
+            <button style="background-color:#444; color:white; padding:12px 25px; font-size:16px; border:none; border-radius:8px; cursor:pointer;">
+                Back
+            </button>
         </a>
 
     </div>
