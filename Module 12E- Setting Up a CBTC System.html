@@ -141,117 +141,211 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. What are the first steps before physical CBTC installation begins?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. Define system goals, design architecture, and plan integration with current operations.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="correct">
+            A. Define system goals, design architecture, and plan integration with current operations.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> B. Install all cabling before choosing a vendor.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            B. Install all cabling before choosing a vendor.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> C. Begin training drivers on ticketing machines.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            C. Begin training drivers on ticketing machines.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> D. Install all signaling components before route plans are finalized.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            D. Install all signaling components before route plans are finalized.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What equipment is commonly installed for CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. Ticket scanners, weight detectors, and onboard restrooms.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            A. Ticket scanners, weight detectors, and onboard restrooms.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> B. Flood sensors, wind meters, and digital clocks.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            B. Flood sensors, wind meters, and digital clocks.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> C. Wayside radios and balises; onboard sensors, radios, ATP computers, and DMIs.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="correct">
+            C. Wayside radios and balises; onboard sensors, radios, ATP computers, and DMIs.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> D. Only onboard Wi-Fi routers and platform speakers.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            D. Only onboard Wi-Fi routers and platform speakers.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. Why is integration and testing critical?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. To validate train advertising displays.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            A. To validate train advertising displays.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> B. To confirm cable colors match the circuit book.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            B. To confirm cable colors match the circuit book.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> C. To check signal alignment with shadows at sunset.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            C. To check signal alignment with shadows at sunset.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> D. To ensure all subsystems work together safely under real operating conditions.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="correct">
+            D. To ensure all subsystems work together safely under real operating conditions.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>4. What helps reduce service disruption during CBTC installation?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q4"> A. Suspend all train service until CBTC is fully installed.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            A. Suspend all train service until CBTC is fully installed.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> B. Use phased implementation and overlay techniques while maintaining service.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="correct">
+            B. Use phased implementation and overlay techniques while maintaining service.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> C. Run parallel train operations using GPS-only systems.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            C. Run parallel train operations using GPS-only systems.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> D. Rely entirely on the old system and add CBTC after launch.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            D. Rely entirely on the old system and add CBTC after launch.
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+        function goToNextModule() {
+            window.location.href = "Module 12F.html";
+        }
+
+        function gradeQuiz() {
+
+            const answers = document.querySelectorAll('input[type="radio"]');
+
+            answers.forEach(answer => {
+
+                answer.disabled = true;
+
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
+
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
+
+                if (answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+
+            });
+        }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. A
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. C
-    </p>
+        <a href="Module 12D.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. D
-    </p>
+    </div>
 
-    <p style="font-size: 20px;">
-        4. B
-    </p>
+    <hr>
 
-    <br>
+    <footer>
 
-    <p>
-        <a href="module12.html">⬅ Back to Module 12</a>
-    </p>
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
 

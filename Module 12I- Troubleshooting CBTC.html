@@ -151,117 +151,212 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. What may happen if a CBTC train loses communication with the control system?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. The train may enter a restrictive fallback mode or stop, causing service delays.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="correct">
+            A. The train may enter a restrictive fallback mode or stop, causing service delays.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> B. The train automatically changes to diesel operation.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            B. The train automatically changes to diesel operation.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> C. Passengers automatically receive evacuation alerts.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            C. Passengers automatically receive evacuation alerts.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> D. All trackside signals are permanently disabled.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            D. All trackside signals are permanently disabled.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What can cause train localization errors?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. Faulty HVAC systems.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            A. Faulty HVAC systems.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> B. Overloaded passenger counters.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            B. Overloaded passenger counters.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> C. Faulty balise readers, odometers, calibration issues, or positioning data errors.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="correct">
+            C. Faulty balise readers, odometers, calibration issues, or positioning data errors.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> D. Ticket scanner problems.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            D. Ticket scanner problems.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. What should be checked when troubleshooting ATP problems?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. Operator seat alignment and horn volume.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            A. Operator seat alignment and horn volume.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> B. Event logs, braking interfaces, speed and position data, and ATP software calibration.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="correct">
+            B. Event logs, braking interfaces, speed and position data, and ATP software calibration.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> C. Station power meters and signal bulb age.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            C. Station power meters and signal bulb age.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> D. Cleaning logs and interior door locks.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            D. Cleaning logs and interior door locks.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>4. Why is teamwork important when troubleshooting CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q4"> A. CBTC is mostly about marketing.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            A. CBTC is mostly about marketing.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> B. Budget approval requires team collaboration.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            B. Budget approval requires team collaboration.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> C. CBTC problems only occur during special events.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="wrong">
+            C. CBTC problems only occur during special events.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q4"> D. CBTC issues may require signaling, IT, operations, vehicle, communication, and hardware specialists.
-        </p>
+        <label>
+            <input type="radio" name="q4" value="correct">
+            D. CBTC issues may require signaling, IT, operations, vehicle, communication, and hardware specialists.
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+        function goToNextModule() {
+            window.location.href = "Module 13.html";
+        }
+
+        function gradeQuiz() {
+
+            const answers = document.querySelectorAll('input[type="radio"]');
+
+            answers.forEach(answer => {
+
+                answer.disabled = true;
+
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
+
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
+
+                if (answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+
+            });
+        }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. A
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. C
-    </p>
+        <a href="Module 12H.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. B
-    </p>
+    </div>
 
-    <p style="font-size: 20px;">
-        4. D
-    </p>
+    <hr>
 
-    <br>
+    <footer>
 
-    <p>
-        <a href="module12.html">⬅ Back to Module 12</a>
-    </p>
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
+
 </html>

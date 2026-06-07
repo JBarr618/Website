@@ -135,93 +135,188 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. What is the main difference between centralized and distributed CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. Centralized systems process control data centrally; distributed systems allow more local onboard processing.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="correct">
+            A. Centralized systems process control data centrally; distributed systems allow more local onboard processing.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> B. Distributed systems require more wayside signals.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            B. Distributed systems require more wayside signals.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> C. Centralized CBTC only works on single-track lines.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            C. Centralized CBTC only works on single-track lines.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> D. Distributed CBTC uses satellite GPS for all data transmission.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            D. Distributed CBTC uses satellite GPS for all data transmission.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What describes a GoA 4 CBTC system?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. Driver controls the train with ATO assistance.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            A. Driver controls the train with ATO assistance.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> B. Train operates automatically but a conductor is always onboard.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            B. Train operates automatically but a conductor is always onboard.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> C. Automated start and stop with driver managing doors and safety.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            C. Automated start and stop with driver managing doors and safety.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> D. Fully automated operation with no onboard staff required.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="correct">
+            D. Fully automated operation with no onboard staff required.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. What communication technology is commonly used in CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. Satellite dish communication.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            A. Satellite dish communication.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> B. Radio-based systems such as Wi-Fi, LTE, or private radio because continuous two-way communication is required.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="correct">
+            B. Radio-based systems such as Wi-Fi, LTE, or private radio because continuous two-way communication is required.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> C. Manual signaling by handheld radios only.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            C. Manual signaling by handheld radios only.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> D. Acoustic sensors and intercom networks.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            D. Acoustic sensors and intercom networks.
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+        function goToNextModule() {
+            window.location.href = "Module 12G.html";
+        }
+
+        function gradeQuiz() {
+
+            const answers = document.querySelectorAll('input[type="radio"]');
+
+            answers.forEach(answer => {
+
+                answer.disabled = true;
+
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
+
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
+
+                if (answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+
+            });
+        }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. A
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. D
-    </p>
+        <a href="Module 12E.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. B
-    </p>
+    </div>
 
-    <br>
+    <hr>
 
-    <p>
-        <a href="module12.html">⬅ Back to Module 12</a>
-    </p>
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
+
 </html>

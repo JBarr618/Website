@@ -12,7 +12,7 @@
     <h1>🚦 Module 12C - Types of CBTC</h1>
 
     <h2 style="color: darkblue;">
-        What Types of Computer Based Train Control?
+        Types of Computer Based Train Control
     </h2>
 
     <hr>
@@ -121,93 +121,140 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. What is the main difference between centralized and distributed CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. Centralized systems process control centrally; distributed systems allow more onboard processing.
-        </p>
-
-        <p>
-            <input type="radio" name="q1"> B. Distributed CBTC requires all trains to stay stopped.
-        </p>
-
-        <p>
-            <input type="radio" name="q1"> C. Centralized CBTC only works for freight trains.
-        </p>
-
-        <p>
-            <input type="radio" name="q1"> D. Distributed CBTC uses no communication.
-        </p>
+        <label><input type="radio" name="q1" value="correct"> A. Centralized systems process control centrally; distributed systems allow more onboard processing.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> B. Distributed CBTC requires all trains to stay stopped.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> C. Centralized CBTC only works for freight trains.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> D. Distributed CBTC uses no communication.</label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What is the difference between GoA 2 and GoA 4?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. GoA 2 has no driver; GoA 4 always has two conductors.
-        </p>
-
-        <p>
-            <input type="radio" name="q2"> B. GoA 2 uses diesel; GoA 4 uses magnetic levitation.
-        </p>
-
-        <p>
-            <input type="radio" name="q2"> C. GoA 4 always requires an attendant onboard.
-        </p>
-
-        <p>
-            <input type="radio" name="q2"> D. GoA 2 has an operator for doors and emergencies; GoA 4 is fully automated.
-        </p>
+        <label><input type="radio" name="q2" value="wrong"> A. GoA 2 has no driver; GoA 4 always has two conductors.</label><br>
+        <label><input type="radio" name="q2" value="wrong"> B. GoA 2 uses diesel; GoA 4 uses magnetic levitation.</label><br>
+        <label><input type="radio" name="q2" value="wrong"> C. GoA 4 always requires an attendant onboard.</label><br>
+        <label><input type="radio" name="q2" value="correct"> D. GoA 2 has an operator for doors and emergencies; GoA 4 is fully automated.</label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. Why is reliable wireless communication important in CBTC?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. It sends Morse code through infrared lights.
-        </p>
+        <label><input type="radio" name="q3" value="wrong"> A. It sends Morse code through infrared lights.</label><br>
+        <label><input type="radio" name="q3" value="wrong"> B. It powers the train motors directly.</label><br>
+        <label><input type="radio" name="q3" value="correct"> C. It allows real-time train monitoring, Movement Authority updates, and control communication.</label><br>
+        <label><input type="radio" name="q3" value="wrong"> D. It replaces all track and signal equipment.</label><br><br>
 
-        <p>
-            <input type="radio" name="q3"> B. It powers the train motors directly.
-        </p>
+        <button type="button" onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
 
-        <p>
-            <input type="radio" name="q3"> C. It allows real-time train monitoring, Movement Authority updates, and control communication.
-        </p>
-
-        <p>
-            <input type="radio" name="q3"> D. It replaces all track and signal equipment.
-        </p>
+        <button type="button" onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+    function goToNextModule() {
+        window.location.href = "Module 12D.html";
+    }
+
+    function gradeQuiz() {
+
+        const answers = document.querySelectorAll('input[type="radio"]');
+
+        answers.forEach(answer => {
+
+            answer.disabled = true;
+
+            if(answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
+
+            if(answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
+
+            if(answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+                answer.parentElement.style.fontWeight = "bold";
+            }
+
+        });
+    }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. A
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. D
-    </p>
+        <a href="Module 12B.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. C
-    </p>
+    </div>
 
-    <br>
+    <hr>
 
-    <p>
-        <a href="module12.html">⬅ Back to Module 12</a>
-    </p>
+    <footer>
+
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
 

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 13C - Troubleshooting Microlok Units</title>
+    <title>Module 13D - Troubleshooting Microlok Units</title>
 </head>
 
 <body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <h1>🚦 Module 13C - Troubleshooting Microlok Units</h1>
+    <h1>🚦 Module 13D - Troubleshooting Microlok Units</h1>
 
     <h2 style="color: darkblue;">
         Troubleshooting Microlok Units
@@ -129,85 +129,169 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. What is one of the first steps in troubleshooting a Microlok unit?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. Replacing all I/O modules immediately.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            A. Replacing all I/O modules immediately.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> B. Reviewing status indicators and diagnostic software.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="correct">
+            B. Reviewing status indicators and diagnostic software.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> C. Turning off power to the system without checking anything.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            C. Turning off power to the system without checking anything.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What are common categories of Microlok problems?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. Improper use of signal flags.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            A. Improper use of signal flags.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> B. Communication, hardware, or software faults.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="correct">
+            B. Communication, hardware, or software faults.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> C. Incorrect train length only.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            C. Incorrect train length only.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. Why is Microlok diagnostic software important?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. It replaces the need for all field inspections.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            A. It replaces the need for all field inspections.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> B. It can permanently fix all problems by itself.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            B. It can permanently fix all problems by itself.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> C. It provides error logs and real-time system status.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="correct">
+            C. It provides error logs and real-time system status.
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+        function goToNextModule() {
+            window.location.href = "Module 14.html";
+        }
+
+        function gradeQuiz() {
+            const answers = document.querySelectorAll('input[type="radio"]');
+
+            answers.forEach(answer => {
+                answer.disabled = true;
+
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
+
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
+
+                if (answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+            });
+        }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. B
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. B
-    </p>
+        <a href="Module 13C.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. C
-    </p>
+    </div>
 
-    <br>
+    <hr>
 
-    <p>
-        <a href="Module-13B.html">⬅ Back to Module 13B</a>
-    </p>
+    <footer>
 
-    <p>
-        <a href="Module-13D.html">Next ➡ Module 13D</a>
-    </p>
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
 

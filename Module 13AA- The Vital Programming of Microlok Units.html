@@ -9,7 +9,7 @@
 
 <body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <h1>🚦 Module 13A - Vital Microlok Programming</h1>
+    <h1>🚦 Module 13AA - Vital Microlok Programming</h1>
 
     <h2 style="color: darkblue;">
         The Vital Programming of Microlok Units
@@ -117,85 +117,169 @@
 
     <hr>
 
-    <h2>Review Questions</h2>
+    <h2>Module Quiz</h2>
 
-    <form>
+    <form id="quizForm">
 
         <p style="font-size: 20px;">
             <strong>1. Why is the Microlok programming language considered high-level?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q1"> A. It only runs on Windows XP.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            A. It only runs on Windows XP.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> B. It uses familiar railroad signal terms to simplify complex logic.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="correct">
+            B. It uses familiar railroad signal terms to simplify complex logic.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q1"> C. It is written only in binary.
-        </p>
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            C. It is written only in binary.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>2. What do simulation and testing tools help engineers do?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q2"> A. Replace all real-world equipment.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            A. Replace all real-world equipment.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> B. Verify logic under different conditions before field deployment.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="correct">
+            B. Verify logic under different conditions before field deployment.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q2"> C. Create CAD drawings only.
-        </p>
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            C. Create CAD drawings only.
+        </label><br><br>
 
         <p style="font-size: 20px;">
             <strong>3. Why is Microlok programming software proprietary?</strong>
         </p>
 
-        <p>
-            <input type="radio" name="q3"> A. To protect safety and limit unauthorized changes.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="correct">
+            A. To protect safety and limit unauthorized changes.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> B. Because it is cheaper than open-source software.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            B. Because it is cheaper than open-source software.
+        </label><br>
 
-        <p>
-            <input type="radio" name="q3"> C. So anyone can program the system.
-        </p>
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            C. So anyone can program the system.
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;">
+        Submit Answers
+        </button>
+
+        <button type="button"
+        onclick="goToNextModule()"
+        style="background-color:#0056b3;
+        color:white;
+        padding:15px 30px;
+        font-size:18px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        margin-top:20px;
+        margin-left:10px;">
+        Next Module
+        </button>
 
     </form>
 
+    <script>
+        function goToNextModule() {
+            window.location.href = "Module 13B.html";
+        }
+
+        function gradeQuiz() {
+            const answers = document.querySelectorAll('input[type="radio"]');
+
+            answers.forEach(answer => {
+                answer.disabled = true;
+
+                if (answer.checked && answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                }
+
+                if (answer.checked && answer.value === "wrong") {
+                    answer.parentElement.style.color = "red";
+                }
+
+                if (answer.value === "correct") {
+                    answer.parentElement.style.color = "green";
+                    answer.parentElement.style.fontWeight = "bold";
+                }
+            });
+        }
+    </script>
+
     <hr>
 
-    <h2>Answer Key</h2>
+    <div style="margin-top:30px;">
 
-    <p style="font-size: 20px;">
-        1. B
-    </p>
+        <a href="courses.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        2. B
-    </p>
+        <a href="Module 13A.html">
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
+        </a>
 
-    <p style="font-size: 20px;">
-        3. A
-    </p>
+    </div>
 
-    <br>
+    <hr>
 
-    <p>
-        <a href="Module 13- Introduction to Microlok Programming.html">⬅ Back to Module 13</a>
-    </p>
+    <footer>
 
-    <p>
-        <a href="Module-13B.html">Next ➡ Module 13B</a>
-    </p>
+        <h3>Built From Real Railroad Experience</h3>
+
+        <p>
+            Signal School 2026 professional railroad signal training.
+        </p>
+
+        <p>
+            © 2026 Vantage Infrastructure LLC
+        </p>
+
+    </footer>
 
 </body>
 
