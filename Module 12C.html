@@ -152,7 +152,8 @@
         <label><input type="radio" name="q3" value="correct"> C. It allows real-time train monitoring, Movement Authority updates, and control communication.</label><br>
         <label><input type="radio" name="q3" value="wrong"> D. It replaces all track and signal equipment.</label><br><br>
 
-        <button type="button" onclick="gradeQuiz()"
+        <button type="button"
+        onclick="gradeQuiz()"
         style="background-color:#0056b3;
         color:white;
         padding:15px 30px;
@@ -164,7 +165,8 @@
         Submit Answers
         </button>
 
-        <button type="button" onclick="goToNextModule()"
+        <button type="button"
+        onclick="checkPassword()"
         style="background-color:#0056b3;
         color:white;
         padding:15px 30px;
@@ -180,31 +182,34 @@
     </form>
 
     <script>
-    function goToNextModule() {
-        window.location.href = "Module 12D.html";
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if (password === "signal2026") {
+            window.location.href = "Module 12D.html";
+        } else {
+            alert("Incorrect Password");
+        }
     }
 
     function gradeQuiz() {
-
         const answers = document.querySelectorAll('input[type="radio"]');
 
         answers.forEach(answer => {
-
             answer.disabled = true;
 
-            if(answer.checked && answer.value === "correct") {
+            if (answer.checked && answer.value === "correct") {
                 answer.parentElement.style.color = "green";
             }
 
-            if(answer.checked && answer.value === "wrong") {
+            if (answer.checked && answer.value === "wrong") {
                 answer.parentElement.style.color = "red";
             }
 
-            if(answer.value === "correct") {
+            if (answer.value === "correct") {
                 answer.parentElement.style.color = "green";
                 answer.parentElement.style.fontWeight = "bold";
             }
-
         });
     }
     </script>
@@ -257,15 +262,5 @@
     </footer>
 
 </body>
-<script>
-    function checkPassword() {
-        let password = prompt("Enter Password:");
-    
-        if (password === "signal2026") {
-            window.location.href = "Module 12D.html";
-        } else {
-            alert("Incorrect Password");
-        }
-    }
-    </script>
+
 </html>

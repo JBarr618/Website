@@ -4,152 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 12H - Testing CBTC</title>
+    <title>Module 12G - CBTC Further Detail</title>
 </head>
 
 <body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <h1>🚦 Module 12H - Testing CBTC</h1>
+    <h1>🚦 Module 12G - CBTC Further Detail</h1>
 
     <h2 style="color: darkblue;">
-        Testing Computer Based Train Control
+        Types of Computer Based Train Control Used
     </h2>
 
     <hr>
 
     <p style="font-size: 22px;">
-        Testing a Computer Based Train Control system is a critical part of
-        placing the system into service. The purpose of testing is to make sure
-        the CBTC system is safe, reliable, properly installed, and functioning
-        as designed.
+        Computer Based Train Control systems can be designed in different ways
+        depending on the railroad, transit agency, operating environment, and
+        level of automation required.
     </p>
 
     <p style="font-size: 22px;">
-        CBTC testing happens in stages. Testing may begin in a laboratory,
-        continue in the field after installation, and continue again during
-        live operation through monitoring and maintenance checks.
+        Some systems are built mainly around central control equipment, while
+        others use more onboard processing. CBTC may also support manual,
+        semi-automatic, driverless, or fully unattended train operation.
     </p>
 
-    <h3>1. Simulation and Laboratory Testing</h3>
+    <h3>1. Centralized CBTC Systems</h3>
 
     <p style="font-size: 22px;">
-        Before CBTC equipment is placed into service on the railroad, testing
-        is often performed in a laboratory or simulated environment.
-    </p>
-
-    <p style="font-size: 22px;">
-        This allows engineers to test software, onboard equipment, wayside
-        equipment, central control equipment, interfaces, normal operation,
-        degraded operation, and failure conditions before the system is tested
-        on the actual track.
-    </p>
-
-    <h3>2. Static Testing</h3>
-
-    <p style="font-size: 22px;">
-        Static testing is performed after equipment is installed but before the
-        train is operated dynamically under CBTC control.
+        Most CBTC systems in service use a centralized design. In this type of
+        system, central or wayside control equipment receives train information,
+        calculates safe Movement Authority, and sends commands back to the
+        trains.
     </p>
 
     <p style="font-size: 22px;">
-        Static testing may include checking wiring, power, equipment
-        configuration, communication links, onboard computers, radios, antennas,
-        balise readers, sensors, and driver machine interfaces.
+        Examples of major CBTC suppliers include Siemens, Thales, and Alstom.
+        Their systems are used in many metro and transit systems throughout the
+        world.
     </p>
 
-    <h3>3. Dynamic Testing</h3>
+    <h3>2. Distributed and Hybrid CBTC Systems</h3>
 
     <p style="font-size: 22px;">
-        Dynamic testing is performed with trains moving on the track. This is
-        also called on-track testing.
-    </p>
-
-    <p style="font-size: 22px;">
-        Dynamic testing verifies train location accuracy, wireless
-        communication, speed supervision, braking enforcement, Movement
-        Authority, train stopping accuracy, route interfaces, and degraded mode
-        operation.
-    </p>
-
-    <h3>4. ATP Testing</h3>
-
-    <p style="font-size: 22px;">
-        Automatic Train Protection testing verifies that the system will keep
-        the train within safe speed and distance limits.
+        Distributed CBTC systems allow more processing to take place onboard
+        the train. This means the train may perform more calculations locally
+        instead of depending completely on one central processor.
     </p>
 
     <p style="font-size: 22px;">
-        ATP testing confirms that if the train exceeds permitted limits or
-        approaches the end of its Movement Authority, the system will intervene
-        and apply the brakes as required.
+        Some modern systems use a hybrid design. A hybrid system may combine
+        centralized safety supervision with onboard train-based logic to improve
+        flexibility, reliability, and system resilience.
     </p>
 
-    <h3>5. ATO Testing</h3>
+    <h3>3. Grade of Automation in CBTC</h3>
 
     <p style="font-size: 22px;">
-        If the CBTC system includes Automatic Train Operation, ATO testing is
-        performed to verify smooth acceleration, braking, speed control, and
-        accurate station stopping.
+        CBTC can support different Grades of Automation. The grade describes
+        how much of the train operation is performed automatically.
     </p>
 
-    <h3>6. Integration Testing</h3>
+    <h3>GoA 2 - Semi-Automatic Operation</h3>
 
     <p style="font-size: 22px;">
-        Integration testing confirms that all CBTC equipment works together as
-        one complete system.
+        Many rail systems begin with GoA 2. In GoA 2, the train may start,
+        stop, and control speed automatically, but an operator is still onboard
+        for door operation, emergencies, and degraded operation.
     </p>
 
+    <h3>GoA 3 - Driverless Train Operation</h3>
+
     <p style="font-size: 22px;">
-        This includes testing interfaces with interlockings, switches, signals,
-        platform screen doors, control center equipment, communication systems,
-        and existing railroad systems.
+        In GoA 3, the train operates without a driver in the cab. The system
+        controls train movement and doors, but staff may still be onboard to
+        assist passengers or respond to emergencies.
     </p>
 
-    <h3>7. Degraded Mode Testing</h3>
+    <h3>GoA 4 - Unattended Train Operation</h3>
 
     <p style="font-size: 22px;">
-        Degraded mode testing verifies how the system responds when something
-        fails or does not operate normally.
+        In GoA 4, the train is fully automated with no onboard staff required
+        for normal operation. This is common on some modern metro systems.
     </p>
 
-    <p style="font-size: 22px;">
-        Examples include communication loss, equipment failure, sensor failure,
-        train location errors, route changes, emergency braking, and fallback
-        operating modes.
-    </p>
-
-    <h3>8. Safety Validation</h3>
+    <h3>4. Mainline Automation Challenges</h3>
 
     <p style="font-size: 22px;">
-        Safety validation confirms that hazards have been identified, analyzed,
-        controlled, and reduced to an acceptable level.
+        High automation is usually easier on metro systems than on mainline
+        railroads. Metro systems often have controlled environments, shorter
+        routes, predictable stopping patterns, and separated tracks.
     </p>
 
     <p style="font-size: 22px;">
-        Formal safety methods may include Failure Mode and Effects Analysis,
-        hazard logs, safety cases, independent safety assessments, and
-        verification that safety requirements have been met.
+        Mainline railroads are more difficult to fully automate because they
+        may have mixed traffic, longer braking distances, more complex routing,
+        highway grade crossings, work zones, and greater obstacle detection
+        concerns.
     </p>
 
-    <h3>9. Acceptance Testing</h3>
+    <h3>5. Radio Communication Technology</h3>
 
     <p style="font-size: 22px;">
-        Acceptance testing is performed to prove that the CBTC system meets the
-        contract requirements, design requirements, safety requirements, and
-        operating requirements before it is accepted for service.
-    </p>
-
-    <h3>10. Ongoing Monitoring and Maintenance Testing</h3>
-
-    <p style="font-size: 22px;">
-        Testing does not stop after CBTC is placed into service. The system
-        must continue to be monitored and maintained.
+        CBTC depends on reliable radio communication. Systems may use licensed
+        radio, unlicensed radio, Wi-Fi-based systems, LTE, 5G, or proprietary
+        industrial radio networks.
     </p>
 
     <p style="font-size: 22px;">
-        Ongoing testing helps detect problems early, verify communication
-        health, confirm sensor accuracy, check software performance, and
-        maintain safe and reliable train operation.
+        Reliable communication is important because trains and control systems
+        must continuously exchange train location, speed, Movement Authority,
+        system status, and control information.
+    </p>
+
+    <h3>6. Public Cellular Networks</h3>
+
+    <p style="font-size: 22px;">
+        Some newer systems may consider public cellular networks such as LTE or
+        5G. These systems may reduce the amount of dedicated communication
+        infrastructure needed.
+    </p>
+
+    <p style="font-size: 22px;">
+        However, public cellular networks must be carefully evaluated for
+        coverage, reliability, latency, cybersecurity, priority access, and
+        safety-critical performance.
+    </p>
+
+    <h3>7. Choosing the Right CBTC Type</h3>
+
+    <p style="font-size: 22px;">
+        The type of CBTC selected depends on the railway’s needs. Important
+        factors include service frequency, safety requirements, ridership,
+        budget, existing signal systems, automation goals, communication
+        coverage, and future expansion plans.
     </p>
 
     <hr>
@@ -159,99 +147,75 @@
     <form id="quizForm">
 
         <p style="font-size: 20px;">
-            <strong>1. Why is simulation and laboratory testing important?</strong>
+            <strong>1. Which companies are examples of major CBTC suppliers?</strong>
         </p>
 
         <label>
             <input type="radio" name="q1" value="wrong">
-            A. It is mainly used to train passengers before launch.
+            A. Boeing, Nokia, and Apple.
+        </label><br>
+
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            B. General Electric and SpaceX.
         </label><br>
 
         <label>
             <input type="radio" name="q1" value="correct">
-            B. It allows early testing of hardware, software, interfaces, and failure scenarios before field deployment.
+            C. Siemens, Thales, and Alstom.
         </label><br>
 
         <label>
             <input type="radio" name="q1" value="wrong">
-            C. It allows field testing to be skipped.
-        </label><br>
-
-        <label>
-            <input type="radio" name="q1" value="wrong">
-            D. It loads emergency broadcasts into station systems.
+            D. Dell and Cisco only.
         </label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>2. What is evaluated during dynamic CBTC testing?</strong>
+            <strong>2. Why is GoA 3 or GoA 4 harder on mainline railways than urban metros?</strong>
         </p>
-
-        <label>
-            <input type="radio" name="q2" value="wrong">
-            A. Track paint wear and advertisement placement.
-        </label><br>
-
-        <label>
-            <input type="radio" name="q2" value="wrong">
-            B. Number of passengers on board.
-        </label><br>
 
         <label>
             <input type="radio" name="q2" value="correct">
-            C. Train location, communication, ATP, ATO, degraded modes, and system interfaces.
+            A. Mainlines have mixed traffic, longer braking distances, and greater obstacle detection needs.
         </label><br>
 
         <label>
             <input type="radio" name="q2" value="wrong">
-            D. Employee uniform fit and horn sound level.
+            B. Urban metros do not use electricity.
+        </label><br>
+
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            C. Urban lines only run once daily.
+        </label><br>
+
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            D. GoA 3 and GoA 4 are banned on all mainlines.
         </label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>3. What is the purpose of safety validation?</strong>
+            <strong>3. What is a concern with using public cellular networks for CBTC?</strong>
         </p>
 
         <label>
             <input type="radio" name="q3" value="wrong">
-            A. To make sure trains have correct branding decals.
+            A. Public LTE offers no possible benefit.
         </label><br>
 
         <label>
             <input type="radio" name="q3" value="wrong">
-            B. To test passenger Wi-Fi at stations.
+            B. Bluetooth is the only safe method.
         </label><br>
 
         <label>
             <input type="radio" name="q3" value="wrong">
-            C. To confirm seat count and accessibility signs.
+            C. Cellular cannot support any train operation.
         </label><br>
 
         <label>
             <input type="radio" name="q3" value="correct">
-            D. To verify hazards are controlled using formal safety methods such as FMEA.
-        </label><br><br>
-
-        <p style="font-size: 20px;">
-            <strong>4. Why does CBTC testing continue after commissioning?</strong>
-        </p>
-
-        <label>
-            <input type="radio" name="q4" value="correct">
-            A. To monitor performance, detect issues early, and maintain system safety and reliability.
-        </label><br>
-
-        <label>
-            <input type="radio" name="q4" value="wrong">
-            B. To qualify for advertising incentives.
-        </label><br>
-
-        <label>
-            <input type="radio" name="q4" value="wrong">
-            C. To avoid retraining operators.
-        </label><br>
-
-        <label>
-            <input type="radio" name="q4" value="wrong">
-            D. To guarantee long-distance travel certification.
+            D. Public networks may reduce cost but raise reliability, latency, and cybersecurity concerns.
         </label><br><br>
 
         <button type="button"
@@ -268,7 +232,7 @@
         </button>
 
         <button type="button"
-        onclick="goToNextModule()"
+        onclick="checkPassword()"
         style="background-color:#0056b3;
         color:white;
         padding:15px 30px;
@@ -284,33 +248,36 @@
     </form>
 
     <script>
-        function goToNextModule() {
-            window.location.href = "Module 12I.html";
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if (password === "signal2026") {
+            window.location.href = "Module 12H.html";
+        } else {
+            alert("Incorrect Password");
         }
+    }
 
-        function gradeQuiz() {
+    function gradeQuiz() {
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-            const answers = document.querySelectorAll('input[type="radio"]');
+        answers.forEach(answer => {
+            answer.disabled = true;
 
-            answers.forEach(answer => {
+            if (answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
 
-                answer.disabled = true;
+            if (answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
 
-                if (answer.checked && answer.value === "correct") {
-                    answer.parentElement.style.color = "green";
-                }
-
-                if (answer.checked && answer.value === "wrong") {
-                    answer.parentElement.style.color = "red";
-                }
-
-                if (answer.value === "correct") {
-                    answer.parentElement.style.color = "green";
-                    answer.parentElement.style.fontWeight = "bold";
-                }
-
-            });
-        }
+            if (answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+                answer.parentElement.style.fontWeight = "bold";
+            }
+        });
+    }
     </script>
 
     <hr>
@@ -330,7 +297,7 @@
             </button>
         </a>
 
-        <a href="Module 12G.html">
+        <a href="Module 12F.html">
             <button style="background-color:#444;
             color:white;
             padding:12px 25px;
@@ -359,17 +326,7 @@
         </p>
 
     </footer>
-    <script>
-        function checkPassword() {
-            let password = prompt("Enter Password:");
-        
-            if (password === "signal2026") {
-                window.location.href = "Module 12I.html";
-            } else {
-                alert("Incorrect Password");
-            }
-        }
-        </script>
+
 </body>
 
 </html>

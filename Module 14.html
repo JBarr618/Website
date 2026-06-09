@@ -66,21 +66,58 @@
     <form id="quizForm">
 
         <p>1. What is the fundamental purpose of a VPI system in railway signaling?</p>
-        <label><input type="radio" name="q1" value="wrong"> To provide power to locomotives</label><br>
-        <label><input type="radio" name="q1" value="correct"> To safely control signals and switches and prevent conflicting train movements</label><br>
-        <label><input type="radio" name="q1" value="wrong"> To replace train crews with automatic ticketing</label><br><br>
+
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            To provide power to locomotives
+        </label><br>
+
+        <label>
+            <input type="radio" name="q1" value="correct">
+            To safely control signals and switches and prevent conflicting train movements
+        </label><br>
+
+        <label>
+            <input type="radio" name="q1" value="wrong">
+            To replace train crews with automatic ticketing
+        </label><br><br>
 
         <p>2. How does VPI software logic differ from traditional relay-based interlocking?</p>
-        <label><input type="radio" name="q2" value="correct"> VPI uses programmed logic that can be modified through software, but requires strict validation and verification</label><br>
-        <label><input type="radio" name="q2" value="wrong"> VPI uses only mechanical levers and no electronics</label><br>
-        <label><input type="radio" name="q2" value="wrong"> VPI removes the need for safety testing</label><br><br>
+
+        <label>
+            <input type="radio" name="q2" value="correct">
+            VPI uses programmed logic that can be modified through software, but requires strict validation and verification
+        </label><br>
+
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            VPI uses only mechanical levers and no electronics
+        </label><br>
+
+        <label>
+            <input type="radio" name="q2" value="wrong">
+            VPI removes the need for safety testing
+        </label><br><br>
 
         <p>3. Which two manufacturers are examples of companies that produce VPI interlocking systems?</p>
-        <label><input type="radio" name="q3" value="wrong"> Ford and Caterpillar</label><br>
-        <label><input type="radio" name="q3" value="wrong"> Apple and Microsoft</label><br>
-        <label><input type="radio" name="q3" value="correct"> Siemens and CASCO</label><br><br>
 
-        <button type="button" onclick="gradeQuiz()" 
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            Ford and Caterpillar
+        </label><br>
+
+        <label>
+            <input type="radio" name="q3" value="wrong">
+            Apple and Microsoft
+        </label><br>
+
+        <label>
+            <input type="radio" name="q3" value="correct">
+            Siemens and CASCO
+        </label><br><br>
+
+        <button type="button"
+        onclick="gradeQuiz()"
         style="background-color:#0056b3;
         color:white;
         padding:15px 30px;
@@ -103,7 +140,7 @@
         cursor:pointer;
         margin-top:20px;
         margin-left:10px;">
-        Module 14A
+        Next Module
         </button>
 
     </form>
@@ -120,7 +157,7 @@
     function checkPassword() {
         let password = prompt("Enter Password:");
 
-        if(password === "signal2026") {
+        if (password === "signal2026") {
             window.location.href = "Module 14A.html";
         } else {
             alert("Incorrect Password");
@@ -128,25 +165,23 @@
     }
 
     function gradeQuiz() {
-
         const answers = document.querySelectorAll('input[type="radio"]');
 
         answers.forEach(answer => {
-
             answer.disabled = true;
 
-            if(answer.checked && answer.value === "correct") {
+            if (answer.checked && answer.value === "correct") {
                 answer.parentElement.style.color = "green";
             }
 
-            if(answer.checked && answer.value === "wrong") {
+            if (answer.checked && answer.value === "wrong") {
                 answer.parentElement.style.color = "red";
             }
 
-            if(answer.value === "correct") {
+            if (answer.value === "correct") {
+                answer.parentElement.style.color = "green";
                 answer.parentElement.style.fontWeight = "bold";
             }
-
         });
 
         document.getElementById("continueButton").style.display = "block";
@@ -158,28 +193,28 @@
     <div style="margin-top:30px;">
 
         <a href="courses.html">
-        <button style="background-color:#444;
-        color:white;
-        padding:12px 25px;
-        font-size:16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        margin-right:10px;">
-        Home
-        </button>
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            margin-right:10px;">
+            Home
+            </button>
         </a>
 
         <a href="Module 13D.html">
-        <button style="background-color:#444;
-        color:white;
-        padding:12px 25px;
-        font-size:16px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;">
-        Back
-        </button>
+            <button style="background-color:#444;
+            color:white;
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;">
+            Back
+            </button>
         </a>
 
     </div>

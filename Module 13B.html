@@ -194,7 +194,7 @@
         </button>
 
         <button type="button"
-        onclick="goToNextModule()"
+        onclick="checkPassword()"
         style="background-color:#0056b3;
         color:white;
         padding:15px 30px;
@@ -210,30 +210,36 @@
     </form>
 
     <script>
-        function goToNextModule() {
+    function checkPassword() {
+        let password = prompt("Enter Password:");
+
+        if (password === "signal2026") {
             window.location.href = "Module 13C.html";
+        } else {
+            alert("Incorrect Password");
         }
+    }
 
-        function gradeQuiz() {
-            const answers = document.querySelectorAll('input[type="radio"]');
+    function gradeQuiz() {
+        const answers = document.querySelectorAll('input[type="radio"]');
 
-            answers.forEach(answer => {
-                answer.disabled = true;
+        answers.forEach(answer => {
+            answer.disabled = true;
 
-                if (answer.checked && answer.value === "correct") {
-                    answer.parentElement.style.color = "green";
-                }
+            if (answer.checked && answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+            }
 
-                if (answer.checked && answer.value === "wrong") {
-                    answer.parentElement.style.color = "red";
-                }
+            if (answer.checked && answer.value === "wrong") {
+                answer.parentElement.style.color = "red";
+            }
 
-                if (answer.value === "correct") {
-                    answer.parentElement.style.color = "green";
-                    answer.parentElement.style.fontWeight = "bold";
-                }
-            });
-        }
+            if (answer.value === "correct") {
+                answer.parentElement.style.color = "green";
+                answer.parentElement.style.fontWeight = "bold";
+            }
+        });
+    }
     </script>
 
     <hr>
@@ -284,15 +290,5 @@
     </footer>
 
 </body>
-<script>
-    function checkPassword() {
-        let password = prompt("Enter Password:");
-    
-        if (password === "signal2026") {
-            window.location.href = "Module 13C.html";
-        } else {
-            alert("Incorrect Password");
-        }
-    }
-    </script>
+
 </html>
