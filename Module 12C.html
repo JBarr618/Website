@@ -4,119 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 12C - Types of CBTC</title>
+    <title>Module 12C - What Types of Computer Based Train Control?</title>
 </head>
 
 <body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <h1>🚦 Module 12C - Types of CBTC</h1>
+    <h1>🚦 Module 12C - What Types of Computer Based Train Control?</h1>
 
     <h2 style="color: darkblue;">
-        Types of Computer Based Train Control
+        Introduction to Computer Based Train Control (CBTC) - Page 4
     </h2>
 
     <hr>
 
     <p style="font-size: 22px;">
-        Computer Based Train Control systems can be grouped into different
-        types based on system architecture, level of automation, and the
-        communication technology used.
+        Computer Based Train Control, commonly called CBTC, can be categorized
+        in several ways. These categories reflect system architecture, the
+        level of automation, and the communication technologies used.
     </p>
 
     <p style="font-size: 22px;">
-        These categories help explain how CBTC systems are designed and how they
-        support safe, efficient, and automated train operation.
+        Understanding these classifications helps explain the flexibility and
+        adaptability of CBTC in different railway environments.
     </p>
 
-    <h3>1. Centralized CBTC</h3>
+    <h3>1. Based on Architecture</h3>
+
+    <h3>Centralized CBTC</h3>
 
     <p style="font-size: 22px;">
-        In a centralized CBTC system, the main control equipment is located in a
-        central control center or wayside control location.
-    </p>
-
-    <p style="font-size: 22px;">
-        The central system receives train location and status information,
-        calculates Movement Authority, creates speed profiles, and sends this
-        information back to the train.
-    </p>
-
-    <h3>2. Distributed CBTC</h3>
-
-    <p style="font-size: 22px;">
-        In a distributed CBTC system, more processing and decision-making may be
-        performed by onboard train equipment.
+        In a centralized CBTC architecture, a central control center acts as
+        the main processing hub.
     </p>
 
     <p style="font-size: 22px;">
-        Trains may share information with wayside equipment or other trains to
-        help maintain safe separation. This can reduce some dependence on one
-        central control point.
+        The central system receives train location and status information from
+        all trains, calculates safe Movement Authorities and speed profiles,
+        and transmits these commands back to the trains.
     </p>
 
-    <h3>3. Grade of Automation</h3>
+    <p style="font-size: 22px;">
+        This architecture depends heavily on a strong and reliable communication
+        link between the trains and the central control system.
+    </p>
+
+    <h3>Distributed CBTC (Train-Centric CBTC)</h3>
 
     <p style="font-size: 22px;">
-        CBTC systems can also be classified by Grade of Automation, often called
-        GoA. The Grade of Automation describes how much of the train operation
-        is performed automatically.
+        In a distributed CBTC architecture, more processing and decision-making
+        capability is shifted to the trains themselves.
+    </p>
+
+    <p style="font-size: 22px;">
+        Trains may communicate directly with each other to help maintain safe
+        separation and coordinate movements, reducing reliance on one central
+        entity for some critical functions.
+    </p>
+
+    <p style="font-size: 22px;">
+        This approach can offer advantages in scalability and resilience.
+    </p>
+
+    <h3>2. Based on Grade of Automation (GoA)</h3>
+
+    <p style="font-size: 22px;">
+        CBTC is a major technology that supports different Grades of Automation,
+        often called GoA, as defined by international standards such as IEC
+        62290.
     </p>
 
     <h3>GoA 1 - Manual Operation</h3>
 
     <p style="font-size: 22px;">
-        In GoA 1, the train operator controls starting, stopping, speed, and
-        door operation. CBTC may still provide train protection and operating
-        information.
-    </p>
-
-    <h3>GoA 2 - Semi-Automatic Train Operation</h3>
-
-    <p style="font-size: 22px;">
-        In GoA 2, the CBTC system may automatically control train starting,
-        stopping, and speed. A train operator is still present and is usually
-        responsible for door control, emergencies, and degraded operation.
-    </p>
-
-    <h3>GoA 3 - Driverless Train Operation</h3>
-
-    <p style="font-size: 22px;">
-        In GoA 3, the train operates without a driver in the cab. The system
-        controls movement and doors, but staff may still be onboard to assist
-        passengers or handle emergencies.
-    </p>
-
-    <h3>GoA 4 - Unattended Train Operation</h3>
-
-    <p style="font-size: 22px;">
-        In GoA 4, the system is fully automated. There is no driver or onboard
-        operating staff required for normal train movement.
-    </p>
-
-    <h3>4. Communication-Based Types</h3>
-
-    <p style="font-size: 22px;">
-        Most modern CBTC systems use radio communication. These systems may use
-        Wi-Fi, LTE, private radio networks, or other industrial wireless
-        communication systems.
+        In GoA 1, the driver is responsible for starting, stopping, speed
+        control, and door operation while following signals.
     </p>
 
     <p style="font-size: 22px;">
-        Reliable communication is critical because train location, speed,
-        Movement Authority, and control commands must be exchanged continuously
-        between the train and the CBTC system.
+        CBTC in this case mainly provides train protection and real-time
+        information to the driver.
     </p>
 
-    <h3>5. Balises and Reference Points</h3>
+    <h3>GoA 2 - Semi-Automatic Operation (STO)</h3>
 
     <p style="font-size: 22px;">
-        Some CBTC systems also use balises, transponders, or fixed reference
-        points to help trains confirm their exact location along the track.
+        In GoA 2, the Automatic Train Operation subsystem can automate train
+        starting and stopping accurately at stations.
     </p>
 
     <p style="font-size: 22px;">
-        These devices do not usually provide continuous high-speed
-        communication, but they help improve train positioning accuracy.
+        A driver is still typically responsible for door operation, handling
+        emergencies, and possibly manual operation during degraded conditions.
+    </p>
+
+    <h3>GoA 3 - Driverless Train Operation (DTO)</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 3, the CBTC system controls starting, stopping, and door
+        operation automatically.
+    </p>
+
+    <p style="font-size: 22px;">
+        There is no driver onboard, but attendants may still be present to
+        assist passengers, handle emergencies, and take manual control if
+        required.
+    </p>
+
+    <h3>GoA 4 - Unattended Train Operation (UTO)</h3>
+
+    <p style="font-size: 22px;">
+        In GoA 4, the CBTC system fully automates train operation, including
+        starting, stopping, door operation, and handling planned contingencies.
+    </p>
+
+    <p style="font-size: 22px;">
+        No onboard operating staff are required for normal train movement, and
+        platform screen doors are often used for additional safety.
+    </p>
+
+    <h3>3. Based on Communication Technology</h3>
+
+    <p style="font-size: 22px;">
+        Reliable and continuous communication is essential for CBTC operation.
+    </p>
+
+    <h3>Radio-Based Systems</h3>
+
+    <p style="font-size: 22px;">
+        The most common modern CBTC systems are radio-based.
+    </p>
+
+    <p style="font-size: 22px;">
+        These systems may use Wi-Fi, cellular networks, or proprietary
+        industrial radio systems. Coverage is often provided by radio base
+        stations or leaky feeder cables installed along the railway.
+    </p>
+
+    <h3>Inductive Loops and Balises</h3>
+
+    <p style="font-size: 22px;">
+        Inductive loops and balises are not usually used for continuous
+        high-bandwidth communication in full CBTC systems, but they can still
+        be important for train positioning and for transmitting discrete data.
+    </p>
+
+    <p style="font-size: 22px;">
+        These devices help improve train location accuracy and support safe
+        operation.
+    </p>
+
+    <h3>4. Combining CBTC Types</h3>
+
+    <p style="font-size: 22px;">
+        These CBTC categories are not mutually exclusive. A railway may use a
+        centralized architecture, support GoA 4, and operate over a radio-based
+        communication network all at the same time.
+    </p>
+
+    <p style="font-size: 22px;">
+        The most suitable type of CBTC system depends on the needs of the
+        railway, such as whether it is an urban metro, mainline, or freight
+        operation.
     </p>
 
     <hr>
@@ -126,31 +174,31 @@
     <form id="quizForm">
 
         <p style="font-size: 20px;">
-            <strong>1. What is the main difference between centralized and distributed CBTC?</strong>
+            <strong>1. What is the primary difference between centralized and distributed CBTC architectures?</strong>
         </p>
 
-        <label><input type="radio" name="q1" value="correct"> A. Centralized systems process control centrally; distributed systems allow more onboard processing.</label><br>
-        <label><input type="radio" name="q1" value="wrong"> B. Distributed CBTC requires all trains to stay stopped.</label><br>
-        <label><input type="radio" name="q1" value="wrong"> C. Centralized CBTC only works for freight trains.</label><br>
-        <label><input type="radio" name="q1" value="wrong"> D. Distributed CBTC uses no communication.</label><br><br>
+        <label><input type="radio" name="q1" value="correct"> A. Centralized CBTC places most processing in a central control center, while distributed CBTC shifts more processing and decision-making to the trains.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> B. Centralized CBTC uses no communication, while distributed CBTC uses only paper records.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> C. Distributed CBTC only works on freight railroads.</label><br>
+        <label><input type="radio" name="q1" value="wrong"> D. Centralized CBTC does not calculate Movement Authorities.</label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>2. What is the difference between GoA 2 and GoA 4?</strong>
+            <strong>2. What is the key operational difference between GoA 2 (STO) and GoA 4 (UTO)?</strong>
         </p>
 
-        <label><input type="radio" name="q2" value="wrong"> A. GoA 2 has no driver; GoA 4 always has two conductors.</label><br>
-        <label><input type="radio" name="q2" value="wrong"> B. GoA 2 uses diesel; GoA 4 uses magnetic levitation.</label><br>
-        <label><input type="radio" name="q2" value="wrong"> C. GoA 4 always requires an attendant onboard.</label><br>
-        <label><input type="radio" name="q2" value="correct"> D. GoA 2 has an operator for doors and emergencies; GoA 4 is fully automated.</label><br><br>
+        <label><input type="radio" name="q2" value="wrong"> A. GoA 2 has no train automation, while GoA 4 only controls lighting.</label><br>
+        <label><input type="radio" name="q2" value="correct"> B. GoA 2 still has a driver responsible for some functions such as doors and emergencies, while GoA 4 is fully automated with no onboard operating staff required for normal service.</label><br>
+        <label><input type="radio" name="q2" value="wrong"> C. GoA 2 is for buses, while GoA 4 is for trains only.</label><br>
+        <label><input type="radio" name="q2" value="wrong"> D. GoA 4 always requires more manual driving than GoA 2.</label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>3. Why is reliable wireless communication important in CBTC?</strong>
+            <strong>3. What are the most common communication technologies used in modern CBTC, and why is reliable communication important?</strong>
         </p>
 
-        <label><input type="radio" name="q3" value="wrong"> A. It sends Morse code through infrared lights.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> B. It powers the train motors directly.</label><br>
-        <label><input type="radio" name="q3" value="correct"> C. It allows real-time train monitoring, Movement Authority updates, and control communication.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> D. It replaces all track and signal equipment.</label><br><br>
+        <label><input type="radio" name="q3" value="wrong"> A. Smoke signals and hand signals, because they reduce track maintenance.</label><br>
+        <label><input type="radio" name="q3" value="wrong"> B. Telegraph wires only, because trains do not need real-time updates.</label><br>
+        <label><input type="radio" name="q3" value="correct"> C. Radio-based systems such as Wi-Fi, cellular, and proprietary radio are most common, and reliable communication is critical because train data, Movement Authorities, and speed commands must be exchanged continuously.</label><br>
+        <label><input type="radio" name="q3" value="wrong"> D. Balises only, because they provide all continuous communication by themselves.</label><br><br>
 
         <button type="button"
         onclick="gradeQuiz()"

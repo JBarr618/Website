@@ -4,97 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 12B - How CBTC Functions</title>
+    <title>Module 12B - How Computer Based Train Control Functions</title>
 </head>
 
 <body style="font-family: Arial; background-color: white; padding: 30px;">
 
-    <h1>🚦 Module 12B - How CBTC Functions</h1>
+    <h1>🚦 Module 12B - How Computer Based Train Control Functions</h1>
 
     <h2 style="color: darkblue;">
-        How Computer Based Train Control Functions
+        Introduction to Computer Based Train Control (CBTC) - Page 3
     </h2>
 
     <hr>
 
     <p style="font-size: 22px;">
-        Computer Based Train Control, or CBTC, works by continuously collecting
-        train information, sending that information to control equipment,
-        calculating safe movement limits, and supervising the train as it moves.
-    </p>
-
-    <p style="font-size: 22px;">
-        Unlike older fixed block signal systems, CBTC uses real-time information
-        about train location, train speed, direction of travel, and safe braking
-        distance. This allows trains to operate closer together while still
-        maintaining a safe separation.
+        Computer Based Train Control, commonly called CBTC, functions through a
+        continuous loop of data acquisition, processing, communication, and
+        action to ensure safe and efficient train movement.
     </p>
 
     <h3>1. Train Localization</h3>
 
     <p style="font-size: 22px;">
-        Each train determines its location using onboard equipment such as
-        odometers, speed sensors, and fixed reference points along the track.
-        These reference points may include balises, transponders, or other
-        location devices.
-    </p>
-
-    <h3>2. Communication</h3>
-
-    <p style="font-size: 22px;">
-        The train sends its location, speed, direction, and operating status to
-        the CBTC control system. This communication is usually wireless and
-        occurs continuously or very frequently.
-    </p>
-
-    <h3>3. Central Processing</h3>
-
-    <p style="font-size: 22px;">
-        The CBTC control system receives information from all trains in the
-        system. It also considers track layout, curves, grades, speed limits,
-        switch positions, interlocking status, and the location of other trains.
+        Each train continuously determines its precise location using onboard
+        sensors such as odometers and speed sensors.
     </p>
 
     <p style="font-size: 22px;">
-        Using this information, the system calculates how far each train may
-        safely travel. This safe travel limit is called Movement Authority.
-    </p>
-
-    <h3>4. Movement Authority</h3>
-
-    <p style="font-size: 22px;">
-        Movement Authority tells the train how far it is allowed to proceed.
-        The system may also send a speed profile, which tells the train the
-        maximum safe speed for different parts of the route.
-    </p>
-
-    <h3>5. Onboard ATP Supervision</h3>
-
-    <p style="font-size: 22px;">
-        The onboard Automatic Train Protection system, or ATP, monitors the
-        train against the received Movement Authority and speed profile.
+        The train periodically calibrates its position using fixed reference
+        points such as balises or beacons.
     </p>
 
     <p style="font-size: 22px;">
-        If the train exceeds the permitted speed or gets too close to the end
-        of its Movement Authority, ATP automatically applies the brakes to keep
-        the train safe.
+        Some CBTC systems may also use radar or Radio Frequency Identification,
+        commonly called RFID, to improve location accuracy.
     </p>
 
-    <h3>6. Continuous Updates</h3>
+    <h3>2. Data Transmission to Central Control</h3>
 
     <p style="font-size: 22px;">
-        CBTC is a continuous process. As trains move, the system constantly
-        updates train positions, recalculates safe movement limits, and sends
-        new Movement Authorities as needed.
+        The train wirelessly transmits its real-time location, speed,
+        direction, and other operational data to the central control center.
+    </p>
+
+    <p style="font-size: 22px;">
+        This communication is continuous or very frequent so that the control
+        system always has current train information.
+    </p>
+
+    <h3>3. Centralized Data Processing and Calculation</h3>
+
+    <p style="font-size: 22px;">
+        The central control system receives and processes data from all trains
+        on the network.
+    </p>
+
+    <p style="font-size: 22px;">
+        Using advanced algorithms, the system considers track geometry,
+        gradients, speed restrictions, interlocking status, and the movement of
+        other trains.
+    </p>
+
+    <p style="font-size: 22px;">
+        Based on this information, the central system calculates the safe
+        braking distance required for each train and determines the maximum safe
+        speed and the extent of its Movement Authority, commonly called MA.
+    </p>
+
+    <h3>4. Movement Authority and Speed Profile Transmission</h3>
+
+    <p style="font-size: 22px;">
+        The central control system transmits the Movement Authority back to the
+        train.
+    </p>
+
+    <p style="font-size: 22px;">
+        The Movement Authority tells the train how far it is safely allowed to
+        proceed.
+    </p>
+
+    <p style="font-size: 22px;">
+        The system often also sends a speed profile, which gives target speeds
+        for different sections of the authorized movement.
+    </p>
+
+    <h3>5. Onboard Supervision and Control (ATP)</h3>
+
+    <p style="font-size: 22px;">
+        The onboard computer system receives the Movement Authority and speed
+        profile from the central control system.
+    </p>
+
+    <p style="font-size: 22px;">
+        The Automatic Train Protection system, commonly called ATP,
+        continuously monitors the train's actual speed and position against the
+        received limits.
+    </p>
+
+    <p style="font-size: 22px;">
+        If the train exceeds the permitted speed or approaches the end of its
+        Movement Authority without proper braking, the ATP system automatically
+        applies the brakes to prevent overspeed or collision.
+    </p>
+
+    <h3>6. Dynamic Adjustments</h3>
+
+    <p style="font-size: 22px;">
+        The entire CBTC process is dynamic and continuous.
+    </p>
+
+    <p style="font-size: 22px;">
+        As train positions change, train speeds change, or track and operating
+        conditions change, the central control system continually recalculates
+        and updates the Movement Authorities and speed profiles for all trains.
+    </p>
+
+    <p style="font-size: 22px;">
+        This allows trains to operate with tighter spacing and more efficient
+        traffic flow than traditional fixed block systems.
     </p>
 
     <h3>7. Interface with Other Systems</h3>
 
     <p style="font-size: 22px;">
-        CBTC also works with other railroad systems such as interlockings,
-        switches, route controls, traffic management systems, and station
-        equipment.
+        CBTC systems often interface with other railway systems such as
+        interlocking systems and traffic management systems.
+    </p>
+
+    <p style="font-size: 22px;">
+        Interlocking systems help with route setting and route protection at
+        junctions, while traffic management systems help optimize the overall
+        railway network.
+    </p>
+
+    <p style="font-size: 22px;">
+        This continuous cycle of localization, communication, centralized
+        processing, and onboard control gives CBTC its advanced capabilities,
+        increased safety, improved capacity, and enhanced operational
+        efficiency.
     </p>
 
     <hr>
@@ -104,31 +151,31 @@
     <form id="quizForm">
 
         <p style="font-size: 20px;">
-            <strong>1. What is the basic operating cycle of a CBTC system?</strong>
+            <strong>1. Which answer best describes the continuous cycle of operations in a CBTC system?</strong>
         </p>
 
-        <label><input type="radio" name="q1" value="wrong"> A. Scan, map, broadcast, stop</label><br>
-        <label><input type="radio" name="q1" value="wrong"> B. Read, decode, sleep, restart</label><br>
-        <label><input type="radio" name="q1" value="wrong"> C. Transmit, relay, instruct, archive</label><br>
-        <label><input type="radio" name="q1" value="correct"> D. Localize, communicate, process, send authority, monitor, repeat</label><br><br>
+        <label><input type="radio" name="q1" value="correct"> A. Train localization, data transmission, central processing, MA and speed profile transmission, onboard ATP supervision, and continuous updating</label><br>
+        <label><input type="radio" name="q1" value="wrong"> B. Manual dispatching, paper train orders, and fixed signal clearance only</label><br>
+        <label><input type="radio" name="q1" value="wrong"> C. Train fueling, station cleaning, and ticket collection</label><br>
+        <label><input type="radio" name="q1" value="wrong"> D. One-time train location setup with no further updates</label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>2. What does the CBTC system use to determine Movement Authority?</strong>
+            <strong>2. How does the central control system determine a train's Movement Authority in CBTC?</strong>
         </p>
 
-        <label><input type="radio" name="q2" value="wrong"> A. Signal color and track paint condition</label><br>
-        <label><input type="radio" name="q2" value="correct"> B. Train location, speed, track conditions, interlockings, and nearby trains</label><br>
-        <label><input type="radio" name="q2" value="wrong"> C. GPS longitude, time zone, and load weight only</label><br>
-        <label><input type="radio" name="q2" value="wrong"> D. Number of cars and distance from the nearest station</label><br><br>
+        <label><input type="radio" name="q2" value="wrong"> A. It gives every train the same fixed distance all day long</label><br>
+        <label><input type="radio" name="q2" value="wrong"> B. It only uses station schedules and ignores train positions</label><br>
+        <label><input type="radio" name="q2" value="correct"> C. It uses train data and considers factors such as track geometry, gradients, speed restrictions, interlocking status, and the movement of other trains</label><br>
+        <label><input type="radio" name="q2" value="wrong"> D. It is decided only by the train operator inside the cab</label><br><br>
 
         <p style="font-size: 20px;">
-            <strong>3. What does onboard ATP do in a CBTC system?</strong>
+            <strong>3. What is the role of the Automatic Train Protection (ATP) system in CBTC?</strong>
         </p>
 
-        <label><input type="radio" name="q3" value="correct"> A. It keeps the train within safe speed and distance limits and applies brakes if needed.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> B. It opens train doors at the platform.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> C. It monitors fuel levels and crew hours.</label><br>
-        <label><input type="radio" name="q3" value="wrong"> D. It programs the train destination sign.</label><br><br>
+        <label><input type="radio" name="q3" value="wrong"> A. It controls station air conditioning systems</label><br>
+        <label><input type="radio" name="q3" value="correct"> B. It monitors the train's speed and position against its limits and automatically applies the brakes if necessary</label><br>
+        <label><input type="radio" name="q3" value="wrong"> C. It replaces all communication between the train and control center</label><br>
+        <label><input type="radio" name="q3" value="wrong"> D. It is used only for passenger announcements</label><br><br>
 
         <button type="button"
         onclick="gradeQuiz()"
@@ -161,7 +208,6 @@
 
     <script>
     function checkPassword() {
-
         let password = prompt("Enter Password:");
 
         if (password === "signal2026") {
@@ -172,11 +218,9 @@
     }
 
     function gradeQuiz() {
-
         const answers = document.querySelectorAll('input[type="radio"]');
 
         answers.forEach(answer => {
-
             answer.disabled = true;
 
             if (answer.checked && answer.value === "correct") {
@@ -191,7 +235,6 @@
                 answer.parentElement.style.color = "green";
                 answer.parentElement.style.fontWeight = "bold";
             }
-
         });
     }
     </script>
@@ -246,5 +289,3 @@
 </body>
 
 </html>
-
-      
